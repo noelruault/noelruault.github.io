@@ -1,0 +1,183 @@
+# banner
+banner:
+  title : "Hi! I'm Noël, <br> Software Engineer"
+
+# about
+about:
+  enable : true
+  item :
+    - content: "Hello! I'm Noël, a software engineer who enjoys coding intuitive backend software that solves
+      real-life problems. I develop exceptional code that is provided with high-performance and modern
+      technologies along with efficient design patterns."
+
+    - content: "I have worked with well organised teams on large, robust, and ambitious projects around the world,
+      which allowed me to collect quantitative and qualitative data to synthesise insights for best
+      practices, recommendations, and strategies to scale."
+
+    - content: "Get in touch! Whether for a potential project or just to say hi, my inbox is always open:"
+
+  button:
+    enable : true
+    label : "contact"
+    URL : "contact"
+
+# skill
+skill:
+  enable : true
+  title : "Here are a few technologies I've been working recently"
+  item:
+    - title : "Web Design"
+      progress : "90%"
+      color : "#fdb157"
+
+    - title : "Logo Design"
+      progress : "60%"
+      color : "#9473e6"
+
+    - title : "After Effects"
+      progress : "80%"
+      color : "#bdecf6"
+
+    - title : "Web App"
+      progress : "70%"
+      color : "#ffbcaa"
+
+# experience
+experience:
+  enable : true
+  title : "Experience"
+  item:
+    # Add tech stack ?
+    - logo : "images/experience/icon-1.png"
+      title : "Backend Engineer and System Designer"
+      type: "Contract service"
+      company : "No Spoon Tech Lab"
+      duration : "July 2020 - Nov 2020"
+      location: "Valencia, Spain"
+
+    - logo : "images/experience/icon-2.png"
+      title : "Golang Back End Engineer"
+      company : "Assembly Payments / mx51"
+      duration : "Oct 2019 - Mar 2020"
+      location: "Sydney, Australia"
+
+    - logo : "images/experience/icon-3.png"
+      title : "Back End Engineer"
+      company : "Outcomex"
+      duration : "Feb 2019 - Aug 2019"
+      location: "Sydney, Australia"
+
+    - logo : "images/experience/icon-1.png"
+      title : "Backend Developer"
+      company : "Qvantel"
+      duration : "Jul 2017 - Jan 2019"
+      location: "Madrid, Spain"
+
+
+# education
+education:
+  enable : true
+  title : "Education"
+  item:
+    - title : "Marters in UX Design"
+      year : "2006"
+      academy : "Masassusets Institute of Technology"
+
+    - title : "Honours in Fine Arts"
+      year : "2004"
+      academy : "Harvard University"
+
+    - title : "Higher Secondary Certificat"
+      year : "2000"
+      academy : "Cardiff School"
+
+    - title : "Secondary School Certificate"
+      year : "1998"
+      academy : "Cardiff School"
+
+# service
+service:
+  enable : true
+  title : "Services"
+  item:
+    - title : "UI Design"
+      icon : "ti-palette"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      highlighted : false
+
+    - title : "UX Design"
+      icon : "ti-vector"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      highlighted : true
+
+    - title : "Interaction Design"
+      icon : "ti-panel"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      highlighted : false
+
+# portfolio
+portfolio:
+  enable : true
+  title : "Portfolio"
+  item_show : 5
+  # portfolio item comes from 'data/portfolio.yml' item.
+
+# testimonial
+testimonial:
+  enable : true
+  title : "Testimonials"
+  item:
+    - name : "Jesica Gomez"
+      image : "images/testimonial/client-1.png"
+      designation : "CEO, Funder"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
+    - name : "Shirley Scot"
+      image : "images/testimonial/client-1.png"
+      designation : "CEO, Funder"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
+    - name : "Jessica Julie"
+      image : "images/testimonial/client-1.png"
+      designation : "CEO, Funder"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
+# client logo slider
+clients_logo_slider:
+  enable : true
+  item:
+    - logo : "images/clients-logo/client-logo-1.png"
+      URL : "http://examplesite.com"
+
+    - logo : "images/clients-logo/client-logo-2.png"
+      URL : "#"
+
+    - logo : "images/clients-logo/client-logo-3.png"
+      URL : "http://examplesite.com"
+
+    - logo : "images/clients-logo/client-logo-4.png"
+      URL : "#"
+
+    - logo : "images/clients-logo/client-logo-5.png"
+      URL : "http://examplesite.com"
+
+    - logo : "images/clients-logo/client-logo-1.png"
+      URL : "#"
+
+    - logo : "images/clients-logo/client-logo-2.png"
+      URL : "http://examplesite.com"
+
+    - logo : "images/clients-logo/client-logo-3.png"
+      URL : "#"
+
+    - logo : "images/clients-logo/client-logo-4.png"
+      URL : "http://examplesite.com"
+
+    - logo : "images/clients-logo/client-logo-5.png"
+      URL : "#"
+
+# blog
+blog:
+  enable : false
+  title : "Blogs"
+  # blog post comes from "content/blog" folder

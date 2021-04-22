@@ -1,0 +1,3 @@
+[submodule "themes/kross-hugo"]
+	path = themes/kross-hugo
+	url = https://github.com/noelruault/kross-hugo.git
