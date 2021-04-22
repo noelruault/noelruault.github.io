@@ -25,5 +25,5 @@ git commit -m "$msg"
 # Push source and build repos.
 git push origin code
 # Example:
-# git subtree push --prefix=public git@github.com:jhirniak/jhirniak.github.io.git master
-git subtree push --prefix=public git@github.com:<your-username>/<your-username>.github.io.git master
+# git subtree push --prefix=public git@github.com:jhirniak/jhirniak.github.io.git main
+git subtree push --prefix=public git@github.com:noelruault/noelruault.github.io.git main
