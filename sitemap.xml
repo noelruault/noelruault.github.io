@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://noel.engineer/portfolio/project-1/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/concurrency/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/design/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/golang/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/goroutines/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/portfolio/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/portfolio/project-3/</loc>
+    <lastmod>2021-04-15T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/oauth/</loc>
+    <lastmod>2021-04-15T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/rest/</loc>
+    <lastmod>2021-04-15T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/portfolio/project-2/</loc>
+    <lastmod>2021-04-12T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/in-memory-db/</loc>
+    <lastmod>2021-04-12T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noel.engineer/categories/mutex/</loc>
+    <lastmod>2021-04-12T20:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://noel.engineer/blog/post-1/</loc>
     <lastmod>2019-05-12T12:14:34+06:00</lastmod>
   </url><url>
@@ -20,61 +62,25 @@
     <loc>https://noel.engineer/blog/post-6/</loc>
     <lastmod>2019-05-12T12:14:34+06:00</lastmod>
   </url><url>
-    <loc>https://noel.engineer/portfolio/project-1/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-2/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-3/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
     <loc>https://noel.engineer/portfolio/project-4/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-5/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-6/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-7/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-8/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/project-9/</loc>
     <lastmod>2019-05-12T12:14:34+06:00</lastmod>
   </url><url>
     <loc>https://noel.engineer/blog/</loc>
     <lastmod>2019-05-12T12:14:34+06:00</lastmod>
   </url><url>
-    <loc>https://noel.engineer/categories/branding/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/categories/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/categories/design/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/categories/development/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/categories/illustration/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/</loc>
-    <lastmod>2019-05-12T12:14:34+06:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/portfolio/</loc>
+    <loc>https://noel.engineer/categories/postgresql/</loc>
     <lastmod>2019-05-12T12:14:34+06:00</lastmod>
   </url><url>
     <loc>https://noel.engineer/about/</loc>
   </url><url>
+    <loc>https://noel.engineer/categories/bash/</loc>
+  </url><url>
     <loc>https://noel.engineer/contact/</loc>
   </url><url>
+    <loc>https://noel.engineer/portfolio/project-5/</loc>
+  </url><url>
     <loc>https://noel.engineer/tags/</loc>
+  </url><url>
+    <loc>https://noel.engineer/categories/zsh/</loc>
   </url>
 </urlset>

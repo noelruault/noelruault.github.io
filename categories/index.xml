@@ -6,40 +6,103 @@
     <description>Recent content in Categories on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="https://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Apr 2021 20:00:00 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>branding</title>
-      <link>https://noel.engineer/categories/branding/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
+      <title>concurrency</title>
+      <link>https://noel.engineer/categories/concurrency/</link>
+      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
       
-      <guid>https://noel.engineer/categories/branding/</guid>
+      <guid>https://noel.engineer/categories/concurrency/</guid>
       <description></description>
     </item>
     
     <item>
       <title>design</title>
       <link>https://noel.engineer/categories/design/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
+      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
       
       <guid>https://noel.engineer/categories/design/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>development</title>
-      <link>https://noel.engineer/categories/development/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
+      <title>golang</title>
+      <link>https://noel.engineer/categories/golang/</link>
+      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
       
-      <guid>https://noel.engineer/categories/development/</guid>
+      <guid>https://noel.engineer/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>illustration</title>
-      <link>https://noel.engineer/categories/illustration/</link>
+      <title>goroutines</title>
+      <link>https://noel.engineer/categories/goroutines/</link>
+      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/goroutines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oauth</title>
+      <link>https://noel.engineer/categories/oauth/</link>
+      <pubDate>Thu, 15 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/oauth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rest</title>
+      <link>https://noel.engineer/categories/rest/</link>
+      <pubDate>Thu, 15 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>in-memory db</title>
+      <link>https://noel.engineer/categories/in-memory-db/</link>
+      <pubDate>Mon, 12 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/in-memory-db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mutex</title>
+      <link>https://noel.engineer/categories/mutex/</link>
+      <pubDate>Mon, 12 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/mutex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://noel.engineer/categories/postgresql/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>https://noel.engineer/categories/illustration/</guid>
+      <guid>https://noel.engineer/categories/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://noel.engineer/categories/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://noel.engineer/categories/zsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/zsh/</guid>
       <description></description>
     </item>
     

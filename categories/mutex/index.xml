@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mutex on noel ruault</title>
+    <link>https://noel.engineer/categories/mutex/</link>
+    <description>Recent content in mutex on noel ruault</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Apr 2021 20:00:00 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/mutex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auction Bid Tracker</title>
+      <link>https://noel.engineer/portfolio/project-2/</link>
+      <pubDate>Mon, 12 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/portfolio/project-2/</guid>
+      <description>Project Requirements INSTRUCTIONS.md
+Project Details Simple online auction system which will allow users to concurrently bid on items for sale.</description>
+    </item>
+    
+  </channel>
+</rss>
