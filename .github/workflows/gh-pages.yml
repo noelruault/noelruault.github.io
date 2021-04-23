@@ -26,8 +26,10 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          publish_branch: gh-pages  # default: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public # default: public
+          external_repository: noelruault/noelruault.github.io
 
       # - name: Push changes to github.io
       #   uses: actions/github-script@v4
