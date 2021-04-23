@@ -15,5 +15,5 @@ fi
 git commit -m "$msg"
 
 # Push source and build repos.
-git push origin code
+# git push origin code
 git subtree push --prefix=public git@github.com:noelruault/noelruault.github.io.git main
