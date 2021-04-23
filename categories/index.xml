@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on noel ruault</title>
-    <link>http://noel.engineer/categories/</link>
+    <link>https://noel.engineer/categories/</link>
     <description>Recent content in Categories on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="http://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="https://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>branding</title>
-      <link>http://noel.engineer/categories/branding/</link>
+      <link>https://noel.engineer/categories/branding/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>http://noel.engineer/categories/branding/</guid>
+      <guid>https://noel.engineer/categories/branding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>design</title>
-      <link>http://noel.engineer/categories/design/</link>
+      <link>https://noel.engineer/categories/design/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>http://noel.engineer/categories/design/</guid>
+      <guid>https://noel.engineer/categories/design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>http://noel.engineer/categories/development/</link>
+      <link>https://noel.engineer/categories/development/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>http://noel.engineer/categories/development/</guid>
+      <guid>https://noel.engineer/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>illustration</title>
-      <link>http://noel.engineer/categories/illustration/</link>
+      <link>https://noel.engineer/categories/illustration/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>http://noel.engineer/categories/illustration/</guid>
+      <guid>https://noel.engineer/categories/illustration/</guid>
       <description></description>
     </item>
     
