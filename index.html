@@ -57,7 +57,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="https://noel.engineer/">
       
-      <h3 class="text-white font-tertiary">noel ruault</h3>
+      <h3 class="text-white font-tertiary">noel ruault<span id="cursor">|</span></h3>
       
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -101,521 +101,548 @@
   </nav>
 </header>
 
-  
-  <section class="hero-area bg-primary overflow-hidden" id="parallax">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-11 mx-auto">
-          <h1 class="text-white font-tertiary">Hi! I'm Noël, <br> Software Engineer</h1>
-        </div>
+
+<script>
+  var cursor = true;
+  var speed = 550;
+  setInterval(() => {
+    if (cursor) {
+      document.getElementById('cursor').style.opacity = 0;
+      cursor = false;
+    } else {
+      document.getElementById('cursor').style.opacity = 1;
+      cursor = true;
+    }
+  }, speed);
+</script>
+
+
+
+
+<section class="hero-area bg-primary overflow-hidden" id="parallax">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-11 mx-auto">
+        <h1 class="text-white font-tertiary">Hi! I'm Noël, <br> Software Engineer</h1>
       </div>
     </div>
-    <div class="layer-bg w-100">
-      <img class="img-fluid w-100" src="/images/illustrations/leaf-bg.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l2">
-      <img src="/images/illustrations/dots-cyan.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l3">
-      <img src="/images/illustrations/leaf-orange.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l4">
-      <img src="/images/illustrations/dots-orange.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l5">
-      <img src="/images/illustrations/leaf-yellow.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l6">
-      <img src="/images/illustrations/leaf-cyan.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l7">
-      <img src="/images/illustrations/dots-group-orange.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l8">
-      <img src="/images/illustrations/leaf-pink-round.svg" alt="bg-shape">
-    </div>
-    <div class="layer" id="l9">
-      <img src="/images/illustrations/leaf-cyan-2.svg" alt="bg-shape">
-    </div>
+  </div>
+  <div class="layer-bg w-100">
+    <img class="img-fluid w-100" src="/images/illustrations/leaf-bg.png" alt="bg-shape">
+  </div>
+  <div class="layer" id="l2">
+    <img src="/images/illustrations/dots-cyan.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l3">
+    <img src="/images/illustrations/brackets.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l4">
+    <img src="/images/illustrations/dots-orange.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l5">
+    <img src="/images/illustrations/secured-datacenter.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l6">
+    <img src="/images/illustrations/console.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l7">
+    <img src="/images/illustrations/dots-group-orange.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l8">
+    <img src="/images/illustrations/keycap-n-for-noel.svg" alt="bg-shape">
+  </div>
+  <div class="layer" id="l9">
+    <img src="/images/illustrations/security-checks-shield.svg" alt="bg-shape">
+  </div>
+  
+  <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
     
-    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
-      
-      <li class="mb-3"><a class="text-white" href="https://github.com/noelruault"><i class="ti-github"></i></a></li>
-      
-      <li class="mb-3"><a class="text-white" href="https://www.linkedin.com/in/noelruault/"><i class="ti-linkedin"></i></a></li>
-      
-    </ul>
+    <li class="mb-3"><a class="text-white" href="https://github.com/noelruault"><i class="ti-github"></i></a></li>
     
-  </section>
-  
-
-  
-  
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 mx-auto text-center">
-          
-          
-          <p class="font-secondary lead text-dark">Hello! I&rsquo;m Noël, a software engineer who enjoys coding intuitive backend software that solves real-life problems. I develop exceptional code that is provided with high-performance and modern technologies along with efficient design patterns.</p>
-          
-          <p class="font-secondary lead text-dark">I have worked with well organised teams on large, robust, and ambitious projects around the world, which allowed me to collect quantitative and qualitative data to synthesise insights for best practices, recommendations, and strategies to scale.</p>
-          
-          <p class="font-secondary lead text-dark">Get in touch! Whether for a potential project or just to say hi, my inbox is always open:</p>
-          
-          
-          
-          <a href="https://noel.engineer/contact" class="btn btn-transparent">contact</a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  
-
-
-  
-  
-  
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Here are a few technologies I&rsquo;ve been working recently</h2>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#7fd5ea">
-              <div class="wave" data-progress="90%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Golang (90%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#8d0430">
-              <div class="wave" data-progress="70%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">System design (70%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157">
-              <div class="wave" data-progress="90%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">gRPC (90%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#9473e6">
-              <div class="wave" data-progress="80%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Docker (80%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#a4e468">
-              <div class="wave" data-progress="80%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Microservices (80%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#160dcd">
-              <div class="wave" data-progress="70%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Kubernetes (70%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#f9cc22">
-              <div class="wave" data-progress="40%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Kafka (40%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#13aa52">
-              <div class="wave" data-progress="70%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">MongoDB (70%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#cc0a91">
-              <div class="wave" data-progress="40%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">noSQL (40%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#9e98f1">
-              <div class="wave" data-progress="55%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">DDD (55%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#c5b797">
-              <div class="wave" data-progress="50%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">AWS (50%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#0fc522">
-              <div class="wave" data-progress="75%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Bash (75%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#589bd4">
-              <div class="wave" data-progress="30%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Google CLoud (30%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#2b477d">
-              <div class="wave" data-progress="90%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">MySQL, PostgreSQL (90%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#fbea09">
-              <div class="wave" data-progress="80%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Metrics: Zipkin, Datadog (80%)</h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="#a1caec">
-              <div class="wave" data-progress="60%"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">Python, Ruby (60%)</h4>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  
-  
-
-  
-  
-  
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-around">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Experience</h2>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-cyan.svg" alt="icon">
-          <p class="mb-0">Jan 2021 - Present</p>
-          <p class="mb-0">Remote, Europe</p>
-          <h6 class="text-light"></h6>
-          <h4>Senior Backend Engineer</h4>
-          <h6 class="text-light">Ubeeqo</h6>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-yellow.svg" alt="icon">
-          <p class="mb-0">July 2020 - Nov 2020</p>
-          <p class="mb-0">Valencia, Spain</p>
-          <h6 class="text-light">Contract service</h6>
-          <h4>Backend Engineer and System Designer</h4>
-          <h6 class="text-light">No Spoon Tech Lab</h6>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-dark-purple.svg" alt="icon">
-          <p class="mb-0">Oct 2019 - Mar 2020</p>
-          <p class="mb-0">Sydney, Australia</p>
-          <h6 class="text-light"></h6>
-          <h4>Golang Back End Engineer</h4>
-          <h6 class="text-light">Assembly Payments / mx51</h6>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-brown.svg" alt="icon">
-          <p class="mb-0">Feb 2019 - Aug 2019</p>
-          <p class="mb-0">Sydney, Australia</p>
-          <h6 class="text-light"></h6>
-          <h4>Back End Engineer</h4>
-          <h6 class="text-light">Outcomex</h6>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-blue.svg" alt="icon">
-          <p class="mb-0">Jul 2017 - Jan 2019</p>
-          <p class="mb-0">Madrid, Spain</p>
-          <h6 class="text-light"></h6>
-          <h4>Backend Developer</h4>
-          <h6 class="text-light">Qvantel</h6>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-orange.svg" alt="icon">
-          <p class="mb-0">Oct 2016 - Dec 2017</p>
-          <p class="mb-0">Madrid, Spain</p>
-          <h6 class="text-light"></h6>
-          <h4>Full Stack Developer</h4>
-          <h6 class="text-light">Multiple start-ups</h6>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 text-center">
-          <img src="/images/experience/icon-light-purple.svg" alt="icon">
-          <p class="mb-0">Jul 2015 - Aug 2016</p>
-          <p class="mb-0">Elche, Spain</p>
-          <h6 class="text-light"></h6>
-          <h4>Robotics Engineer</h4>
-          <h6 class="text-light">Aisoy Robotics</h6>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  
-  
-
-  
-
-
-  
-
-
-  
-  
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">Portfolio</h2>
-        </div>
-      </div>
-      <div class="row shuffle-wrapper">
-        
-        
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="https://noel.engineer/images/portfolio/solid-background-1.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-1/">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="https://noel.engineer/images/portfolio/solid-background-3.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-3/">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="https://noel.engineer/images/portfolio/solid-background-2.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-2/">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="https://noel.engineer/images/portfolio/solid-background-4.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-4/">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="https://noel.engineer/images/portfolio/solid-background-5.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-5/">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  
-
-
-  
-  
-  
-  <section class="section bg-primary position-relative testimonial-bg-shapes">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title text-white mb-5">Testimonials</h2>
-        </div>
-        <div class="col-lg-10 mx-auto testimonial-slider">
-          
-          
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">Noel is a smart and talented engineer. He is very resourceful and pays a lot of attention to detail. He always shows passion for the craft and works hard and in a focused manner. I look forward to work again with Noel and to see what great things he gets up to next.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/mx51-patrick-ellul.jpg" alt="client-image">
-            <h4 class="text-white">Patrick Ellul</h4>
-            <h6 class="text-light mb-4">Head of Architecture at mx51</h6>
-          </div>
-          
-          
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">I worked with Noel on a migration project from Node JS to Golang. Noel is a developer who follows good practices and always discusses a design decision that will have an impact in the long term. He is passionate about understanding the business model to prioritise the fundamentals for the proper functioning of the software, if something does not fit in the communication between front and back he will try to find a standard as close as possible to reach the most ideal solution. A pleasure to have been able to work with you for almost half a year!</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/kokoro-carlos-esquerdo.jpg" alt="client-image">
-            <h4 class="text-white">Carlos Esquerdo</h4>
-            <h6 class="text-light mb-4">Coworker at Kokoro</h6>
-          </div>
-          
-          
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">Noel was a delight to work with in the last 6 months. Always showing interest and keen to learn, every day we could see the commitment to his tasks and the effort he put in doing beyond his best. Amongst other things, he&rsquo;s also a great colleague and gets along easily with everyone, a real team player.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/outcomex-vitor-fylyk.jpg" alt="client-image">
-            <h4 class="text-white">Vitor Mota Fylyk</h4>
-            <h6 class="text-light mb-4">Network/Software Engineer at Outcomex</h6>
-          </div>
-          
-          
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">Noel is a dependable full-stack developer with passion to learn and interest to understand the full end-to-end solution.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/qvantel-markus-vuorio.jpg" alt="client-image">
-            <h4 class="text-white">Markus Vuorio</h4>
-            <h6 class="text-light mb-4">Domain Architect at Qvantel</h6>
-          </div>
-          
-          
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">It has been a pleasure to work with Noel for one year and a half. In this period of time, he was always looking to learn new technologies, understanding first the basics, and later, going deep in more technical details. Fast learner and with great commitment in tough times to achieve tie goals, he is an great assert for every company.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/qvantel-javier-gil.jpg" alt="client-image">
-            <h4 class="text-white">Javier Gil</h4>
-            <h6 class="text-light mb-4">Coworker and Scrum Master at Qvantel</h6>
-          </div>
-          
-          
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">I was Noel&rsquo;s direct supervisor at Qvantel. Not only he is a pleasant person to be around, but he is also very proactive with the whole team, always willing to lend a hand wherever needed. He has an excellent eye for detail and is very committed to documenting his work at all times&hellip;</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/qvantel-diego-caceres.jpg" alt="client-image">
-            <h4 class="text-white">Diego Cáceres</h4>
-            <h6 class="text-light mb-4">Project Manager at Qvantel</h6>
-          </div>
-          
-        </div>
-      </div>
-    </div>
+    <li class="mb-3"><a class="text-white" href="https://www.linkedin.com/in/noelruault/"><i class="ti-linkedin"></i></a></li>
     
-    <img src="/images/backgrounds/map.png" alt="map" class="img-fluid bg-map">
-    <img src="/images/illustrations/dots-group-v.svg" alt="bg-shape" class="img-fluid bg-shape-1">
-    <img src="/images/illustrations/leaf-orange.svg" alt="bg-shape" class="img-fluid bg-shape-2">
-    <img src="/images/illustrations/dots-group-sm.svg" alt="bg-shape" class="img-fluid bg-shape-3">
-    <img src="/images/illustrations/leaf-pink-round.svg" alt="bg-shape" class="img-fluid bg-shape-4">
-    <img src="/images/illustrations/leaf-cyan.svg" alt="bg-shape" class="img-fluid bg-shape-5">
-  </section>
+  </ul>
   
-  
-  
+</section>
 
 
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        
+        
+        <p class="font-secondary lead text-dark">Hello! I&rsquo;m Noël, a software engineer who enjoys coding intuitive backend software that solves real-life problems. I develop exceptional code that is provided with high-performance and modern technologies along with efficient design patterns.</p>
+        
+        <p class="font-secondary lead text-dark">I have worked with well organised teams on large, robust, and ambitious projects around the world, which allowed me to collect quantitative and qualitative data to synthesise insights for best practices, recommendations, and strategies to scale.</p>
+        
+        <p class="font-secondary lead text-dark">Get in touch! Whether for a potential project or just to say hi, my inbox is always open:</p>
+        
+        
+        
+        <a href="https://noel.engineer/contact" class="btn btn-transparent">contact</a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Here are a few technologies I&rsquo;ve been working recently</h2>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#7fd5ea">
+            <div class="wave" data-progress="90%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Golang</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#8d0430">
+            <div class="wave" data-progress="70%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">System design</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157">
+            <div class="wave" data-progress="90%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">gRPC</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#9473e6">
+            <div class="wave" data-progress="80%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Docker</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#a4e468">
+            <div class="wave" data-progress="80%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Microservices</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#160dcd">
+            <div class="wave" data-progress="70%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Kubernetes</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#f9cc22">
+            <div class="wave" data-progress="40%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Kafka</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#13aa52">
+            <div class="wave" data-progress="70%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">MongoDB</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#cc0a91">
+            <div class="wave" data-progress="40%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">noSQL</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#9e98f1">
+            <div class="wave" data-progress="55%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">DDD</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#c5b797">
+            <div class="wave" data-progress="50%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">AWS</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#0fc522">
+            <div class="wave" data-progress="75%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Bash</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#589bd4">
+            <div class="wave" data-progress="30%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Google CLoud</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#2b477d">
+            <div class="wave" data-progress="90%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">MySQL, PostgreSQL</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#fbea09">
+            <div class="wave" data-progress="80%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Metrics: Zipkin, Datadog</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card shadow text-center">
+          <div class="position-relative rounded-top progress-wrapper" data-color="#a1caec">
+            <div class="wave" data-progress="60%"></div>
+          </div>
+          <div class="card-footer bg-white">
+            <h4 class="card-title">Python, Ruby</h4>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section position-relative">
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Experience</h2>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-cyan.svg" alt="icon">
+        <p class="mb-0">Jan 2021 - Present</p>
+        <p class="mb-0">Remote, Europe</p>
+        <h6 class="text-light"></h6>
+        <h4>Senior Backend Engineer</h4>
+        <p class="mb-0">Golang, DDD, Kafka, MongoDB, Google Cloud, Gitlab CI/CD, Microservices</p>
+        <h6 class="text-light">Ubeeqo</h6>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-yellow.svg" alt="icon">
+        <p class="mb-0">July 2020 - Nov 2020</p>
+        <p class="mb-0">Valencia, Spain</p>
+        <h6 class="text-light">Contract service</h6>
+        <h4>Backend Engineer and System Designer</h4>
+        <p class="mb-0">Golang, noSQL, MySQL, AWS: Beanstalk, Docker, Compose, Metrics: Zipkin, Terraform, Microservices, Github CI//CD</p>
+        <h6 class="text-light">No Spoon Tech Lab</h6>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-dark-purple.svg" alt="icon">
+        <p class="mb-0">Oct 2019 - Mar 2020</p>
+        <p class="mb-0">Sydney, Australia</p>
+        <h6 class="text-light"></h6>
+        <h4>Golang Back End Engineer</h4>
+        <p class="mb-0">Golang, gRPC, Agile, PostgreSQL, Docker, Kubernetes, Makefile, Buildkite, Metrics: Datadog, Microservices</p>
+        <h6 class="text-light">Assembly Payments / mx51</h6>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-brown.svg" alt="icon">
+        <p class="mb-0">Feb 2019 - Aug 2019</p>
+        <p class="mb-0">Sydney, Australia</p>
+        <h6 class="text-light"></h6>
+        <h4>Back End Engineer</h4>
+        <p class="mb-0">Golang, REST, TDD, Metrics, Oauth, PostgreSQL, Docker, Drone CI, gin-gonic, GORM, Microservices</p>
+        <h6 class="text-light">Outcomex</h6>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-blue.svg" alt="icon">
+        <p class="mb-0">Jul 2017 - Jan 2019</p>
+        <p class="mb-0">Madrid, Spain</p>
+        <h6 class="text-light"></h6>
+        <h4>Backend Developer</h4>
+        <p class="mb-0">Python, Django, Ruby, Rails, Agile, Docker, RabbitMQ, Jenkins</p>
+        <h6 class="text-light">Qvantel</h6>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-orange.svg" alt="icon">
+        <p class="mb-0">Oct 2016 - Dec 2017</p>
+        <p class="mb-0">Madrid, Spain</p>
+        <h6 class="text-light"></h6>
+        <h4>Full Stack Developer</h4>
+        <p class="mb-0">Python, Javascript</p>
+        <h6 class="text-light">Multiple start-ups</h6>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 text-center mb-20">
+        <img class="mb-10" src="/images/experience/icon-light-purple.svg" alt="icon">
+        <p class="mb-0">Jul 2015 - Aug 2016</p>
+        <p class="mb-0">Elche, Spain</p>
+        <h6 class="text-light"></h6>
+        <h4>Robotics Engineer</h4>
+        <p class="mb-0">Python, C, Chatbot development</p>
+        <h6 class="text-light">Aisoy Robotics</h6>
+      </div>
+      
+    </div>
+  </div>
   
+  <img class="img-fluid edu-bg-image w-100" src="/images/backgrounds/education-bg.png" alt="bg-image">
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Portfolio</h2>
+      </div>
+    </div>
+    <div class="row shuffle-wrapper">
+      
+      
+      <div class="col-lg-4 col-6 mb-4 shuffle-item">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-1.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-1/">view project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-6 mb-4 shuffle-item">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-3.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-3/">view project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-6 mb-4 shuffle-item">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-2.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-2/">view project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-6 mb-4 shuffle-item">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-4.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-4/">view project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-6 mb-4 shuffle-item">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-5.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-5/">view project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section bg-primary position-relative testimonial-bg-shapes">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title text-white mb-5">Testimonials</h2>
+        <h3 class="section-subtitle text-white mb-2">LinkedIn Recomendations</h2>
+      </div>
+      <div class="col-lg-10 mx-auto testimonial-slider">
+        
+        
+        <div class="text-center testimonial-content">
+          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
+          <p class="text-white mb-4">Noel is a smart and talented engineer. He is very resourceful and pays a lot of attention to detail. He always shows passion for the craft and works hard and in a focused manner. I look forward to work again with Noel and to see what great things he gets up to next.</p>
+          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/mx51-patrick-ellul.jpg" alt="client-image">
+          <h4 class="text-white">Patrick Ellul</h4>
+          <h6 class="text-light mb-4">Head of Architecture at mx51</h6>
+        </div>
+        
+        
+        <div class="text-center testimonial-content">
+          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
+          <p class="text-white mb-4">I worked with Noel on a migration project from Node JS to Golang. Noel is a developer who follows good practices and always discusses a design decision that will have an impact in the long term. He is passionate about understanding the business model to prioritise the fundamentals for the proper functioning of the software, if something does not fit in the communication between front and back he will try to find a standard as close as possible to reach the most ideal solution. A pleasure to have been able to work with you for almost half a year!</p>
+          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/kokoro-carlos-esquerdo.jpg" alt="client-image">
+          <h4 class="text-white">Carlos Esquerdo</h4>
+          <h6 class="text-light mb-4">Coworker at Kokoro</h6>
+        </div>
+        
+        
+        <div class="text-center testimonial-content">
+          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
+          <p class="text-white mb-4">Noel was a delight to work with in the last 6 months. Always showing interest and keen to learn, every day we could see the commitment to his tasks and the effort he put in doing beyond his best. Amongst other things, he&rsquo;s also a great colleague and gets along easily with everyone, a real team player.</p>
+          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/outcomex-vitor-fylyk.jpg" alt="client-image">
+          <h4 class="text-white">Vitor Mota Fylyk</h4>
+          <h6 class="text-light mb-4">Network/Software Engineer at Outcomex</h6>
+        </div>
+        
+        
+        <div class="text-center testimonial-content">
+          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
+          <p class="text-white mb-4">Noel is a dependable full-stack developer with passion to learn and interest to understand the full end-to-end solution.</p>
+          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/qvantel-markus-vuorio.jpg" alt="client-image">
+          <h4 class="text-white">Markus Vuorio</h4>
+          <h6 class="text-light mb-4">Domain Architect at Qvantel</h6>
+        </div>
+        
+        
+        <div class="text-center testimonial-content">
+          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
+          <p class="text-white mb-4">It has been a pleasure to work with Noel for one year and a half. In this period of time, he was always looking to learn new technologies, understanding first the basics, and later, going deep in more technical details. Fast learner and with great commitment in tough times to achieve tie goals, he is an great assert for every company.</p>
+          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/qvantel-javier-gil.jpg" alt="client-image">
+          <h4 class="text-white">Javier Gil</h4>
+          <h6 class="text-light mb-4">Coworker and Scrum Master at Qvantel</h6>
+        </div>
+        
+        
+        <div class="text-center testimonial-content">
+          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
+          <p class="text-white mb-4">I was Noel&rsquo;s direct supervisor at Qvantel. Not only he is a pleasant person to be around, but he is also very proactive with the whole team, always willing to lend a hand wherever needed. He has an excellent eye for detail and is very committed to documenting his work at all times&hellip;</p>
+          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="https://noel.engineer/images/testimonial/qvantel-diego-caceres.jpg" alt="client-image">
+          <h4 class="text-white">Diego Cáceres</h4>
+          <h6 class="text-light mb-4">Project Manager at Qvantel</h6>
+        </div>
+        
+      </div>
+    </div>
+  </div>
   
-  <section class="section pb-0">
-    <div class="container">
-      <div class="client-logo-slider d-flex align-items-center">
+  <img src="/images/backgrounds/map.png" alt="map" class="img-fluid bg-map">
+  <img src="/images/illustrations/dots-group-v.svg" alt="bg-shape" class="img-fluid bg-shape-1">
+  <img src="/images/illustrations/brackets.svg" alt="bg-shape" class="img-fluid bg-shape-2">
+  <img src="/images/illustrations/dots-group-sm.svg" alt="bg-shape" class="img-fluid bg-shape-3">
+  <img src="/images/illustrations/keycap-n-for-noel.svg" alt="bg-shape" class="img-fluid bg-shape-4">
+  <img src="/images/illustrations/console.svg" alt="bg-shape" class="img-fluid bg-shape-5">
+</section>
+
+
+
+
+
+
+
+<section class="section pb-0">
+  <div class="container">
+    <div class="client-logo-slider d-flex align-items-center">
   
   
   <span class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://noel.engineer/images/clients-logo/logo-golang.svg" alt="client-logo"></span>
@@ -650,12 +677,12 @@
   
   
 </div>
-    </div>
-  </section>
-  
-  
+  </div>
+</section>
 
-  
+
+
+
 
 
 
@@ -714,6 +741,7 @@
   </div>
   <div class="border-top text-center border-dark py-5">
     <p class="mb-0 text-light">Developed with &lt;3 by Noël Ruault</p>
+    <p class="mb-0 text-light">Copyright © 2021 a <a href="https://github.com/themefisher/kross-hugo/blob/master/LICENSE">MIT</a> theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
   </div>
 </footer>
 
