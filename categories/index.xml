@@ -8,7 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Apr 2021 20:00:00 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>concurrency</title>
+      <title>API</title>
+      <link>https://noel.engineer/categories/api/</link>
+      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
+      
+      <guid>https://noel.engineer/categories/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
       <link>https://noel.engineer/categories/concurrency/</link>
       <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
       
@@ -17,16 +26,7 @@
     </item>
     
     <item>
-      <title>design</title>
-      <link>https://noel.engineer/categories/design/</link>
-      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
-      
-      <guid>https://noel.engineer/categories/design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
+      <title>Golang</title>
       <link>https://noel.engineer/categories/golang/</link>
       <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
       
@@ -35,16 +35,7 @@
     </item>
     
     <item>
-      <title>goroutines</title>
-      <link>https://noel.engineer/categories/goroutines/</link>
-      <pubDate>Tue, 20 Apr 2021 20:00:00 +0000</pubDate>
-      
-      <guid>https://noel.engineer/categories/goroutines/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>oauth</title>
+      <title>OAuth</title>
       <link>https://noel.engineer/categories/oauth/</link>
       <pubDate>Thu, 15 Apr 2021 20:00:00 +0000</pubDate>
       
@@ -53,7 +44,7 @@
     </item>
     
     <item>
-      <title>rest</title>
+      <title>REST</title>
       <link>https://noel.engineer/categories/rest/</link>
       <pubDate>Thu, 15 Apr 2021 20:00:00 +0000</pubDate>
       
@@ -62,7 +53,7 @@
     </item>
     
     <item>
-      <title>in-memory db</title>
+      <title>In-Memory DB</title>
       <link>https://noel.engineer/categories/in-memory-db/</link>
       <pubDate>Mon, 12 Apr 2021 20:00:00 +0000</pubDate>
       
@@ -71,38 +62,20 @@
     </item>
     
     <item>
-      <title>mutex</title>
-      <link>https://noel.engineer/categories/mutex/</link>
+      <title>Mutexes</title>
+      <link>https://noel.engineer/categories/mutexes/</link>
       <pubDate>Mon, 12 Apr 2021 20:00:00 +0000</pubDate>
       
-      <guid>https://noel.engineer/categories/mutex/</guid>
+      <guid>https://noel.engineer/categories/mutexes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>bash</title>
+      <title>Bash</title>
       <link>https://noel.engineer/categories/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://noel.engineer/categories/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>postgresql</title>
-      <link>https://noel.engineer/categories/postgresql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://noel.engineer/categories/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>zsh</title>
-      <link>https://noel.engineer/categories/zsh/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://noel.engineer/categories/zsh/</guid>
       <description></description>
     </item>
     

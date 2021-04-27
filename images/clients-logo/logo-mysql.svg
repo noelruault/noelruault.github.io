@@ -12,7 +12,7 @@
         </g>
         <text id="MySQL" font-family="ArialMT, Arial" font-size="150" font-weight="normal">
             <tspan x="333" y="136" fill="#000000">My</tspan>
-            <tspan x="532.951172" y="136" fill="#336791">SQL</tspan>
+            <tspan x="532.951172" y="136" fill="#FF9900">SQL</tspan>
         </text>
     </g>
 </svg>

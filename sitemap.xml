@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://noel.engineer/categories/api/</loc>
+    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://noel.engineer/portfolio/project-1/</loc>
     <lastmod>2021-04-20T20:00:00+00:00</lastmod>
   </url><url>
@@ -11,13 +14,7 @@
     <loc>https://noel.engineer/categories/concurrency/</loc>
     <lastmod>2021-04-20T20:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://noel.engineer/categories/design/</loc>
-    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://noel.engineer/categories/golang/</loc>
-    <lastmod>2021-04-20T20:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noel.engineer/categories/goroutines/</loc>
     <lastmod>2021-04-20T20:00:00+00:00</lastmod>
   </url><url>
     <loc>https://noel.engineer/</loc>
@@ -41,7 +38,7 @@
     <loc>https://noel.engineer/categories/in-memory-db/</loc>
     <lastmod>2021-04-12T20:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://noel.engineer/categories/mutex/</loc>
+    <loc>https://noel.engineer/categories/mutexes/</loc>
     <lastmod>2021-04-12T20:00:00+00:00</lastmod>
   </url><url>
     <loc>https://noel.engineer/blog/post-1/</loc>
@@ -67,18 +64,14 @@
   </url><url>
     <loc>https://noel.engineer/about/</loc>
   </url><url>
-    <loc>https://noel.engineer/portfolio/project-4/</loc>
-  </url><url>
     <loc>https://noel.engineer/categories/bash/</loc>
   </url><url>
     <loc>https://noel.engineer/contact/</loc>
   </url><url>
     <loc>https://noel.engineer/portfolio/project-5/</loc>
   </url><url>
-    <loc>https://noel.engineer/categories/postgresql/</loc>
+    <loc>https://noel.engineer/portfolio/project-4/</loc>
   </url><url>
     <loc>https://noel.engineer/tags/</loc>
-  </url><url>
-    <loc>https://noel.engineer/categories/zsh/</loc>
   </url>
 </urlset>
