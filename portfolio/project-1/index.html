@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Callback Service</title>
+  <title>Flea Circus</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Golang challenge concurrency service callback">
+  <meta name="description" content="Golang solution to the 213th problem of the Euler project: &#34;Flea Circus&#34;.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
       --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -93,14 +94,6 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
@@ -128,7 +121,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Callback Service</h1>
+        <h1 class="text-white font-tertiary">Flea Circus</h1>
       </div>
     </div>
   </div>
@@ -145,11 +138,11 @@
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/solid-background-1.png" class="img-fluid w-100" alt="Callback Service">
+        <img src="https://noel.engineer/images/portfolio/solid-background-1.png" class="img-fluid w-100" alt="Flea Circus">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
@@ -158,29 +151,19 @@
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>Apr 20, 2021</p>
+                <h4>Creation date</h4>
+                <p>Apr 04, 2022</p>
               </div>
             </div>
           </div>
           
-          
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>Private company</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Concurrency, golang, API</p>
+                <p>Benchmark, concurrency, golang, portfolio</p>
               </div>
             </div>
           </div>
@@ -190,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://github.com/noelruault/go-callback-service">https://github.com/noelruault/go-callback-service</a></p>
+                <p><a href="https://github.com/noelruault/flea-circus">https://github.com/noelruault/flea-circus</a></p>
               </div>
             </div>
           </div>
@@ -198,11 +181,44 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p><a href="https://github.com/noelruault/go-callback-service/blob/main/doc/INSTRUCTIONS.md">INSTRUCTIONS.md</a></p>
-<h4 id="project-details">Project Details</h4>
-<p>Golang Callback Service is a simple API that listens for POST requests in /callback and requests object information for each incoming object_id concurrently. Validates the request, returns a response, and processes the payload. Thus, avoiding bottlenecks in a thread-safe way.</p>
-<p><a href="https://github.com/noelruault/go-callback-service#readme">README.md</a></p>
+        <div class="content"><h1 id="project-euler-problem-213-flea-circus">Project Euler: Problem 213 &ldquo;Flea Circus&rdquo;</h1>
+<p>A 30×30 grid of squares contains 900 fleas, initially one flea per square.
+When a bell is rung, each flea jumps to an adjacent square at random (usually 4 possibilities, except for fleas on the edge of the grid or at the corners).</p>
+<p>What is the expected number of unoccupied squares after 50 rings of the bell? Give your answer rounded to six decimal places.</p>
+<h2 id="implementation-plan">Implementation plan</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Implement single simulation</li>
+<li><input checked="" disabled="" type="checkbox"> Run multiple simulations and calculate average</li>
+<li><input checked="" disabled="" type="checkbox"> Run simulations in parallel</li>
+<li><input checked="" disabled="" type="checkbox"> Optimize for better speed, less memory allocations</li>
+</ul>
+<h2 id="run">Run</h2>
+<pre><code>go run main.go --workers=1 --runs=1000
+</code></pre>
+<p><em>Output</em></p>
+<pre><code>2022/04/04 22:17:16 Running 1000 simulation(s) in 1 worker(s)...
+2022/04/04 22:17:19 Average unnoccupied squares after 1000 simulations: 330.531000
+2022/04/04 22:17:19 2.844869326s elapsed
+</code></pre>
+<h2 id="benchmarking">Benchmarking</h2>
+<pre><code>go test -bench=. -benchtime=50x -benchmem
+</code></pre>
+<blockquote>
+<p>&ldquo;-benchtime=50x&rdquo; sets the explicit iteration count to 50 to shorten the benchmark execution time</p>
+</blockquote>
+<p><em>Output</em></p>
+<pre><code>goos: darwin
+goarch: amd64
+pkg: github.com/noelruault/flea-circus
+cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+BenchmarkRun1Worker-12                50          74098303 ns/op        72206676 B/op    1125144 allocs/op
+BenchmarkRun10Workers-12              50         138845500 ns/op        72192206 B/op    1125151 allocs/op
+BenchmarkRun100Workers-12             50         186722515 ns/op        72189076 B/op    1125161 allocs/op
+</code></pre>
+<h2 id="race-condition-checks">Race condition checks</h2>
+<p>Running the program with the race detector enabled displays it&rsquo;s absence of data races</p>
+<pre><code>go run -race main.go --workers=10 --runs=500
+</code></pre>
 </div>
       </div>
     </div>
@@ -220,7 +236,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Send me an email!</h4>
           <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">

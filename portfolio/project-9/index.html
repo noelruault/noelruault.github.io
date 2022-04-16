@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Artwork Design</title>
+  <title>Ratingsapp</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description.">
+  <meta name="description" content="Golang: RatingsApp is designed to allow authentication and authorisation of users to a rating system. As well as the ability to CRUD a database of ratings.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
-      --primary-color:#41228e;
+      --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -44,6 +45,11 @@
 	</script>
 	
 
+  <!-- OpenGraph meta (alters social media link metadata) -->
+  <meta property="og:title" content="Hello, I'm Noël. I write code because I love to." name="title" />
+  <meta property="og:image" content="https://noel.engineer/images/meta/og-image.png " name="image" />
+  <meta property="og:description" content="Software engineer in all its amplitude. Backend partisan, Unix enthusiast, MacOs user. Always positive, eager, proactive and passionate. Skilled in agile methodologies and team procedures. Determined to achieve success." name="description" />
+
 </head>
 <body>
 <!-- preloader start -->
@@ -57,7 +63,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="https://noel.engineer/">
       
-      <h3 class="text-white font-tertiary">noel ruault</h3>
+      <h3 class="text-white font-tertiary">noel ruault<span id="cursor">|</span></h3>
       
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -88,75 +94,76 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
 </header>
 
 
+<script>
+  var cursor = true;
+  var speed = 550;
+  setInterval(() => {
+    if (cursor) {
+      document.getElementById('cursor').style.opacity = 0;
+      cursor = false;
+    } else {
+      document.getElementById('cursor').style.opacity = 1;
+      cursor = true;
+    }
+  }, speed);
+</script>
+
+
+
+
 <section class="page-title bg-primary position-relative overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Artwork Design</h1>
+        <h1 class="text-white font-tertiary">Ratingsapp</h1>
       </div>
     </div>
   </div>
   
   <img src="/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/keycap-n-for-noel.svg" alt="illustrations" class="bg-shape-2">
   <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
-  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
-  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/brackets.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/console.svg" alt="illustrations" class="bg-shape-5">
   <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
-  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+  
 </section>
 
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/item-7.png" class="img-fluid w-100" alt="Artwork Design">
+        <img src="https://noel.engineer/images/portfolio/solid-background-9.png" class="img-fluid w-100" alt="Ratingsapp">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
+          
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>May 12, 2019</p>
+                <h4>Creation date</h4>
+                <p>Aug 29, 2019</p>
               </div>
             </div>
           </div>
           
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>John Doe</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Branding</p>
+                <p>API rest, golang, microservices, portfolio</p>
               </div>
             </div>
           </div>
@@ -166,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+                <p><a href="https://github.com/noelruault/ratingsapp">https://github.com/noelruault/ratingsapp</a></p>
               </div>
             </div>
           </div>
@@ -174,21 +181,78 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-<h4 id="project-details">Project Details</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
+        <div class="content"><h1 id="overview">Overview</h1>
+<p>RatingsApp is designed to allow authentication and authorization of users to a rating system. As well as the ability to CRUD a database of ratings.</p>
+<p>This system is able to detect which user is interacting with the system and allow you to make any transaction in the database as long as the user has the relevant privileges.</p>
+<p>Once you have a considerable number of ratings, you can list one by one or by target, which points to a product or object to which the rating is directed.</p>
+<h1 id="documentation">Documentation</h1>
+<ul>
+<li><a href="Authentication.md">Authentication and Authorization</a> 🔑</li>
+<li><a href="Rating.md">Rating</a> ★</li>
+</ul>
+<h1 id="development">Development</h1>
+<p>To run the environment in Docker:</p>
+<pre><code>docker-compose run --rm --service-ports --name ratingsapp ratingsapp
+</code></pre>
+<p>To build and run the backend, run this on the Go container shell:</p>
+<pre><code>go build -mod=vendor ./cmd/ratingsapp &amp;&amp; ./ratingsapp -v
+</code></pre>
+<p>To run your build locally, if outside your GOPATH:</p>
+<pre><code>go build ./cmd/ratingsapp &amp;&amp; RATINGSAPP_POSTGRES_DSL=postgres://ratingsapp:ratingspassword@localhost:5432/ratingsapp?sslmode=disable ./ratingsapp -v
+</code></pre>
+<p>When running integration tests, the RATINGSAPP_POSTGRES_DSL_TEST must be defined pointing to a testing Postgres instance. This is set already on .drone.yml and on docker-compose.</p>
+<p>Don&rsquo;t forget to stop the database container after you&rsquo;re done:</p>
+<pre><code>docker-compose stop
+</code></pre>
+<p>TIP: You can reset the whole docker-compose service with the following command. Use it carefully.</p>
+<pre><code>docker-compose down &amp;&amp; docker-compose up -d
+</code></pre>
+<h2 id="tests">Tests</h2>
+<p>In the docker-compose container shell, you may execute the tests by issuing:</p>
+<pre><code>go test -mod=vendor -cover -v -p 1 -count=1 -coverprofile=cover.out ./internal/...
+</code></pre>
+<p>The -count=1 makes sure the test cache is not used. The packages in internal and the e2etests must be tests separately; this prevents issues where multiple packages make use of the test database.</p>
+<p>You can check a web-based coverage report by launching the following command on the <strong>host</strong>:</p>
+<pre><code>go tool cover -html=cover.out
+</code></pre>
+<h2 id="debug-backend">Debug backend</h2>
+<p>Configure your VSCode to debug Go code using Delve (check on VSCode wiki). Make sure you set the right environment variables with the database connection details. It&rsquo;s easier to debug the backend locally, so you&rsquo;ll need all Go 1.12 tooling installed.</p>
+<h2 id="migrations">Migrations</h2>
+<p>This project uses GORM Migration tool and therefore Auto Migration is active. This will automatically migrate your schema, to keep your schema update to date</p>
+<p>WARNING: AutoMigrate will ONLY create tables, missing columns and missing indexes, and WON’T change existing column’s type or delete unused columns to protect your data.</p>
+<h2 id="vendoring">Vendoring</h2>
+<p>This project uses the Go 1.11 module functionality. If running it from inside your GOPATH, please set the environment variable GO111MODULE=on to manage the dependencies correctly. When adding new dependencies, please vendor them with <code>go mod vendor</code>. Please also commit the vendored repositories that are added.</p>
+<h1 id="deployment-for-testing">Deployment for testing</h1>
+<pre><code>docker-compose run --rm --service-ports --name ratingsapp ratingsapp
+</code></pre>
+<p>This will result OK if everything works and we will be inside of the docker container.</p>
+<p>&hellip;
+Two options from here:</p>
+<ol>
+<li>
+<p>Build the project to test the API from a client like <em>Postman</em>.</p>
+<p><code>go build -mod=vendor ./cmd/ratingsapp &amp;&amp; ./ratingsapp -v</code></p>
+</li>
+<li>
+<p>With go test we can test the components separately.</p>
+<p><code>go test -mod=vendor -cover -v -p 1 -count=1 ./...</code></p>
+</li>
+</ol>
+<h2 id="hot-reload">Hot reload</h2>
+<p>To watch the Go files for changes and automatically recompile and reload the server, use the <a href="https://github.com/oxequa/realize">&ldquo;realize&rdquo;</a> utility:</p>
+<pre><code>go get github.com/oxequa/realize
+
+$ realize start
+</code></pre>
+<p>The utility will not die if it fails to build.</p>
+<p>TIP: Remember to clean (drop and create) the database if a significant change in the schema (like a unique constraint) is made. Realize will not do it for you.</p>
+<h1 id="deployment">Deployment</h1>
+<h2 id="environment-variables">Environment variables</h2>
+<ul>
+<li><strong>RATINGSAPP_POSTGRES_DSL</strong>: PostgreSQL connection string, e.g. <code>postgresql://ratingsapp:ratingspassword@postgres:5432/admin</code></li>
+<li><strong>RATINGSAPP_JWT_SECRET</strong>: The JWT signing key to be used. A default development value will be used if not defined.</li>
+<li><strong>PORT</strong>: TCP port the HTTP server will listen to. Defaults to <code>8000</code>.</li>
+</ul>
 </div>
       </div>
     </div>
@@ -206,8 +270,8 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" method="POST" class="row">
+          <h4 class="mb-80">Send me an email!</h4>
+          <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
             </div>
@@ -241,17 +305,18 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">&#43;34 722 122 274</p>
+          <p class="text-white paragraph-lg font-secondary">&#43;31 623 333 488</p>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">Valencia, Spain</p>
+          <p class="text-white paragraph-lg font-secondary">127.0.0.1, Amsterdam</p>
         </div>
       </div>
     </div>
   </div>
   <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Copyright © 2021 a theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
+    <p class="mb-0 text-light">Developed with &lt;3 by Noël Ruault</p>
+    <p class="mb-0 text-light">Copyright © 2021 a <a href="https://github.com/themefisher/kross-hugo/blob/master/LICENSE">MIT</a> theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
   </div>
 </footer>
 

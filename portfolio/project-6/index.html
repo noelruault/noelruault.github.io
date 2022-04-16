@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Artwork Design</title>
+  <title>Go Callback Service</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description.">
+  <meta name="description" content="Golang simple API that listens for POST requests and requests object information for each incoming request concurrently.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
-      --primary-color:#41228e;
+      --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -44,6 +45,11 @@
 	</script>
 	
 
+  <!-- OpenGraph meta (alters social media link metadata) -->
+  <meta property="og:title" content="Hello, I'm Noël. I write code because I love to." name="title" />
+  <meta property="og:image" content="https://noel.engineer/images/meta/og-image.png " name="image" />
+  <meta property="og:description" content="Software engineer in all its amplitude. Backend partisan, Unix enthusiast, MacOs user. Always positive, eager, proactive and passionate. Skilled in agile methodologies and team procedures. Determined to achieve success." name="description" />
+
 </head>
 <body>
 <!-- preloader start -->
@@ -57,7 +63,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="https://noel.engineer/">
       
-      <h3 class="text-white font-tertiary">noel ruault</h3>
+      <h3 class="text-white font-tertiary">noel ruault<span id="cursor">|</span></h3>
       
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -88,75 +94,76 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
 </header>
 
 
+<script>
+  var cursor = true;
+  var speed = 550;
+  setInterval(() => {
+    if (cursor) {
+      document.getElementById('cursor').style.opacity = 0;
+      cursor = false;
+    } else {
+      document.getElementById('cursor').style.opacity = 1;
+      cursor = true;
+    }
+  }, speed);
+</script>
+
+
+
+
 <section class="page-title bg-primary position-relative overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Artwork Design</h1>
+        <h1 class="text-white font-tertiary">Go Callback Service</h1>
       </div>
     </div>
   </div>
   
   <img src="/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/keycap-n-for-noel.svg" alt="illustrations" class="bg-shape-2">
   <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
-  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
-  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/brackets.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/console.svg" alt="illustrations" class="bg-shape-5">
   <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
-  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+  
 </section>
 
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/item-6.png" class="img-fluid w-100" alt="Artwork Design">
+        <img src="https://noel.engineer/images/portfolio/solid-background-6.png" class="img-fluid w-100" alt="Go Callback Service">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
+          
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>May 12, 2019</p>
+                <h4>Creation date</h4>
+                <p>Apr 19, 2021</p>
               </div>
             </div>
           </div>
           
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>John Doe</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Design</p>
+                <p>Golang, portfolio, tracing, API server, API client</p>
               </div>
             </div>
           </div>
@@ -166,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+                <p><a href="https://github.com/noelruault/go-callback-service">https://github.com/noelruault/go-callback-service</a></p>
               </div>
             </div>
           </div>
@@ -174,21 +181,138 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-<h4 id="project-details">Project Details</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
+        <div class="content"><h1 id="golang-callback-service">Golang Callback Service</h1>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Golang Callback Service is a simple API that listens for <code>POST</code> requests in <code>/callback</code> and requests object information for each incoming <code>object_id</code> concurrently. Validates the request, returns a response, and processes the payload. Thus, avoiding bottlenecks in a thread-safe way.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>This project was designed against Go 1.16.
+Supporting services like the database are hosted in Docker and use Docker Compose to startup.</p>
+<ul>
+<li>Golang</li>
+<li>Docker</li>
+<li>Docker compose</li>
+</ul>
+<h2 id="api-request">API Request</h2>
+<p><code>cmd/callback-service</code></p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/callback</code></td>
+<td style="text-align:center"><code>POST</code></td>
+<td style="text-align:center"><code>Create objects</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td style="text-align:center"><code>GET</code></td>
+<td style="text-align:center"><code>Health check</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>cmd/client-service</code></p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/objects/:id</code></td>
+<td style="text-align:center"><code>GET</code></td>
+<td style="text-align:center"><code>Retrieves object</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="decisions-taken-on-this-implementation">Decisions taken on this implementation</h2>
+<h3 id="product">Product</h3>
+<ul>
+<li>Given a request to the server, the payload will be validated and a response will be returned to the client before processing is completed.</li>
+<li>Errors that occur while data is being processed in goroutines are logged.</li>
+<li>Deletion of data on the database is executed exactly N seconds after insertion.</li>
+<li>Unit and integration tested.</li>
+</ul>
+<h3 id="design">Design</h3>
+<ul>
+<li>Unhandled error fail-safe. An unhandled error will output as internal_error.</li>
+<li>Captures logs. Stores traces with Zipkin and profiles memory usage with <em>pprof</em>.</li>
+<li>The core parts of the application are documented.</li>
+<li>Service variables can be modified at execution time.</li>
+<li>The folder structure follows a package-oriented design to maintain the best possible purpose, usability, and portability.</li>
+<li>The project dependencies are located in the vendor folder.</li>
+<li>When stopped, the service tries to shut down gracefully. Logging any errors that may occur.</li>
+</ul>
+<h2 id="instructions-to-run-the-project">Instructions to run the project</h2>
+<p>If the host operating system is MacOS, I&rsquo;ve tried to configure the whole thing with one command (<a href="(Makefile#L46)"><code>make compose-mac</code></a>) but couldn&rsquo;t make work a docker-compose approach <a href="https://docs.docker.com/docker-for-mac/networking/#known-limitations-use-cases-and-workarounds">due to networking limitations</a> when talking between containers.</p>
+<p>Thus, to <strong>start everything on a MacOS</strong> you must have the previously listed <a href="#dependencies">dependencies</a> installed:</p>
+<pre><code>make compose-local-mac
+</code></pre>
+<blockquote>
+<p>Any flag attribute listed when the application starts can be changed at execution time. Check <a href="Makefile#L46">Makefile (line 46)</a> for an extended illustration.
+Therefore, the client-server could be changed if required:
+<code>make compose-local-mac LDFLAGS=--callback-service-address=http://1234host:7777</code>
+This functionality can be used to easily (for example) switch URL references between the services involved.</p>
+</blockquote>
+<p>With a Linux machine, the docker-compose approach should work, setting up everything at once:
+<em>(Not tested)</em></p>
+<pre><code>make compose-linux
+</code></pre>
+<p>To start the client service that will query the server every 5 seconds and also provide the status of the objects:</p>
+<pre><code>make client-start
+</code></pre>
+<p>To explore what else you can do with the Makefile:</p>
+<pre><code>make
+</code></pre>
+<p>After successful execution, the service should be running on port 9090. Hit the <em>health</em> endpoint to check that all is running as expected:</p>
+<ul>
+<li><a href="http://localhost:9090/">:9090</a></li>
+</ul>
+<p>Tracing can be found at:</p>
+<ul>
+<li><a href="http://localhost:9411/zipkin/">:9411/zipkin/</a></li>
+<li><a href="http://localhost:6060/debug/pprof/">:6060/debug/pprof/</a></li>
+</ul>
+<p><img src="/doc/zipkin-traces.png" alt="zipkin-traces"></p>
+<h2 id="testing">Testing</h2>
+<p>The tests point to a different database created just for them, so they are isolated from the core service.</p>
+<p>Project tests can be run by typing:</p>
+<pre><code>make test
+</code></pre>
+<p>Integration tests (which require both services running) can be performed by typing:</p>
+<pre><code>make test-integration
+</code></pre>
+<h2 id="packaging">Packaging</h2>
+<pre><code>.
+├── cmd                     # Entrypoint
+│   ├── callback-service    # Main API
+│   └── client-service      # Client API (provided by the task)
+├── doc                     # API Documentation, images, and helpful files
+└── internal
+    ├── handlers            # HTTP layer &amp; integration tests
+    ├── middleware
+    ├── models              # Business logic
+    └── web                 # Framework for common HTTP related tasks
+</code></pre>
+<h2 id="use-of-external-libraries">Use of external libraries</h2>
+<ul>
+<li><a href="https://github.com/go-gorm/gorm">gorm</a>. ORM library.</li>
+<li>Zipkin, go-zipkin, and Opencensus. Distributed tracing system</li>
+<li><a href="https://github.com/go-chi/chi">go-chi</a>. Router for building Golang HTTP services.</li>
+<li><a href="github.com/ardanlabs/conf">conf</a>. Support for using environmental variables and command-line arguments for configuration.</li>
+</ul>
+<h2 id="author">Author</h2>
+<p>Noel Ruault - <a href="https://github.com/noelruault">@noelruault</a></p>
+<h2 id="license">License</h2>
+<p>Copyright © 2020 <a href="https://github.com/noelruault">@noelruault</a>.
+This project is <a href="https://opensource.org/licenses/MIT">MIT</a> licensed.</p>
 </div>
       </div>
     </div>
@@ -206,8 +330,8 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" method="POST" class="row">
+          <h4 class="mb-80">Send me an email!</h4>
+          <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
             </div>
@@ -241,17 +365,18 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">&#43;34 722 122 274</p>
+          <p class="text-white paragraph-lg font-secondary">&#43;31 623 333 488</p>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">Valencia, Spain</p>
+          <p class="text-white paragraph-lg font-secondary">127.0.0.1, Amsterdam</p>
         </div>
       </div>
     </div>
   </div>
   <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Copyright © 2021 a theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
+    <p class="mb-0 text-light">Developed with &lt;3 by Noël Ruault</p>
+    <p class="mb-0 text-light">Copyright © 2021 a <a href="https://github.com/themefisher/kross-hugo/blob/master/LICENSE">MIT</a> theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
   </div>
 </footer>
 

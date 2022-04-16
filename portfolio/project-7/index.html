@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Artwork Design</title>
+  <title>Auction Bid Tracker</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description.">
+  <meta name="description" content="This project consists of an authentication and authorisation service, as well as a bidding system based on users and items. ">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
-      --primary-color:#41228e;
+      --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -44,6 +45,11 @@
 	</script>
 	
 
+  <!-- OpenGraph meta (alters social media link metadata) -->
+  <meta property="og:title" content="Hello, I'm Noël. I write code because I love to." name="title" />
+  <meta property="og:image" content="https://noel.engineer/images/meta/og-image.png " name="image" />
+  <meta property="og:description" content="Software engineer in all its amplitude. Backend partisan, Unix enthusiast, MacOs user. Always positive, eager, proactive and passionate. Skilled in agile methodologies and team procedures. Determined to achieve success." name="description" />
+
 </head>
 <body>
 <!-- preloader start -->
@@ -57,7 +63,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="https://noel.engineer/">
       
-      <h3 class="text-white font-tertiary">noel ruault</h3>
+      <h3 class="text-white font-tertiary">noel ruault<span id="cursor">|</span></h3>
       
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -88,75 +94,76 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
 </header>
 
 
+<script>
+  var cursor = true;
+  var speed = 550;
+  setInterval(() => {
+    if (cursor) {
+      document.getElementById('cursor').style.opacity = 0;
+      cursor = false;
+    } else {
+      document.getElementById('cursor').style.opacity = 1;
+      cursor = true;
+    }
+  }, speed);
+</script>
+
+
+
+
 <section class="page-title bg-primary position-relative overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Artwork Design</h1>
+        <h1 class="text-white font-tertiary">Auction Bid Tracker</h1>
       </div>
     </div>
   </div>
   
   <img src="/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/keycap-n-for-noel.svg" alt="illustrations" class="bg-shape-2">
   <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
-  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
-  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/brackets.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/console.svg" alt="illustrations" class="bg-shape-5">
   <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
-  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+  
 </section>
 
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/item-1.png" class="img-fluid w-100" alt="Artwork Design">
+        <img src="https://noel.engineer/images/portfolio/solid-background-7.png" class="img-fluid w-100" alt="Auction Bid Tracker">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
+          
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>May 12, 2019</p>
+                <h4>Creation date</h4>
+                <p>Apr 13, 2021</p>
               </div>
             </div>
           </div>
           
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>John Doe</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Branding</p>
+                <p>Benchmarking, golang, portfolio</p>
               </div>
             </div>
           </div>
@@ -166,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+                <p><a href="https://github.com/noelruault/auction-bid-tracker">https://github.com/noelruault/auction-bid-tracker</a></p>
               </div>
             </div>
           </div>
@@ -174,21 +181,101 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-<h4 id="project-details">Project Details</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
+        <div class="content"><h1 id="auction-bid-tracker">Auction bid tracker</h1>
+<p>This project consists of an authentication and authorisation service, as well as a bidding system based on users and items.</p>
+<h2 id="implementation-decisions">Implementation decisions</h2>
+<p>I have decided to run this task without doing all possible CRUD methods, in order not to obfuscate the code.
+I have considered this on the assumption that the structure is consistent enough to get an idea of how they would have been implemented. I hope you like it.</p>
+<h3 id="data-chart">Data chart</h3>
+<pre><code>┌─────────────┐                       ┌─────────────┐
+│    USERS    ├───────────────────────┤     BIDS    │
+│             │1                  0..N│             │
+└─────────────┘                       └──────┬──────┘
+                                        0..N │
+┌─────────────┐                              │
+│             │ 1                            │
+│    ITEMS    ├──────────────────────────────┘
+└─────────────┘
+</code></pre>
+<h3 id="data-structure">Data structure</h3>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Item</th>
+<th>Bid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>id</td>
+<td>id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>name</td>
+<td>item id</td>
+</tr>
+<tr>
+<td></td>
+<td>value*</td>
+<td>user id</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>amount</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>*value is used as starting price of an object in the auction service.</p>
+<h3 id="chosen-data-structures-and-concurrency-approach">Chosen data structures and concurrency approach</h3>
+<p>I have used:</p>
+<ul>
+<li>A set of Golang <a href="https://blog.golang.org/maps">maps</a> along with</li>
+<li><a href="https://golang.org/pkg/sync/#RWMutex">RWMutexes</a> and</li>
+<li>incremental integers used to simulate the sequential addition of elements into the map</li>
+</ul>
+<p>Everything can be found on the <a href="/internal/models/memdatabase.go">memdatabase.go</a> file</p>
+<p>As far as the entities <strong>user</strong> and <strong>item</strong> are concerned, the mutex used will not return any error if two concurrent users try to add one of these items to the storage but wait until the first one is done to process the second one.
+On the other hand, the code in charge of the <strong>bids</strong> will return an error if two users try to access the same resource, excluding the last one that consumes the service. I have decided to do this to ensure consistency of bids as well as to guarantee that the amount a user bids does not increase if the bid comes in second place.</p>
+<p>Some tests can be found at <a href="/internal/models/memdatabase_test.go">memdatabase_test.go</a></p>
+<h2 id="instructions-to-run-the-project">Instructions to run the project</h2>
+<p>The project is vendored so nothing else than <code>go run</code> might be needed. You can use the makefile that will ensure everything is correctly in place and point to the main file for you.</p>
+<pre><code>make go-run
+</code></pre>
+<p>There is also a docker version of the execution. But depending of your SO you will need to <a href="https://stackoverflow.com/a/24326540">configure how to access to the container</a> through your host.</p>
+<pre><code>make docker-build
+make docker-run
+</code></pre>
+<h2 id="api-usage">API usage</h2>
+<p>The project has a <a href="/docs/auction-bid-tracker.postman_collection.json">Postman collection</a> attached, which can be used to interact with the auction service.</p>
+<h3 id="packaging">Packaging</h3>
+<ul>
+<li>entrypoint in <code>cmd/sales-api</code></li>
+<li>HTTP layer in <code>cmd/sales-api/internal/handlers</code></li>
+<li>business logic in <code>internal/models</code>
+<ul>
+<li>in-memory database in <code>internal/models/memdatabase.go</code></li>
+</ul>
+</li>
+<li>framework for common HTTP related tasks in <code>internal/web</code></li>
+<li>helper functions to process data before response/request in <code>internal/views</code></li>
+<li>documentation, images and helpful files in <code>docs/</code></li>
+</ul>
+<h2 id="benchmarking">Benchmarking</h2>
+<p>I did some testing to check if the performance was good enough and IMO the processing times are fast.</p>
+<p><img src="/docs/images/bench-create-bids.png" alt="bench-create-bids"></p>
+<blockquote>
+<p>Benchmarking of 500 sequential creations of a bid using the model and storage.</p>
+</blockquote>
+<p><img src="/docs/images/bench-listing-by-user-id.png" alt="bench-list-by-user-id"></p>
+<blockquote>
+<p>Benchmarking of 500 sequential listings of items given a user ID. For this one I created 1000 bids for 5 items with the same user and then queried to find the items per user.</p>
+</blockquote>
+<p>I used <a href="https://github.com/nakabonne/ali">ali</a> for the load testing.</p>
 </div>
       </div>
     </div>
@@ -206,8 +293,8 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" method="POST" class="row">
+          <h4 class="mb-80">Send me an email!</h4>
+          <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
             </div>
@@ -241,17 +328,18 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">&#43;34 722 122 274</p>
+          <p class="text-white paragraph-lg font-secondary">&#43;31 623 333 488</p>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">Valencia, Spain</p>
+          <p class="text-white paragraph-lg font-secondary">127.0.0.1, Amsterdam</p>
         </div>
       </div>
     </div>
   </div>
   <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Copyright © 2021 a theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
+    <p class="mb-0 text-light">Developed with &lt;3 by Noël Ruault</p>
+    <p class="mb-0 text-light">Copyright © 2021 a <a href="https://github.com/themefisher/kross-hugo/blob/master/LICENSE">MIT</a> theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
   </div>
 </footer>
 

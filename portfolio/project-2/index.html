@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Auction Bid Tracker</title>
+  <title>Go Http Sum</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Golang challenge mutex inmemory database service">
+  <meta name="description" content="Golang simple HTTP service with two endpoints, the first contains a JWT OAuth authentication and the other returns the result of text processing.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
       --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -93,14 +94,6 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
@@ -128,7 +121,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Auction Bid Tracker</h1>
+        <h1 class="text-white font-tertiary">Go Http Sum</h1>
       </div>
     </div>
   </div>
@@ -145,11 +138,11 @@
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/solid-background-2.png" class="img-fluid w-100" alt="Auction Bid Tracker">
+        <img src="https://noel.engineer/images/portfolio/solid-background-2.png" class="img-fluid w-100" alt="Go Http Sum">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
@@ -158,29 +151,19 @@
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>Apr 12, 2021</p>
+                <h4>Creation date</h4>
+                <p>Apr 04, 2022</p>
               </div>
             </div>
           </div>
           
-          
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>Private company</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Mutexes, in memory db, golang</p>
+                <p>Golang, JWT authentication, oauth2, portfolio</p>
               </div>
             </div>
           </div>
@@ -190,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://github.com/noelruault/auction-bid-tracker">https://github.com/noelruault/auction-bid-tracker</a></p>
+                <p><a href="https://github.com/noelruault/go-http-sum">https://github.com/noelruault/go-http-sum</a></p>
               </div>
             </div>
           </div>
@@ -198,11 +181,45 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p><a href="https://github.com/noelruault/auction-bid-tracker/blob/main/docs/TASK.md">INSTRUCTIONS.md</a></p>
-<h4 id="project-details">Project Details</h4>
-<p>Simple online auction system which allow users to concurrently bid on items.</p>
-<p><a href="https://github.com/noelruault/auction-bid-tracker#readme">README.md</a></p>
+        <div class="content"><h1 id="go-http-sum">go-http-sum</h1>
+<p>This project holds the code of simple HTTP service with two endpoints:</p>
+<p><code>POST /auth</code>: returns a response containing a JWT (OAuth 2) token with the username as a subject. The successful response follows the <a href="https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/">Oauth2 standard</a></p>
+<p><code>POST /sum</code>: accepts an arbitrary JSON document as payload, finds all of the numbers throughout the document and adds them together.</p>
+<p>This API returns the appropriate error status code when an issue is found.</p>
+<h2 id="instructions">Instructions</h2>
+<p>To explore the different options provided by the make command:</p>
+<pre><code>make help
+</code></pre>
+<p>In order to run the project on the current machine:</p>
+<pre><code>make run
+</code></pre>
+<p>In order to run the project on a docker container:</p>
+<pre><code>make docker-run
+</code></pre>
+<h2 id="querying-the-service">Querying the service</h2>
+<hr>
+<p>The service can be used by running</p>
+<pre><code>curl --request POST 'http://localhost:8000/auth' \
+--data-raw '{
+    &quot;username&quot;: &quot;user&quot;,
+    &quot;password&quot;: &quot;pass&quot;
+}' | jq
+</code></pre>
+<p>Example output:</p>
+<pre><code>{
+    &quot;access_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJleHAiOjE2NDg5OTQwMTJ9.mEeg8nisxG1szUXaO9bs96ZgjzueUqYmZDWNbagiuks&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;expires_in&quot;: 3600
+}
+</code></pre>
+<p>Once authenticated, using the JWT access token obtained, the <code>POST sum/</code> endpoint can be used.</p>
+<pre><code>curl --request POST 'http://localhost:8000/sum' \
+--header 'Authorization: Bearer &lt;token-here&gt;' \
+--data-raw '[1,2,3,4]'
+</code></pre>
+<p>Example output:</p>
+<pre><code>b1d5781111d84f7b3fe45a0852e59758cd7a87e5
+</code></pre>
 </div>
       </div>
     </div>
@@ -220,7 +237,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Send me an email!</h4>
           <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">

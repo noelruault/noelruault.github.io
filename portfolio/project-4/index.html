@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Ratings APP</title>
+  <title>Go News Http Service</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Golang challenge oauth authentication service">
+  <meta name="description" content="Simple HTTP service that fetches information from multiple external providers in an efficient way.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
       --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -93,14 +94,6 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
@@ -128,7 +121,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Ratings APP</h1>
+        <h1 class="text-white font-tertiary">Go News Http Service</h1>
       </div>
     </div>
   </div>
@@ -145,32 +138,32 @@
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/solid-background-4.png" class="img-fluid w-100" alt="Ratings APP">
+        <img src="https://noel.engineer/images/portfolio/solid-background-4.png" class="img-fluid w-100" alt="Go News Http Service">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
           
-          
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
-              <i class="ti-user"></i>
+              <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Client</h4>
-                <p>Portfolio</p>
+                <h4>Creation date</h4>
+                <p>Oct 04, 2021</p>
               </div>
             </div>
           </div>
+          
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Oauth, golang, API</p>
+                <p>Api, golang, portfolio</p>
               </div>
             </div>
           </div>
@@ -180,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://github.com/noelruault/ratingsapp">https://github.com/noelruault/ratingsapp</a></p>
+                <p><a href="https://github.com/noelruault/go-news-http-service">https://github.com/noelruault/go-news-http-service</a></p>
               </div>
             </div>
           </div>
@@ -188,12 +181,94 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-details">Project Details</h4>
-<p>An almost production-ready service that I coded in 2019.</p>
-<p>RatingsApp allows users authentication and authorisation on a rating system, as well as the ability to CRUD a ratings database.</p>
-<p>This system can detect which user is interacting with the system and allow you to make any transaction in the database as long as the user has the relevant privileges.</p>
-<p>Once you have a considerable number of ratings, you can list one by one or by target, which points to a product or object to which the rating is related.</p>
-<p><a href="https://github.com/noelruault/ratingsapp#readme">README.md</a></p>
+        <div class="content"><h1 id="golang-coding-challenge">Golang Coding challenge</h1>
+<p>The dev team created this coding challenge to help assess your coding and problem-solving skills. Along with this file, you should find an archive with the code of the project to complete.</p>
+<h2 id="the-project">The Project</h2>
+<p>The project contains a simple HTTP service that simulates a news API.</p>
+<h3 id="content">Content</h3>
+<ul>
+<li>The content itself is fetched from multiple providers (those could be 3rd party APIs, internal services, or database connections).</li>
+<li>Content providers are represented by the <code>Provider</code> type. And the API has a mapping between providers and <code>Clients</code>, which are used to fetch content.</li>
+</ul>
+<h3 id="content-configuration">Content configuration</h3>
+<ul>
+<li>The API has set a configuration, which represents the repeating sequence of providers to use.
+If the sequence is <code>[Provider1, Provider2, Provider3]</code> and the user requests five (5) articles, the response should contain items from <code>[Provider1, Provider2, Provider3, Provider1, Provider2]</code> in that order.</li>
+</ul>
+<p>In addition,</p>
+<ul>
+<li>If a provider fails to deliver content, the configuration might contain a fallback to use instead.</li>
+<li>If both, the main provider and the fallback fail (or if the main provider fails and there is no fallback), the API should respond with all the items before that point. So, for example, if the configuration calls for <code>[1,1,2,3]</code> and <code>2</code> fails, the response should only contain <code>[1,1]</code>.</li>
+</ul>
+<h2 id="the-interface">The Interface</h2>
+<p>The API responds to GET requests with 2 URL parameters:</p>
+<ul>
+<li><code>count</code> represents the number of items desired</li>
+<li><code>offset</code> represents the number of items previously requested. The configuration should be offset by this number.</li>
+</ul>
+<p>The expected response is a list of content items, each one being a JSON representation of the <code>ContentItem</code> struct, found in <code>content.go</code></p>
+<p>Example request/response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Request:
+</span></span><span style="display:flex;"><span>    http &#39;127.0.0.1:8080/?count=3&amp;offset=10&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Response:
+</span></span><span style="display:flex;"><span>    HTTP/1.1 200 OK
+</span></span><span style="display:flex;"><span>    Content-Length: 385
+</span></span><span style="display:flex;"><span>    Content-Type: application/json
+</span></span><span style="display:flex;"><span>    Date: Thu, 24 Sep 2020 10:47:11 GMT
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;expiry&#34;</span>: <span style="color:#e6db74">&#34;2020-09-24T11:47:11.204318471+01:00&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;5577006791947779410&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;link&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;summary&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;title&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;expiry&#34;</span>: <span style="color:#e6db74">&#34;2020-09-24T11:47:11.204324536+01:00&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;8674665223082153551&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;link&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;summary&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;title&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;expiry&#34;</span>: <span style="color:#e6db74">&#34;2020-09-24T11:47:11.204326896+01:00&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;6129484611666145821&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;link&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;2&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;summary&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;title&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h2 id="instructions">Instructions</h2>
+<ol>
+<li>Complete the <code>ServeHTTP</code> method in <code>server.go</code> in accordance with the specifications above.</li>
+<li>Run existing tests, and make sure they all pass.</li>
+<li>Add some tests to catch missing edge cases. For example, check that fallbacks are handled.</li>
+</ol>
+<p>Hints:</p>
+<ul>
+<li>You can run the server simply with <code>go run .</code> in the projects directory.</li>
+<li>Tests are run with <code>go test</code> in the current directory.</li>
+<li>Try to keep to the standard library as much as possible</li>
+<li>Latency is crucial for this application, so fetching the items sequentially one at a time might not be good enough</li>
+</ul>
+<h2 id="decisions-taken-on-the-implementation">Decisions taken on the implementation</h2>
+<ul>
+<li>For the sake of simplicity, I coded a <a href="sever_test.go#L33">simple test</a> that works with the given implementation, but there is another <a href="sever_test.go#L260">test that would work if external dependencies</a> were added.</li>
+<li>When testing, I&rsquo;ve decided to mock <code>rand.Int</code> and <code>time.Now</code> packages creating a <a href="content.go#L9">global variable</a> rather than (for example) extend <code>SampleContentProvider</code> to take a <code>now</code> <code>func() time.Time</code>.</li>
+<li>I&rsquo;ve created a <a href="server.go#L13">custom error struct</a> to return a formatted error on the response.</li>
+<li>I&rsquo;ve used a helper function <a href="response.go#L212">(<code>Respond</code>) to return a unified response</a>.</li>
+<li>Added <a href="golangci.yml">golangci.yml</a> for the CI/CD to catch errors for me but also to be independent from the IDE. In addition, would help other people to follow same linter rules.</li>
+</ul>
+<h2 id="querying-the-service">Querying the service</h2>
+<p>The application is tested by <code>server_test.go</code> file, but you can query the running service by running:</p>
+<p><code>curl &quot;http://localhost:8080/?count=8&quot; | jq</code></p>
+<p>Expected result sources: <code>1 1 2 3 1 1 1 2</code> given <a href="config.go#L39">default config</a></p>
+<p><code>curl &quot;http://localhost:8080/?count=8&amp;offset=10&quot; | jq</code></p>
+<p>Expected result sources: <code>2 3 1 1 1 2 1 1</code> given <a href="config.go#L39">default config</a></p>
 </div>
       </div>
     </div>
@@ -211,7 +286,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Send me an email!</h4>
           <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">

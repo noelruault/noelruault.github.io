@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microservices on noel ruault</title>
+    <link>https://noel.engineer/categories/microservices/</link>
+    <description>Recent content in microservices on noel ruault</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Aug 2019 02:36:03 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ratingsapp</title>
+      <link>https://noel.engineer/portfolio/project-9/</link>
+      <pubDate>Thu, 29 Aug 2019 02:36:03 +0000</pubDate>
+      
+      <guid>https://noel.engineer/portfolio/project-9/</guid>
+      <description>Overview RatingsApp is designed to allow authentication and authorization of users to a rating system.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Artwork Design</title>
+  <title>Golang Authentication</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description.">
+  <meta name="description" content="Golang micro-service implemented with an MVC pattern to manage access to Users.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
-      --primary-color:#41228e;
+      --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -44,6 +45,11 @@
 	</script>
 	
 
+  <!-- OpenGraph meta (alters social media link metadata) -->
+  <meta property="og:title" content="Hello, I'm Noël. I write code because I love to." name="title" />
+  <meta property="og:image" content="https://noel.engineer/images/meta/og-image.png " name="image" />
+  <meta property="og:description" content="Software engineer in all its amplitude. Backend partisan, Unix enthusiast, MacOs user. Always positive, eager, proactive and passionate. Skilled in agile methodologies and team procedures. Determined to achieve success." name="description" />
+
 </head>
 <body>
 <!-- preloader start -->
@@ -57,7 +63,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="https://noel.engineer/">
       
-      <h3 class="text-white font-tertiary">noel ruault</h3>
+      <h3 class="text-white font-tertiary">noel ruault<span id="cursor">|</span></h3>
       
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -88,75 +94,76 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
 </header>
 
 
+<script>
+  var cursor = true;
+  var speed = 550;
+  setInterval(() => {
+    if (cursor) {
+      document.getElementById('cursor').style.opacity = 0;
+      cursor = false;
+    } else {
+      document.getElementById('cursor').style.opacity = 1;
+      cursor = true;
+    }
+  }, speed);
+</script>
+
+
+
+
 <section class="page-title bg-primary position-relative overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Artwork Design</h1>
+        <h1 class="text-white font-tertiary">Golang Authentication</h1>
       </div>
     </div>
   </div>
   
   <img src="/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/keycap-n-for-noel.svg" alt="illustrations" class="bg-shape-2">
   <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
-  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
-  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/brackets.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/console.svg" alt="illustrations" class="bg-shape-5">
   <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
-  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+  
 </section>
 
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/item-3.png" class="img-fluid w-100" alt="Artwork Design">
+        <img src="https://noel.engineer/images/portfolio/solid-background-8.png" class="img-fluid w-100" alt="Golang Authentication">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
+          
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>May 12, 2019</p>
+                <h4>Creation date</h4>
+                <p>Apr 06, 2021</p>
               </div>
             </div>
           </div>
           
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>John Doe</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Illustration, development</p>
+                <p>Golang, JWT authentication, oauth, portfolio</p>
               </div>
             </div>
           </div>
@@ -166,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+                <p><a href="https://github.com/noelruault/golang-authentication">https://github.com/noelruault/golang-authentication</a></p>
               </div>
             </div>
           </div>
@@ -174,21 +181,188 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-<h4 id="project-details">Project Details</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
+        <div class="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="golang-authentication-service">Golang authentication service</h1>
+<p>Small microservice to manage access to Users</p>
+<h2 id="technical-decisions">Technical decisions</h2>
+<ul>
+<li>I have limited authentication and is only used when <strong>removing</strong> a User resource. The middlewares will check if a user is authenticated and is removing resource of its own. Therefore, to remove a user through the API, you must authenticate with its credentials beforehand.</li>
+</ul>
+<h3 id="external-dependencies">External dependencies</h3>
+<ul>
+<li>I have used <a href="https://gorm.io">GORM</a> to manage the database transactions.</li>
+<li>And <a href="https://github.com/go-chi/chi">go-chi</a> to extend some HTTP service attributes.</li>
+</ul>
+<h2 id="possible-extensions-or-improvements">Possible extensions or improvements</h2>
+<ul>
+<li>When deploying to production, I would like to know if the number of requests for the service is very large, perhaps the tracing service can slow down performance.</li>
+<li>I would extend authentication to use roles, to allow users to have specific permissions.</li>
+<li>I have been used the attributes active and settings as a good practice but they are not completely functional and with some more time I would extend their functionality.</li>
+<li>Some things have not been tested, the functionality is (overall) correct but with a little more time I would have ensured 90%+ coverage.</li>
+<li>The migration method could be extended to use previous states of the database.</li>
+</ul>
+<h3 id="data-structure">Data structure</h3>
+<ul>
+<li><a href="#authentication">Authentication</a>
+<ul>
+<li><a href="#with-password">With password</a></li>
+<li><a href="#with-refresh-token">With refresh token</a></li>
+</ul>
+</li>
+<li><a href="#user">User</a></li>
+</ul>
+<h3 id="authentication">Authentication</h3>
+<h4 id="with-password">With password</h4>
+<p>The request must be sent form-encoded, and the response will be sent JSON encoded.</p>
+<p><strong>Request:</strong></p>
+<pre><code>POST /api/oauth/login
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password
+&amp;email=user@example.com
+&amp;password=1234secret
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><strong>grant_type</strong>: Must be &ldquo;password&rdquo;.</li>
+<li><strong>email</strong>: User&rsquo;s email address.</li>
+<li><strong>password</strong>: User&rsquo;s password.</li>
+</ul>
+<h4 id="with-refresh-token">With refresh token</h4>
+<p>The request must be sent form-encoded, and the response will be sent JSON encoded.</p>
+<p>A token request using a refresh token will return a new, current access token as well as a new refresh token, extending the lifetime of the user session and reducing chances of the user needing to login again to the system, as long as the user access the system frequently.</p>
+<p><strong>Request:</strong></p>
+<pre><code>POST /api/oauth/login
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token
+&amp;refresh_token=IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><strong>grant_type</strong>: Must be &ldquo;refresh_token&rdquo;.</li>
+<li><strong>refresh_token</strong>: A previously issued refresh_token.</li>
+</ul>
+<h3 id="user">User</h3>
+<p>A <strong>User</strong> resource represents a user of the system.</p>
+<p><strong>Fields:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>int</td>
+<td></td>
+<td>User ID in the database.</td>
+</tr>
+<tr>
+<td><strong>active</strong></td>
+<td>bool</td>
+<td>true</td>
+<td>Whether the account is active. An inactive account is not able to login to the application, or perform any actions via the API.</td>
+</tr>
+<tr>
+<td><strong>country</strong></td>
+<td>string</td>
+<td></td>
+<td>Country code on <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3166-1 format</a>.</td>
+</tr>
+<tr>
+<td><strong>email</strong></td>
+<td>string</td>
+<td></td>
+<td>User email address. Used for user identification, login. Is a <strong>mandatory</strong> field and <strong>must be unique</strong> in the application.</td>
+</tr>
+<tr>
+<td><strong>firstName</strong>, <strong>lastName</strong></td>
+<td>string</td>
+<td></td>
+<td>User name details. The first name is <strong>mandatory.</strong></td>
+</tr>
+<tr>
+<td><strong>nickname</strong></td>
+<td>string</td>
+<td></td>
+<td>User nickname.</td>
+</tr>
+<tr>
+<td><strong>password</strong></td>
+<td>string</td>
+<td></td>
+<td>User password. <strong>Must be passed on create/update operations</strong>. It&rsquo;s never returned on any read operations.</td>
+</tr>
+<tr>
+<td><strong>settings</strong></td>
+<td>string</td>
+<td>{}</td>
+<td>A string used to store user preferences like dark mode or similar profile data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="instructions-to-run-the-project">Instructions to run the project</h2>
+<p>If the host operating system is MacOS:</p>
+<pre><code>make compose-mac
+</code></pre>
+<p>If it is Linux:</p>
+<pre><code>make compose-linux
+</code></pre>
+<p>On a first startup, the database should be initialised by running</p>
+<pre><code>go run ./cmd/admin/main.go migrate
+</code></pre>
+<p>After successful execution, the service should be running on port 8080:</p>
+<ul>
+<li><a href="http://localhost:8080/">:8080</a></li>
+</ul>
+<p>Tracing can be found at:</p>
+<ul>
+<li><a href="http://localhost:9411/zipkin/">:9411/zipkin/</a></li>
+<li><a href="http://localhost:6060/debug/pprof/">:6060/debug/pprof/</a></li>
+</ul>
+<p><img src="/doc/assets/tracing-support.png" alt="image-tracing-support"></p>
+<p>Project tests can be run by typing:</p>
+<pre><code>make test
+</code></pre>
+<p>To explore what you can do with the Makefile:</p>
+<pre><code>make
+</code></pre>
+<h2 id="api-usage">API usage</h2>
+<p>The project has a <a href="/doc/golang-authetication-service.postman_collection.json">Postman collection</a> attached, which can be used to interact with the authentication/user service.</p>
+<h3 id="packaging">Packaging</h3>
+<pre><code>├── cmd             # Entrypoint
+│   ├── admin       # Admin (database) related tasks and x509 key creator for the auth service
+│   └── api         # Main API
+├── doc             # Documentation, images and helpful files
+└── internal
+    ├── errors      # Utilities that make easier error handling throughout the project
+    ├── handlers    # HTTP layer
+    ├── middleware
+    ├── models      # Business logic
+    ├── schema      # Framework for common database related tasks
+    └── web         # Framework for common HTTP related tasks
+</code></pre>
+<h3 id="benchmarking">Benchmarking</h3>
+<p>I have benchmarked the two most computationally expensive points of the API: The PUT method and authentication.
+Here are the results:</p>
+<pre><code>ali --body-file=./doc/assets/ali-update.json --method=PUT http://localhost:8080/api/users/1
+</code></pre>
+<p><img src="/doc/assets/bench-put-user.gif" alt="bench-put-user.gif"></p>
+<blockquote>
+<p>Benchmark: <strong>50</strong> requests per second. Min: 12~ ms. Max: 120~ ms.</p>
+</blockquote>
+<hr>
+<pre><code>ali --rate=10 --method=POST http://localhost:8080/oauth/login/bench/
+</code></pre>
+<p><img src="/doc/assets/bench-auth.gif" alt="bench-auth.gif"></p>
+<blockquote>
+<p>Benchmark: <strong>10</strong> requests per second. Min: 370~ ms. Max: 730~ ms.</p>
+</blockquote>
 </div>
       </div>
     </div>
@@ -206,8 +380,8 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" method="POST" class="row">
+          <h4 class="mb-80">Send me an email!</h4>
+          <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
             </div>
@@ -241,17 +415,18 @@ consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porr
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">&#43;34 722 122 274</p>
+          <p class="text-white paragraph-lg font-secondary">&#43;31 623 333 488</p>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">Valencia, Spain</p>
+          <p class="text-white paragraph-lg font-secondary">127.0.0.1, Amsterdam</p>
         </div>
       </div>
     </div>
   </div>
   <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Copyright © 2021 a theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
+    <p class="mb-0 text-light">Developed with &lt;3 by Noël Ruault</p>
+    <p class="mb-0 text-light">Copyright © 2021 a <a href="https://github.com/themefisher/kross-hugo/blob/master/LICENSE">MIT</a> theme by <a href="https://gethugothemes.com">gethugothemes</a></p>
   </div>
 </footer>
 

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>My Bash/ZSH config</title>
+  <title>Go Fibonacci</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bash/zsh alias configuration files">
+  <meta name="description" content="Golang Fibonacci is a single endpoint service that listens for GET requests on /fib?n=&lt;n&gt; and calculates n-th Fibonacci sequence number of the given number.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
       --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -93,14 +94,6 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
@@ -128,7 +121,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">My Bash/ZSH config</h1>
+        <h1 class="text-white font-tertiary">Go Fibonacci</h1>
       </div>
     </div>
   </div>
@@ -145,14 +138,24 @@
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/solid-background-5.png" class="img-fluid w-100" alt="My Bash/ZSH config">
+        <img src="https://noel.engineer/images/portfolio/solid-background-5.png" class="img-fluid w-100" alt="Go Fibonacci">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
+          
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-calendar"></i>
+              <div class="ml-3">
+                <h4>Creation date</h4>
+                <p>Apr 28, 2021</p>
+              </div>
+            </div>
+          </div>
           
           
           <div class="col-sm-6 mb-5">
@@ -160,7 +163,7 @@
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Bash</p>
+                <p>Golang, kubernetes, mathematics, portfolio</p>
               </div>
             </div>
           </div>
@@ -170,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://github.com/noelruault/config/tree/master/zshrc-config">https://github.com/noelruault/config/tree/master/zshrc-config</a></p>
+                <p><a href="https://github.com/noelruault/go-fibonacci">https://github.com/noelruault/go-fibonacci</a></p>
               </div>
             </div>
           </div>
@@ -178,8 +181,79 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-details">Project Details</h4>
-<p>This project contains the aliases and helpers that I use on a daily basis. I am a humble but passionate bash programmer.</p>
+        <div class="content"><h1 id="go-fibonacci">Go Fibonacci</h1>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Golang Fibonacci is a single endpoint service that listens for <code>GET</code> requests on <code>/fib?n=&lt;n&gt;</code> and calculates n-th Fibonacci sequence number of the given number.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>This project was designed against Go 1.16.
+The service uses Kubernetes and Docker to startup.</p>
+<ul>
+<li>Docker</li>
+<li>Kubernetes
+<ul>
+<li>Minikube</li>
+</ul>
+</li>
+</ul>
+<h2 id="decisions-taken-on-this-implementation">Decisions taken on this implementation</h2>
+<p>The service as it is, solves up to element 93 of the Fibonacci sequence with an iterative approach, which has been chosen for its efficiency compared to the alternatives. The application is limited by the length of the int64 type, so the maximum value that can be stored in that data type is 18,446,744,073,709,551,615.</p>
+<p>However, I have implemented a solution using the <a href="./internal/models/fibonacci.go#L81"><code>math/big</code> library</a> to demonstrate that even if the computational cost skyrockets, the Fibonacci sequence can still be calculated and stored on data types beyond 64 bits using Golang.</p>
+<p>Both benchmarking and testing can be proved by running the functions contained in <a href="./internal/models/fibonacci_test.go"><code>fibonacci_test.go</code></a></p>
+<pre><code>make bench
+make test
+</code></pre>
+<p>To explore what else you can do with the Makefile:</p>
+<pre><code>make
+</code></pre>
+<h2 id="instructions-to-run-the-project">Instructions to run the project</h2>
+<p>By running the following command, the project will be (docker) built, deployed on minikube and started.</p>
+<pre><code>make k8-minikube-start
+</code></pre>
+<p>The next step is to open a <a href="https://minikube.sigs.k8s.io/docs/commands/tunnel/#minikube-tunnel">minikube tunnel</a>, to access the service through localhost. I have opted for this option to avoid having to make too many changes to <code>fib.yaml</code> in case of sending the service to production.</p>
+<pre><code>minikube tunnel
+</code></pre>
+<p>After successful execution, the service should be running on port 8080. Hit the <em>health</em> endpoint to check that all is running as expected:</p>
+<ul>
+<li><a href="http://localhost:8080/">:8080</a></li>
+</ul>
+<p>You should receive a <code>{&quot;status&quot;: &quot;ok&quot;}</code> as the response.</p>
+<p>The next step is to hit the <code>fib</code> endpoint and start querying the API</p>
+<pre><code>curl http://localhost:8080/fib?n=1
+&gt; 1
+
+curl http://localhost:8080/fib?n=72
+&gt; 498454011879264
+</code></pre>
+<h2 id="packaging">Packaging</h2>
+<pre><code>.
+├── cmd                     # Entrypoint, Main API
+└── internal
+    ├── handlers            # HTTP layer
+    ├── models              # Business logic
+    └── web                 # Framework for common HTTP related tasks
+</code></pre>
+<h2 id="author">Author</h2>
+<p>Noel Ruault - <a href="https://github.com/noelruault">@noelruault</a></p>
+<h2 id="feedback">Feedback</h2>
+<p>Has implementations of multiple basic Fibonacci algorithms but don&rsquo;t have
+matrix exponentiation or phi approximations. Has some wrong claims in the
+comments - recursive algorithm is not O(n) complex, it&rsquo;s O(2^n). Besides
+that, the code structure is actually really nice and reminds me how one
+would do a longer-term web service project, not a two-hour exercise. Most
+importantly it shows familiarity and experience with Go. Kubernetes part is
+basic, doesn&rsquo;t do health checks even though the service has health check
+endpoint.</p>
+<h2 id="further-development">Further development</h2>
+<p><a href="https://blog.abelotech.com/posts/fibonacci-numbers-golang/">High-performance Fibonacci numbers generator in Go</a></p>
+<h3 id="matrix">Matrix</h3>
+<p><a href="https://play.golang.org/p/MpFWnMlEiSR">The Go Playground</a></p>
+<p><a href="https://www.programmersought.com/article/66706671612/">The optimal algorithm of Fibonacci sequence (golang code) - Programmer Sought</a></p>
+<p><a href="https://stackoverflow.com/a/17604464">Go Fibonacci sequence generator</a></p>
+<p><a href="https://rosettacode.org/wiki/Fibonacci_matrix-exponentiation#Go">Fibonacci matrix-exponentiation</a></p>
+<h3 id="phi">Phi</h3>
+<p><a href="http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/phi.html#section5">The Golden Section - the Number</a></p>
+<h3 id="complexity">Complexity</h3>
+<p><a href="https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation">Determining complexity for recursive functions (Big O notation)</a></p>
 </div>
       </div>
     </div>
@@ -197,7 +271,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Send me an email!</h4>
           <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">

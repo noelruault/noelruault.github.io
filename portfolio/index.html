@@ -5,13 +5,14 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A few coding tasks and works I&#39;ve done over the years.">
+  <meta name="description" content="A few coding tasks and projects I&#39;ve done over the years.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
       --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -93,14 +94,6 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
@@ -147,91 +140,13 @@
 
 <section class="section">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-12">
-        <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
-          <label class="btn btn-sm btn-primary active">
-            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
-          </label>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="concurrency" />Concurrency
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="golang" />Golang
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="api" />API
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="oauth" />Oauth
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="rest" />Rest
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="mutexes" />Mutexes
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="in-memory-db" />In memory db
-          </label>
-          
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="bash" />Bash
-          </label>
-          
-        </div>
-      </div>
-    </div>
+    
     <div class="row shuffle-wrapper">
       
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;concurrency&quot;,&quot;golang&quot;,&quot;api&quot;]">
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;benchmark&quot;,&quot;concurrency&quot;,&quot;golang&quot;,&quot;portfolio&quot;]">
         <div class="position-relative rounded hover-wrapper">
           <img src="https://noel.engineer/images/portfolio/solid-background-1.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
           <div class="hover-overlay">
@@ -240,20 +155,14 @@
             </div>
           </div>
         </div>
+        <h4 class="pt-2">Flea Circus</h4>
+        <div class="content">Golang solution to the 213th problem of the Euler project: &#34;Flea Circus&#34;.</div>
       </div>
       
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;oauth&quot;,&quot;rest&quot;,&quot;golang&quot;,&quot;api&quot;]">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="https://noel.engineer/images/portfolio/solid-background-3.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-3/">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;mutexes&quot;,&quot;in-memory-db&quot;,&quot;golang&quot;]">
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;golang&quot;,&quot;jwt-authentication&quot;,&quot;oauth2&quot;,&quot;portfolio&quot;]">
         <div class="position-relative rounded hover-wrapper">
           <img src="https://noel.engineer/images/portfolio/solid-background-2.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
           <div class="hover-overlay">
@@ -262,20 +171,30 @@
             </div>
           </div>
         </div>
+        <h4 class="pt-2">Go Http Sum</h4>
+        <div class="content">Golang simple HTTP service with two endpoints, the first contains a JWT OAuth authentication and the other returns the result of text processing.</div>
       </div>
       
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;bash&quot;]">
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;external-api-request&quot;,&quot;golang&quot;,&quot;jwt-auth&quot;,&quot;portfolio&quot;]">
         <div class="position-relative rounded hover-wrapper">
-          <img src="https://noel.engineer/images/portfolio/solid-background-5.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <img src="https://noel.engineer/images/portfolio/solid-background-3.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
           <div class="hover-overlay">
             <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-5/">view project</a>
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-3/">view project</a>
             </div>
           </div>
         </div>
+        <h4 class="pt-2">Pqlbench</h4>
+        <div class="content">Command line tool that can be used to benchmark PromQL query performance across multiple workers/clients against a Promscale instance.</div>
       </div>
       
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;oauth&quot;,&quot;golang&quot;,&quot;api&quot;]">
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;api&quot;,&quot;golang&quot;,&quot;portfolio&quot;]">
         <div class="position-relative rounded hover-wrapper">
           <img src="https://noel.engineer/images/portfolio/solid-background-4.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
           <div class="hover-overlay">
@@ -284,6 +203,88 @@
             </div>
           </div>
         </div>
+        <h4 class="pt-2">Go News Http Service</h4>
+        <div class="content">Simple HTTP service that fetches information from multiple external providers in an efficient way.</div>
+      </div>
+      
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;golang&quot;,&quot;kubernetes&quot;,&quot;mathematics&quot;,&quot;portfolio&quot;]">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-5.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-5/">view project</a>
+            </div>
+          </div>
+        </div>
+        <h4 class="pt-2">Go Fibonacci</h4>
+        <div class="content">Golang Fibonacci is a single endpoint service that listens for GET requests on /fib?n=&lt;n&gt; and calculates n-th Fibonacci sequence number of the given number.</div>
+      </div>
+      
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;golang&quot;,&quot;portfolio&quot;,&quot;tracing&quot;,&quot;api-server&quot;,&quot;api-client&quot;]">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-6.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-6/">view project</a>
+            </div>
+          </div>
+        </div>
+        <h4 class="pt-2">Go Callback Service</h4>
+        <div class="content">Golang simple API that listens for POST requests and requests object information for each incoming request concurrently.</div>
+      </div>
+      
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;benchmarking&quot;,&quot;golang&quot;,&quot;portfolio&quot;]">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-7.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-7/">view project</a>
+            </div>
+          </div>
+        </div>
+        <h4 class="pt-2">Auction Bid Tracker</h4>
+        <div class="content">This project consists of an authentication and authorisation service, as well as a bidding system based on users and items. </div>
+      </div>
+      
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;golang&quot;,&quot;jwt-authentication&quot;,&quot;oauth&quot;,&quot;portfolio&quot;]">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-8.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-8/">view project</a>
+            </div>
+          </div>
+        </div>
+        <h4 class="pt-2">Golang Authentication</h4>
+        <div class="content">Golang micro-service implemented with an MVC pattern to manage access to Users.</div>
+      </div>
+      
+      <div
+        class="col-lg-4 col-6 mb-4 shuffle-item portfolio-item"
+        style="min-height: 400px;"
+        data-groups="[&quot;api-rest&quot;,&quot;golang&quot;,&quot;microservices&quot;,&quot;portfolio&quot;]">
+        <div class="position-relative rounded hover-wrapper">
+          <img src="https://noel.engineer/images/portfolio/solid-background-9.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <a class="btn btn-light btn-sm" href="https://noel.engineer/portfolio/project-9/">view project</a>
+            </div>
+          </div>
+        </div>
+        <h4 class="pt-2">Ratingsapp</h4>
+        <div class="content">Golang: RatingsApp is designed to allow authentication and authorisation of users to a rating system. As well as the ability to CRUD a database of ratings.</div>
       </div>
       
     </div>
@@ -341,7 +342,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Send me an email!</h4>
           <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">

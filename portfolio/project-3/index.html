@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Auth API</title>
+  <title>Pqlbench</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Golang challenge oauth authentication service">
+  <meta name="description" content="Command line tool that can be used to benchmark PromQL query performance across multiple workers/clients against a Promscale instance.">
   <meta name="author" content="Noel Ruault">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.97.0" />
 
   <style>
     :root{
       --primary-color:#366969;
+      --logo-font-size:40px;
     }
   </style>
 
@@ -93,14 +94,6 @@
         </li>
         
         
-        
-        
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="https://noel.engineer/contact">Contact</a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
@@ -128,7 +121,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Auth API</h1>
+        <h1 class="text-white font-tertiary">Pqlbench</h1>
       </div>
     </div>
   </div>
@@ -145,11 +138,11 @@
 
 
 
-<section class="section">
+<section class="section portfolio-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="https://noel.engineer/images/portfolio/solid-background-3.png" class="img-fluid w-100" alt="Auth API">
+        <img src="https://noel.engineer/images/portfolio/solid-background-3.png" class="img-fluid w-100" alt="Pqlbench">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
@@ -158,29 +151,19 @@
             <div class="project-meta">
               <i class="ti-calendar"></i>
               <div class="ml-3">
-                <h4>Date</h4>
-                <p>Apr 15, 2021</p>
+                <h4>Creation date</h4>
+                <p>Mar 30, 2022</p>
               </div>
             </div>
           </div>
           
-          
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>Private company</p>
-              </div>
-            </div>
-          </div>
           
           <div class="col-sm-6 mb-5">
             <div class="project-meta">
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Oauth, rest, golang, API</p>
+                <p>External API request, golang, JWT auth, portfolio</p>
               </div>
             </div>
           </div>
@@ -190,7 +173,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://github.com/noelruault/golang-authentication">https://github.com/noelruault/golang-authentication</a></p>
+                <p><a href="https://github.com/noelruault/pqlbench">https://github.com/noelruault/pqlbench</a></p>
               </div>
             </div>
           </div>
@@ -198,10 +181,20 @@
         </div>
       </div>
       <div class="col-lg-11">
-        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
-<p><a href="https://github.com/noelruault/golang-authentication/blob/main/doc/INSTRUCTIONS.md">INSTRUCTIONS.md</a></p>
-<h4 id="project-details">Project Details</h4>
-<p><a href="https://github.com/noelruault/golang-authentication#readme">README.md</a></p>
+        <div class="content"><h1 id="pqlbench-command-line-tool"><code>pqlbench</code> command line tool</h1>
+<p>This project holds the code of a command line tool that can be used to benchmark PromQL query performance across multiple workers/clients against a Promscale instance.</p>
+<p>To explore the different options provided by the make command:</p>
+<pre><code>make help
+</code></pre>
+<p>In order to run the project from a clean state:</p>
+<pre><code>make setup install
+</code></pre>
+<p>From now on, there are two options for running the tool.</p>
+<pre><code>pqlbench benchmark -filepath=&lt;file_name&gt; -workers=&lt;num_workers&gt; -promscale.url=&lt;url&gt;
+</code></pre>
+<hr>
+<pre><code>make run filepath=&lt;file_name&gt; workers=&lt;num_workers&gt; promscale.url=&lt;url&gt;
+</code></pre>
 </div>
       </div>
     </div>
@@ -219,7 +212,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Send me an email!</h4>
           <form action="https://formspree.io/f/myylzawr" method="POST" class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
