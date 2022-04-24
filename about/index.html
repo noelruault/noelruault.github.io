@@ -55,12 +55,12 @@
 <!-- preloader start -->
 <div class="preloader">
   
-  <img src="/images/preloader.gif " alt="preloader">
+  <div id="bounce" alt="preloader"></div>
   
 </div>
 <!-- preloader end -->
 
-<header class="navigation fixed-top">
+<header class="navigation nav-fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="https://noel.engineer/">
       
@@ -165,13 +165,50 @@
 
 
 <section class="resume">
-  <img alt="Noël Ruault resume" class="resume-poster" src="https://user-images.githubusercontent.com/4104120/150405633-2fd66ae2-654d-4dbc-bbc8-15a8db16cf6c.jpg" />
+  <img id="resume-img" alt="Noël Ruault's résumé" class="modal-target resume-poster" src="https://user-images.githubusercontent.com/4104120/150405633-2fd66ae2-654d-4dbc-bbc8-15a8db16cf6c.jpg" />
   <div class="resume-instructions">
     <form action="https://gist.github.com/noelruault/964d77b87924f8076d04d09b13569e07">
-      <button class="brick">Display resume</button>
+      <button id="resume-button" class="brick">Display resume</button>
     </form>
   </div>
+
+  <div id="modal" class="modal">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <img id="modal-content" class="modal-content">
+  </div>
 </section>
+
+<script>
+    
+    var modal = document.getElementById('modal');
+
+    var modalClose = document.getElementById('modal-close');
+    modalClose.addEventListener('click', function () {
+      modal.style.display = "none";
+    });
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    document.addEventListener('click', function (e) {
+      if (e.target.className.indexOf('modal-target') !== -1) {
+        var img = e.target;
+        var modalImg = document.getElementById("modal-content");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      }
+    });
+</script>
+
 
 
 
