@@ -1,3 +1,0 @@
-# https://rachelrly.medium.com/how-to-compress-images-in-the-mac-terminal-57f8ddd11926
-
-    sips -s format jpeg -s formatOptions 40 author.png --out "autor-compressed.jpeg"
