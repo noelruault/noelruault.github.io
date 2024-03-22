@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>concurrency on noel ruault</title>
+    <title>Concurrency on noel ruault</title>
     <link>https://noel.engineer/categories/concurrency/</link>
-    <description>Recent content in concurrency on noel ruault</description>
+    <description>Recent content in Concurrency on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Apr 2022 20:23:22 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 20:23:22 +0000</lastBuildDate>
+    <atom:link href="https://noel.engineer/categories/concurrency/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flea Circus</title>
       <link>https://noel.engineer/portfolio/project-1/</link>
       <pubDate>Mon, 04 Apr 2022 20:23:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-1/</guid>
       <description>Project Euler: Problem 213 &amp;ldquo;Flea Circus&amp;rdquo; A 30×30 grid of squares contains 900 fleas, initially one flea per square.</description>
     </item>
-    
   </channel>
 </rss>

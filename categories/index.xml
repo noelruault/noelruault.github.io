@@ -6,168 +6,133 @@
     <description>Recent content in Categories on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Apr 2022 20:23:22 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 20:23:22 +0000</lastBuildDate>
+    <atom:link href="https://noel.engineer/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>benchmark</title>
+      <title>Benchmark</title>
       <link>https://noel.engineer/categories/benchmark/</link>
       <pubDate>Mon, 04 Apr 2022 20:23:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/benchmark/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>concurrency</title>
+      <title>Concurrency</title>
       <link>https://noel.engineer/categories/concurrency/</link>
       <pubDate>Mon, 04 Apr 2022 20:23:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/concurrency/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>golang</title>
+      <title>Golang</title>
       <link>https://noel.engineer/categories/golang/</link>
       <pubDate>Mon, 04 Apr 2022 20:23:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/golang/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>portfolio</title>
+      <title>Portfolio</title>
       <link>https://noel.engineer/categories/portfolio/</link>
       <pubDate>Mon, 04 Apr 2022 20:23:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/portfolio/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jwt-authentication</title>
+      <title>Jwt-Authentication</title>
       <link>https://noel.engineer/categories/jwt-authentication/</link>
       <pubDate>Mon, 04 Apr 2022 06:14:35 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/jwt-authentication/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>oauth2</title>
+      <title>Oauth2</title>
       <link>https://noel.engineer/categories/oauth2/</link>
       <pubDate>Mon, 04 Apr 2022 06:14:35 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/oauth2/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>external-api-request</title>
+      <title>External-Api-Request</title>
       <link>https://noel.engineer/categories/external-api-request/</link>
       <pubDate>Wed, 30 Mar 2022 20:36:18 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/external-api-request/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jwt-auth</title>
+      <title>Jwt-Auth</title>
       <link>https://noel.engineer/categories/jwt-auth/</link>
       <pubDate>Wed, 30 Mar 2022 20:36:18 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/jwt-auth/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>api</title>
+      <title>Api</title>
       <link>https://noel.engineer/categories/api/</link>
       <pubDate>Mon, 04 Oct 2021 08:34:32 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/api/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kubernetes</title>
+      <title>Kubernetes</title>
       <link>https://noel.engineer/categories/kubernetes/</link>
       <pubDate>Wed, 28 Apr 2021 09:59:55 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/kubernetes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mathematics</title>
+      <title>Mathematics</title>
       <link>https://noel.engineer/categories/mathematics/</link>
       <pubDate>Wed, 28 Apr 2021 09:59:55 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/mathematics/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>api-client</title>
+      <title>Api-Client</title>
       <link>https://noel.engineer/categories/api-client/</link>
       <pubDate>Mon, 19 Apr 2021 14:17:17 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/api-client/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>api-server</title>
+      <title>Api-Server</title>
       <link>https://noel.engineer/categories/api-server/</link>
       <pubDate>Mon, 19 Apr 2021 14:17:17 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/api-server/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tracing</title>
+      <title>Tracing</title>
       <link>https://noel.engineer/categories/tracing/</link>
       <pubDate>Mon, 19 Apr 2021 14:17:17 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/tracing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>benchmarking</title>
+      <title>Benchmarking</title>
       <link>https://noel.engineer/categories/benchmarking/</link>
       <pubDate>Tue, 13 Apr 2021 11:55:42 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/benchmarking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>oauth</title>
+      <title>Oauth</title>
       <link>https://noel.engineer/categories/oauth/</link>
       <pubDate>Tue, 06 Apr 2021 15:45:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/oauth/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>api-rest</title>
+      <title>Api-Rest</title>
       <link>https://noel.engineer/categories/api-rest/</link>
       <pubDate>Thu, 29 Aug 2019 02:36:03 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/api-rest/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>microservices</title>
+      <title>Microservices</title>
       <link>https://noel.engineer/categories/microservices/</link>
       <pubDate>Thu, 29 Aug 2019 02:36:03 +0000</pubDate>
-      
       <guid>https://noel.engineer/categories/microservices/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>benchmarking on noel ruault</title>
+    <title>Benchmarking on noel ruault</title>
     <link>https://noel.engineer/categories/benchmarking/</link>
-    <description>Recent content in benchmarking on noel ruault</description>
+    <description>Recent content in Benchmarking on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Apr 2021 11:55:42 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/benchmarking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 11:55:42 +0000</lastBuildDate>
+    <atom:link href="https://noel.engineer/categories/benchmarking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Auction Bid Tracker</title>
       <link>https://noel.engineer/portfolio/project-7/</link>
       <pubDate>Tue, 13 Apr 2021 11:55:42 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-7/</guid>
       <description>Auction bid tracker This project consists of an authentication and authorisation service, as well as a bidding system based on users and items.</description>
     </item>
-    
   </channel>
 </rss>

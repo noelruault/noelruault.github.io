@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mathematics on noel ruault</title>
+    <title>Mathematics on noel ruault</title>
     <link>https://noel.engineer/categories/mathematics/</link>
-    <description>Recent content in mathematics on noel ruault</description>
+    <description>Recent content in Mathematics on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Apr 2021 09:59:55 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 09:59:55 +0000</lastBuildDate>
+    <atom:link href="https://noel.engineer/categories/mathematics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Fibonacci</title>
       <link>https://noel.engineer/portfolio/project-5/</link>
       <pubDate>Wed, 28 Apr 2021 09:59:55 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-5/</guid>
       <description>Go Fibonacci Golang Fibonacci is a single endpoint service that listens for GET requests on /fib?</description>
     </item>
-    
   </channel>
 </rss>

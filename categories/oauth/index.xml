@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>oauth on noel ruault</title>
+    <title>Oauth on noel ruault</title>
     <link>https://noel.engineer/categories/oauth/</link>
-    <description>Recent content in oauth on noel ruault</description>
+    <description>Recent content in Oauth on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Apr 2021 15:45:22 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/oauth/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 15:45:22 +0000</lastBuildDate>
+    <atom:link href="https://noel.engineer/categories/oauth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Authentication Service</title>
       <link>https://noel.engineer/portfolio/project-8/</link>
       <pubDate>Tue, 06 Apr 2021 15:45:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-8/</guid>
       <description>Golang authentication service Small microservice to manage access to Users</description>
     </item>
-    
   </channel>
 </rss>

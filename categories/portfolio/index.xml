@@ -1,92 +1,75 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>portfolio on noel ruault</title>
+    <title>Portfolio on noel ruault</title>
     <link>https://noel.engineer/categories/portfolio/</link>
-    <description>Recent content in portfolio on noel ruault</description>
+    <description>Recent content in Portfolio on noel ruault</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Apr 2022 20:23:22 +0000</lastBuildDate><atom:link href="https://noel.engineer/categories/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 20:23:22 +0000</lastBuildDate>
+    <atom:link href="https://noel.engineer/categories/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flea Circus</title>
       <link>https://noel.engineer/portfolio/project-1/</link>
       <pubDate>Mon, 04 Apr 2022 20:23:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-1/</guid>
       <description>Project Euler: Problem 213 &amp;ldquo;Flea Circus&amp;rdquo; A 30×30 grid of squares contains 900 fleas, initially one flea per square.</description>
     </item>
-    
     <item>
       <title>Go Http Sum</title>
       <link>https://noel.engineer/portfolio/project-2/</link>
       <pubDate>Mon, 04 Apr 2022 06:14:35 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-2/</guid>
       <description>go-http-sum This project holds the code of simple HTTP service with two endpoints:</description>
     </item>
-    
     <item>
       <title>Pqlbench</title>
       <link>https://noel.engineer/portfolio/project-3/</link>
       <pubDate>Wed, 30 Mar 2022 20:36:18 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-3/</guid>
       <description>pqlbench command line tool This project holds the code of a command line tool that can be used to benchmark PromQL query performance across multiple workers/clients against a Promscale instance.</description>
     </item>
-    
     <item>
       <title>Go News Http Service</title>
       <link>https://noel.engineer/portfolio/project-4/</link>
       <pubDate>Mon, 04 Oct 2021 08:34:32 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-4/</guid>
       <description>Golang Coding challenge The dev team created this coding challenge to help assess your coding and problem-solving skills.</description>
     </item>
-    
     <item>
       <title>Go Fibonacci</title>
       <link>https://noel.engineer/portfolio/project-5/</link>
       <pubDate>Wed, 28 Apr 2021 09:59:55 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-5/</guid>
       <description>Go Fibonacci Golang Fibonacci is a single endpoint service that listens for GET requests on /fib?</description>
     </item>
-    
     <item>
       <title>Go Callback Service</title>
       <link>https://noel.engineer/portfolio/project-6/</link>
       <pubDate>Mon, 19 Apr 2021 14:17:17 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-6/</guid>
       <description>Golang Callback Service Golang Callback Service is a simple API that listens for POST requests in /callback and requests object information for each incoming object_id concurrently.</description>
     </item>
-    
     <item>
       <title>Auction Bid Tracker</title>
       <link>https://noel.engineer/portfolio/project-7/</link>
       <pubDate>Tue, 13 Apr 2021 11:55:42 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-7/</guid>
       <description>Auction bid tracker This project consists of an authentication and authorisation service, as well as a bidding system based on users and items.</description>
     </item>
-    
     <item>
       <title>Golang Authentication Service</title>
       <link>https://noel.engineer/portfolio/project-8/</link>
       <pubDate>Tue, 06 Apr 2021 15:45:22 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-8/</guid>
       <description>Golang authentication service Small microservice to manage access to Users</description>
     </item>
-    
     <item>
       <title>Ratingsapp</title>
       <link>https://noel.engineer/portfolio/project-9/</link>
       <pubDate>Thu, 29 Aug 2019 02:36:03 +0000</pubDate>
-      
       <guid>https://noel.engineer/portfolio/project-9/</guid>
       <description>Overview RatingsApp is designed to allow authentication and authorization of users to a rating system.</description>
     </item>
-    
   </channel>
 </rss>
