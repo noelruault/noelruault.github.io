@@ -1,6 +1,5 @@
-// typstmd appends `#show: doc => conf(...)` + the markdown body, so renaming `conf`, dropping one of
-// its five keyword params, or moving `doc` off the end breaks it (README.md has the markdown contract).
-// Font list is fixed by typst.ts: Libertinus Serif, New Computer Modern, DejaVu Sans Mono.
+// Fonts are limited to what typstmd's browser build loads: Libertinus Serif, DejaVu Sans Mono.
+// Markdown conventions this relies on are documented in ../README.md.
 
 #let palettes = (
   dracula: (
@@ -21,14 +20,7 @@
   ),
 )
 
-#let conf(
-  title: none,
-  authors: (),
-  date: none,
-  lang: "en",
-  toc: false,
-  font: "Libertinus Serif",
-  fontsize: 9.5pt,
+#let cv(
   theme: "aitelier",
   name: "Noël Ruault",
   role: "Site Reliability & DevOps Engineer",
@@ -40,50 +32,72 @@
     (text: "linkedin.com/in/noelruault", url: "https://linkedin.com/in/noelruault"),
     (text: "github.com/noelruault", url: "https://github.com/noelruault"),
   ),
-  doc,
+  footer-note: "References on request · live copy at noel.engineer",
+  body,
 ) = {
   let t = palettes.at(theme)
   let mono-font = "DejaVu Sans Mono"
-  // Frontmatter wins over the defaults so one template can serve more than one person.
-  let name = if title != none { title } else { name }
-  let contacts = if authors.len() > 0 { authors.map(a => (text: a.name, url: none)) } else { contacts }
 
-  let mono(size: 8pt, tracking: 0pt, fill: t.muted, weight: "regular", body) = text(
+  let mono(size: 8pt, tracking: 0pt, fill: t.muted, weight: "regular", it) = text(
     font: mono-font, size: size, tracking: tracking, fill: fill, weight: weight,
-  )[#body]
+  )[#it]
 
   set page(paper: "a4", margin: (x: 1.9cm, top: 1.5cm, bottom: 1.4cm), fill: t.bg)
-  set text(font: font, size: fontsize, fill: t.ink, lang: lang, hyphenate: false)
+  set text(font: "Libertinus Serif", size: 9.5pt, fill: t.ink, lang: "en", hyphenate: false)
   set par(leading: 0.62em, spacing: 0.7em, justify: false)
   set list(marker: text(fill: t.accent)[•], indent: 0.3em, body-indent: 0.5em, spacing: 0.5em)
-  set table(inset: (x: 0pt, y: 3pt), stroke: none)
   show link: set text(fill: t.accent)
-  show raw.where(block: false): set text(font: mono-font, size: 8.5pt, fill: t.muted)
 
-  show heading.where(level: 1): it => block(above: 1.35em, below: 0.55em, breakable: false)[
+  // Skills read as an aligned two-column block, which a GFM table is the only plain-Markdown way to express. Its header row exists because GFM requires one, and is hidden here.
+  // Columns come from the emitted table, and an explicit argument beats a set rule, so keep every skill label at 12 characters or fewer: past that typstmd sizes it as prose and the two columns split the page evenly instead of hugging the labels.
+  set table(stroke: none, inset: (x: 0pt, y: 3pt), column-gutter: 0.9em)
+  show table.cell.where(y: 0): none
+  show table.cell.where(x: 0): it => mono(size: 8pt, tracking: 0.08em, fill: t.accent)[#upper(it)]
+
+  // A paragraph body is a sequence of text, space and quote elements, not one text run, so reading `.text` off it silently yields nothing.
+  let plain-text(it) = {
+    if type(it) == str { it }
+    else if it.has("text") { it.text }
+    else if it.has("children") { it.children.map(plain-text).join("") }
+    else if repr(it.func()) == "space" { " " }
+    else { "" }
+  }
+
+  let section-label(it) = block(above: 1.35em, below: 0.55em, breakable: false)[
     #grid(
       columns: (auto, auto),
       column-gutter: 0.55em,
       align: horizon,
       line(length: 1.2em, stroke: 1.4pt + t.accent),
-      mono(size: 8pt, tracking: 0.16em, weight: "bold")[#upper(it.body)],
+      mono(size: 8pt, tracking: 0.16em, weight: "bold")[#upper(it)],
     )
   ]
-  show heading.where(level: 2): it => [#heading(level: 1, it.body)]
 
-  // An entry heading carries its date as trailing inline code; split it out so it sits flush right.
-  show heading.where(level: 3): it => {
-    let parts = it.body.at("children", default: (it.body,))
-    let dates = parts.filter(c => c.func() == raw)
-    let title = parts.filter(c => c.func() != raw)
-    block(above: 1em, below: 0.4em, breakable: false)[
-      #grid(
-        columns: (1fr, auto),
-        align: (left + bottom, right + bottom),
-        text(size: 11pt, weight: "bold")[#title.join()],
-        if dates.len() > 0 { mono(size: 8pt)[#dates.first().text] },
-      )
-    ]
+  show heading.where(level: 1): it => section-label(it.body)
+  show heading.where(level: 2): it => section-label(it.body)
+  show heading.where(level: 3): it => block(
+    above: 1.1em,
+    below: 0.45em,
+    breakable: false,
+    text(size: 11pt, weight: "bold", it.body),
+  )
+
+  // Detected by shape, not by position. Counting paragraphs from the last heading needs
+  // `state` inside `context`, which reads and writes the same value: Typst then re-lays out the document until it gives up with "layout did not converge", and it measured 2x slower.
+  // A meta line is dot-separated and ends in a year or Present; the trailing field goes right.
+  let meta-line = regex("·.*(\\d{4}|Present)\\s*$")
+
+  show par: it => {
+    let line = plain-text(it.body)
+    if line.find(meta-line) == none {
+      it
+    } else {
+      let parts = line.split(" · ")
+      // box, not a bare content block: the block would form a new paragraph, this rule would fire on its own output, and the second pass would split the already-composed line,
+      // gluing the middle field to the date. A grid instead of h(1fr) recurses the same way
+      // until Typst aborts with "maximum show rule depth exceeded".
+      box(width: 100%, mono(size: 8.5pt)[#parts.slice(0, -1).join(" · ")#h(1fr)#parts.last()])
+    }
   }
 
   grid(
@@ -114,11 +128,7 @@
   v(0.2em)
   line(length: 100%, stroke: 0.5pt + t.rule)
 
-  if toc {
-    outline(title: none, depth: 2)
-  }
-
-  doc
+  body
 
   v(0.9em)
   line(length: 100%, stroke: 0.5pt + t.rule)
@@ -126,6 +136,6 @@
   grid(
     columns: (1fr, auto),
     mono(size: 7.5pt)[#name · #role],
-    mono(size: 7.5pt)[#if date != none { date } else [References on request · live copy at noel.engineer]],
+    mono(size: 7.5pt)[#footer-note],
   )
 }

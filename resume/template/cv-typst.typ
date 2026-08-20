@@ -1,4 +1,4 @@
-// Needs macOS system fonts; will not run in typstmd (web), use cv-typstmd.typ there.
+// Faces are the ones typstmd's browser build ships, so this and cv-typstmd.typ render alike.
 // typst compile cv-typst.typ --input theme=dracula ../noel-ruault-cv-dracula.pdf
 
 #let palettes = (
@@ -8,9 +8,9 @@
     muted: rgb("#5a5c5e"),
     rule: rgb("#d9d9d9"),
     accent: rgb("#217a37"),
-    display: ("Helvetica Neue", "Helvetica", "Arial", "Libertinus Serif"),
-    body: ("Helvetica Neue", "Helvetica", "Arial", "Libertinus Serif"),
-    mono: ("Menlo", "DejaVu Sans Mono"),
+    display: ("Libertinus Serif",),
+    body: ("Libertinus Serif",),
+    mono: ("DejaVu Sans Mono",),
     mark: "block",
   ),
   aitelier: (
@@ -19,9 +19,9 @@
     muted: rgb("#6b625a"),
     rule: rgb("#d6c9b3"),
     accent: rgb("#7a1c1c"),
-    display: ("Optima", "Iowan Old Style", "Libertinus Serif"),
-    body: ("Iowan Old Style", "Libertinus Serif"),
-    mono: ("Menlo", "DejaVu Sans Mono"),
+    display: ("Libertinus Serif",),
+    body: ("Libertinus Serif",),
+    mono: ("DejaVu Sans Mono",),
     mark: "dot",
   ),
 )
@@ -258,11 +258,11 @@ PRs, a terminal UI for on-call triage, autonomous build-loop runners.
   column-gutter: 0.6em,
   row-gutter: 0.45em,
   ..skill("Reliability", [SLOs & perf budgets, incident response & on-call, observability (Grafana/Mimir, Datadog, Prometheus/PromQL), benchmark-gated change]),
-  ..skill("Cloud & infra", [AWS (EKS, EC2/ASG, IAM, Cost Explorer, SSM, Bedrock), Kubernetes, Terraform, GitOps/ArgoCD, HashiCorp Vault + External Secrets, Cloudflare, Docker]),
-  ..skill("CI/CD & release", [GitHub Actions, benchmark-gated merges, notarized multi-channel release pipelines, GitHub/GitLab Apps]),
+  ..skill("Cloud/infra", [AWS (EKS, EC2/ASG, IAM, Cost Explorer, SSM, Bedrock), Kubernetes, Terraform, GitOps/ArgoCD, HashiCorp Vault + External Secrets, Cloudflare, Docker]),
+  ..skill("CI/CD", [GitHub Actions, benchmark-gated merges, notarized multi-channel release pipelines, GitHub/GitLab Apps]),
   ..skill("Security", [AppSec, vulnerability discovery and remediation, CTF authoring, Cedar authorization (PoC), threat-informed review]),
   ..skill("Languages", [Go (primary), Swift, Bash, TypeScript/JavaScript, Python, Rust, Zig, C++, SQL (PostgreSQL)]),
-  ..skill("AI engineering", [Claude Code champion, agentic build systems, model routing, Amazon Bedrock]),
+  ..skill("AI systems", [Claude Code champion, agentic build systems, model routing, Amazon Bedrock]),
 )
 
 // ── Education ───────────────────────────────────────────────────────────────
