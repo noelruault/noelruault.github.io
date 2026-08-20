@@ -1,0 +1,11 @@
+{
+  "name": "noel-ruault-cv",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i cv.src.css -o cv.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "tailwindcss": "4.3.3"
+  }
+}

@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@source "./index.html";
+
+/* Palettes match the Typst templates in ./template so the web and PDF CVs stay one design. */
+@theme {
+  --color-paper: #ffffff;
+  --color-ink: #1b1c1e;
+  --color-muted: #5a5c5e;
+  --color-rule: #d9d9d9;
+  --color-accent: #217a37;
+
+  --font-display: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-mono: Menlo, ui-monospace, "SF Mono", monospace;
+}
+
+[data-theme="aitelier"] {
+  --color-paper: #f4ede2;
+  --color-ink: #1d1a17;
+  --color-muted: #6b625a;
+  --color-rule: #d6c9b3;
+  --color-accent: #7a1c1c;
+
+  --font-display: Optima, "Iowan Old Style", Palatino, Georgia, serif;
+  --font-body: "Iowan Old Style", Palatino, Georgia, serif;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 19mm;
+  }
+
+  /* Without this the accent rules and cream background drop out of the printed page. */
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
