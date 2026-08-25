@@ -5,7 +5,7 @@
 
 ## What we are building
 
-Five independent, self-contained website templates under `templates/`, plus a gallery index. Each template is a clean-room deep-copy of a reference site: we take its LAYOUT, GEOMETRY, SPACING RHYTHM, TYPE SCALE, MOTION and RESPONSIVE BEHAVIOR. We never take its content, assets or identity. Every section of the reference page becomes a namespaced, reusable component in the template. Verified headless with playwright, side by side against the live reference, at three widths.
+Six independent, self-contained website templates under `templates/`, plus a gallery index. Each template is a clean-room deep-copy of a reference site: we take its LAYOUT, GEOMETRY, SPACING RHYTHM, TYPE SCALE, MOTION and RESPONSIVE BEHAVIOR. We never take its content, assets or identity. Every section of the reference page becomes a namespaced, reusable component rendered from that template's config (Modularity contract below). Verified headless with playwright, side by side against the live reference, at three widths.
 
 | ticket | slug | reference | class prefix |
 |---|---|---|---|
@@ -14,6 +14,7 @@ Five independent, self-contained website templates under `templates/`, plus a ga
 | t30 | `cipher-tv` | https://cipher.tv/ | `ct-` |
 | t40 | `michaelgatt` | https://michaelgatt.com | `mg-` |
 | t50 | `likova` | https://likova.space | `lk-` |
+| t55 | `otsuka-air` | https://otsuka-air.jp | `oa-` |
 
 ## Clean-room rules (hard, every template)
 
@@ -23,6 +24,13 @@ Five independent, self-contained website templates under `templates/`, plus a ga
 - No source assets: no images, logos, fonts, illustrations, videos. Placeholders are CSS gradients, own inline SVG, solid blocks. Type uses system font stacks approximating the source's feel; no webfont fetching.
 - No source JS. Reimplement observed behavior (reveal, marquee, accordion, nav) as small vanilla JS per template.
 - Self-contained at runtime: zero external requests. Each template is one dir with `index.html`, built `style.css`, optional `main.js`.
+
+## Modularity contract (hard, every template including the gallery)
+
+- Everything mutable lives in `templates/<slug>/config.json`: brand name, nav items, every heading, paragraph, label and link, image/placeholder specs (gradient stops, inline-SVG params, alt text), theme tokens (colors, radii, accent), section order and each section's item lists.
+- Every section is a component: `templates/<slug>/components/<section>.mjs`, a pure function `(config) => html string`. A component holds structure, classes and wiring only; no copy, url, image or color literal hardcoded inside it.
+- Rendering happens at BUILD time: `bun run build` renders `index.html` from config + components, then builds the css. Build-time rendering keeps the no-JS guarantee (gate check) while making every template fully re-skinnable by editing config alone.
+- The gate's render-drift check (Harness contract) enforces that the committed `index.html` is exactly what the config renders.
 
 ## Method (per site, condensed from the proven component-RE loop)
 
@@ -38,7 +46,7 @@ Five independent, self-contained website templates under `templates/`, plus a ga
 
 - `templates/` is a bun workspace: `package.json`, `bun.lock`, tailwind v4, playwright as devDependency (`bunx playwright install chromium` once).
 - `templates/manifest.json`: array of built slugs. Every shipped template is added here; the gate iterates it.
-- `bun run build`: builds each slug's tailwind entry to `templates/<slug>/style.css` (built css is committed; gh-pages serves static files).
+- `bun run build`: renders each manifest slug's `index.html` from `config.json` + `components/` (Modularity contract; t05 adds this stage to the t00 harness), then builds its tailwind entry to `templates/<slug>/style.css`. Rendered html and built css are committed; gh-pages serves static files.
 - `bun run gate`: build, then `check.mjs` per manifest slug. Hard, local, deterministic checks per slug at widths 390, 768, 1440 against a local static server (Bun.serve on an ephemeral port):
   - zero console errors and zero pageerrors;
   - `document.body.scrollWidth <= window.innerWidth + 1` (no horizontal overflow);
@@ -48,7 +56,8 @@ Five independent, self-contained website templates under `templates/`, plus a ga
     zero targets and silently pass on nothing;
   - with `prefers-reduced-motion: reduce` emulated, content visible without scrolling tricks;
   - with JS disabled, content visible (noscript guard works);
-  - forbidden-identity scan: `document.title` + `document.body.innerText` match none of (case-insensitive): `fin.ai`, `intercom`, `posthog`, `cipher.tv`, `michaelgatt`, `likova`.
+  - forbidden-identity scan: `document.title` + `document.body.innerText` match none of (case-insensitive): `fin.ai`, `intercom`, `posthog`, `cipher.tv`, `michaelgatt`, `likova`, `otsuka`;
+  - render-drift check: re-render every manifest slug's `index.html` from its config + components and fail if the committed file differs (a hand-edit of rendered output is a defect).
 - `bun run compare <slug> <live-url>`: side-by-side evidence, NOT part of the gate (live network is flaky; a down site must not redden the gate). Screenshots local and live full-page at the three widths, writes composites to `.backups/webtemplates-verify/<slug>/`. The cycle LOOKS at the composites during the review gate and records a parity verdict (section order, grid geometry, spacing rhythm, breakpoint behavior, motion presence) in `review.md`. If the live fetch fails, note it and judge from the scraped evidence.
 
 ## Green gate (trust exit codes, from repo root)
@@ -65,7 +74,8 @@ The terminal `final-dod` ticket emits the literal phrase `backlog empty` ONLY wh
 
 - every backlog ticket is in built.md;
 - every group has been reviewed in-cycle and carries a `- reviewed <id> <sha>: …` line in `review.md`;
-- the full green gate passes end-to-end over all five templates plus the gallery;
+- the full green gate passes end-to-end over all six templates plus the gallery;
+- every template renders entirely from its `config.json`: render-drift check green, no mutable content hardcoded in components;
 - every template has a side-by-side parity verdict at 390/768/1440 recorded in `review.md`, with its effects inventory ticked off;
 - the forbidden-identity scan is clean on every template;
 - each template dir is self-contained (no external requests, no node_modules, built css committed).
