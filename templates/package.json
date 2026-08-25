@@ -1,0 +1,15 @@
+{
+  "name": "webtemplates",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun scripts/build.mjs",
+    "gate": "bun scripts/gate.mjs",
+    "compare": "bun scripts/compare.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "playwright": "^1.62.1"
+  }
+}
