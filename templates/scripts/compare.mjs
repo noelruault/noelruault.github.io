@@ -1,10 +1,14 @@
-import { mkdirSync } from "node:fs";
+import { existsSync, mkdirSync } from "node:fs";
 import { chromium } from "playwright";
 import { WIDTHS, serveDir } from "./check.mjs";
 
 const [slug, liveUrl] = process.argv.slice(2);
 if (!slug || !liveUrl) {
   console.error("usage: bun scripts/compare.mjs <slug> <live-url>");
+  process.exit(1);
+}
+if (!existsSync(`${slug}/index.html`)) {
+  console.error(`compare: ${slug}/index.html does not exist, build the template before comparing`);
   process.exit(1);
 }
 

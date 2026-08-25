@@ -42,7 +42,10 @@ Five independent, self-contained website templates under `templates/`, plus a ga
 - `bun run gate`: build, then `check.mjs` per manifest slug. Hard, local, deterministic checks per slug at widths 390, 768, 1440 against a local static server (Bun.serve on an ephemeral port):
   - zero console errors and zero pageerrors;
   - `document.body.scrollWidth <= window.innerWidth + 1` (no horizontal overflow);
-  - all reveal targets end visible after scrolling the page (observer fired);
+  - all reveal targets end visible after scrolling the page (observer fired). The gate finds reveal
+    targets by `[class*="reveal" i]` (case-insensitive substring match): name every reveal wrapper's
+    class so it contains "reveal" (e.g. `fa-reveal`), or the reveal/reduced-motion/no-js checks find
+    zero targets and silently pass on nothing;
   - with `prefers-reduced-motion: reduce` emulated, content visible without scrolling tricks;
   - with JS disabled, content visible (noscript guard works);
   - forbidden-identity scan: `document.title` + `document.body.innerText` match none of (case-insensitive): `fin.ai`, `intercom`, `posthog`, `cipher.tv`, `michaelgatt`, `likova`.
