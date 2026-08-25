@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "./components.css";
+@source "../";
+
+@theme {
+  --color-fa-paper: #f6f6f1;
+  --color-fa-cream: #f1eee9;
+  --color-fa-panel: #efece4;
+  --color-fa-ink: #111111;
+  --color-fa-mute: #5f5f5a;
+  --color-fa-line: #d9d7cf;
+  --color-fa-orange: #fe6e00;
+  --color-fa-ember: #e04d00;
+  --color-fa-blue: #0037fb;
+  --color-fa-bluepale: #f3f9ff;
+  --font-fa-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+  --font-fa-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-fa-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

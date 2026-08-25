@@ -1,0 +1,219 @@
+/* fin-ai template components. Everything namespaced fa-. */
+
+:root {
+  --fa-head-h: 94px;
+}
+
+body {
+  font-family: var(--font-fa-sans);
+  color: var(--color-fa-ink);
+  background: var(--color-fa-paper);
+}
+
+/* type scale, measured off the reference: display 6.25rem/.9 desktop, 3rem mobile */
+.fa-display {
+  font-family: var(--font-fa-serif);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 7vw, 6.25rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+}
+
+.fa-h2 {
+  font-family: var(--font-fa-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+}
+
+.fa-h3 {
+  font-family: var(--font-fa-serif);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+
+.fa-num {
+  font-family: var(--font-fa-serif);
+  font-size: clamp(1.5rem, 2.1vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  font-variant-numeric: oldstyle-nums;
+}
+
+.fa-label {
+  font-family: var(--font-fa-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fa-body {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #2d2d29;
+}
+
+.fa-body a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* buttons */
+.fa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.fa-btn-dark {
+  background: var(--color-fa-ink);
+  color: #fff;
+}
+
+.fa-btn-line {
+  border: 1px solid rgb(17 17 17 / 0.3);
+  background: transparent;
+  color: var(--color-fa-ink);
+}
+
+/* reveal-on-scroll; opacity keeps a short duration so the gate's 300ms settle sees it finished */
+.fa-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease-out, transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+  transition-delay: 0s, calc(var(--i, 0) * 60ms);
+}
+
+.fa-reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .fa-marquee-track {
+    animation: none !important;
+  }
+}
+
+/* event-photo marquee, duplicated track scrolled half its width */
+.fa-marquee-track {
+  animation: fa-marquee 45s linear infinite;
+}
+
+@keyframes fa-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* registration-mark squares on panel corners, as on the reference's figures */
+.fa-notch::before,
+.fa-notch::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #c9c7bf;
+}
+
+.fa-notch::before {
+  top: -3px;
+  left: -3px;
+}
+
+.fa-notch::after {
+  bottom: -3px;
+  right: -3px;
+}
+
+/* fixed hero curtain: the page body scrolls over the pinned hero */
+.fa-hero {
+  position: fixed;
+  top: var(--fa-head-h);
+  left: 0;
+  right: 0;
+  height: calc(85svh - var(--fa-head-h));
+  overflow: hidden;
+}
+
+@media (min-width: 64rem) {
+  .fa-hero {
+    height: min(65vh, 600px);
+  }
+}
+
+.fa-hero-spacer {
+  height: calc(85svh - var(--fa-head-h));
+}
+
+@media (min-width: 64rem) {
+  .fa-hero-spacer {
+    height: min(65vh, 600px);
+  }
+}
+
+/* nav dropdowns, CSS only */
+.fa-menu {
+  position: relative;
+}
+
+.fa-menu > div {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -0.75rem;
+  min-width: 13rem;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--color-fa-line);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+}
+
+.fa-menu:hover > div,
+.fa-menu:focus-within > div {
+  display: block;
+}
+
+.fa-menu > div a {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+}
+
+.fa-menu > div a:hover {
+  background: var(--color-fa-cream);
+}
+
+/* mobile nav panel */
+.fa-mobile-panel {
+  display: none;
+}
+
+.fa-nav-open .fa-mobile-panel {
+  display: block;
+}
+
+/* bar-chart bars inside the stat cards */
+.fa-bar {
+  width: 22%;
+  background: #e8e5dd;
+}
+
+.fa-bar-hot {
+  background: var(--color-fa-orange);
+}
