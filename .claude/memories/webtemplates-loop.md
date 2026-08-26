@@ -1,11 +1,11 @@
 ---
 name: webtemplates-loop
-description: loopctl loop "webtemplates" builds six clean-room, config-driven site templates under templates/ on branch feature/web-templates
+description: loopctl loop "webtemplates" builds seven clean-room, config-driven site templates under templates/ on branch feature/web-templates
 metadata:
   type: project
 ---
 
-Started 2026-08-25. loopctl loop `webtemplates` (configs in noelruault/loopctl `loops/webtemplates.{loop,prompt}`) builds six clean-room website templates into this repo under `templates/`, one dir per reference site: fin.ai, posthog.com, cipher.tv, michaelgatt.com, likova.space, otsuka-air.jp, plus a gallery index. Branch `feature/web-templates` (pushed), contract in `docs/webtemplates/spec.md`, account `--2` work (`--1` personal was org-disabled for Claude Code as of 2026-08-18, see arch-showcase log).
+Started 2026-08-25. loopctl loop `webtemplates` (configs in noelruault/loopctl `loops/webtemplates.{loop,prompt}`) builds seven clean-room website templates into this repo under `templates/`, one dir per reference site: fin.ai, posthog.com, cipher.tv, michaelgatt.com, likova.space, otsuka-air.jp, pi.dev, plus a gallery index. Branch `feature/web-templates` (pushed), contract in `docs/webtemplates/spec.md`, account `--2` work (`--1` personal was org-disabled for Claude Code as of 2026-08-18, see arch-showcase log).
 
 Modularity contract (Noel, 2026-08-25): every template fully modular, all mutable content (text, images/placeholders, theme tokens, section lists) in per-template `config.json`, sections as pure-function `components/*.mjs`, `index.html` rendered at BUILD time (keeps the no-JS gate guarantee), render-drift check in the gate. t10-fin-ai shipped before this contract; `t11-fin-ai-modular` retrofits it.
 

@@ -13,6 +13,7 @@ Every group is reviewed and repaired inside the cycle that built it (spec.md), s
 - [ ] `t40-michaelgatt` [d5] HUGE: same as t10 for https://michaelgatt.com into `templates/michaelgatt/` (prefix `mg-`). Acceptance: same as t10.
 - [ ] `t50-likova` [d5] HUGE: same as t10 for https://likova.space into `templates/likova/` (prefix `lk-`). Acceptance: same as t10.
 - [ ] `t55-otsuka` [d5] HUGE: same as t10 for https://otsuka-air.jp into `templates/otsuka-air/` (prefix `oa-`). Japanese-language reference: placeholder copy is our own (keep Japanese type feel via system JP font stacks like Hiragino/Yu Gothic if the design calls for it); confirm `otsuka` is in the forbidden-identity list in check.mjs. Acceptance: same as t10.
+- [ ] `t56-pi-dev` [d5] HUGE: same as t10 for https://pi.dev/ into `templates/pi-dev/` (prefix `pi-`); add `pi.dev` to the forbidden-identity list in check.mjs matching the literal domain, never the bare word "pi" (false positives). Acceptance: same as t10.
 - [ ] `t60-gallery` [d3]: `templates/index.html` gallery page, own design (not copied from any reference), config-driven per the modularity contract, one preview card per template linking into it, added to manifest and gated. Acceptance: gate green including the gallery.
 
 ## Terminal
