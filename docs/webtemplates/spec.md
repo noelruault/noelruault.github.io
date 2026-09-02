@@ -5,7 +5,7 @@
 
 ## What we are building
 
-Seven independent, self-contained website templates under `templates/`, plus a gallery index. Each template is a clean-room deep-copy of a reference site: we take its LAYOUT, GEOMETRY, SPACING RHYTHM, TYPE SCALE, MOTION and RESPONSIVE BEHAVIOR. We never take its content, assets or identity. Every section of the reference page becomes a namespaced, reusable component rendered from that template's config (Modularity contract below). Verified headless with playwright, side by side against the live reference, at three widths.
+Eight independent, self-contained website templates under `templates/`, plus a gallery index. Each template is a clean-room deep-copy of a reference site: we take its LAYOUT, GEOMETRY, SPACING RHYTHM, TYPE SCALE, MOTION and RESPONSIVE BEHAVIOR. We never take its content, assets or identity. Every section of the reference page becomes a namespaced, reusable component rendered from that template's config (Modularity contract below). Verified headless with playwright, side by side against the live reference, at three widths.
 
 | ticket | slug | reference | class prefix |
 |---|---|---|---|
@@ -16,6 +16,7 @@ Seven independent, self-contained website templates under `templates/`, plus a g
 | t50 | `likova` | https://likova.space | `lk-` |
 | t55 | `otsuka-air` | https://otsuka-air.jp | `oa-` |
 | t56 | `pi-dev` | https://pi.dev/ | `pi-` |
+| t57 | `charm-land` | https://charm.land/ | `ch-` |
 
 ## Clean-room rules (hard, every template)
 
@@ -57,7 +58,7 @@ Seven independent, self-contained website templates under `templates/`, plus a g
     zero targets and silently pass on nothing;
   - with `prefers-reduced-motion: reduce` emulated, content visible without scrolling tricks;
   - with JS disabled, content visible (noscript guard works);
-  - forbidden-identity scan: `document.title` + `document.body.innerText` match none of (case-insensitive): `fin.ai`, `intercom`, `posthog`, `cipher.tv`, `michaelgatt`, `likova`, `otsuka`, `pi.dev` (the literal domain, never the bare word "pi");
+  - forbidden-identity scan: `document.title` + `document.body.innerText` match none of (case-insensitive): `fin.ai`, `intercom`, `posthog`, `cipher.tv`, `michaelgatt`, `likova`, `otsuka`, `pi.dev` (the literal domain, never the bare word "pi"), `charm.land` (the literal domain, never the bare word "charm");
   - render-drift check: re-render every manifest slug's `index.html` from its config + components and fail if the committed file differs (a hand-edit of rendered output is a defect).
 - `bun run compare <slug> <live-url>`: side-by-side evidence, NOT part of the gate (live network is flaky; a down site must not redden the gate). Screenshots local and live full-page at the three widths, writes composites to `.backups/webtemplates-verify/<slug>/`. The cycle LOOKS at the composites during the review gate and records a parity verdict (section order, grid geometry, spacing rhythm, breakpoint behavior, motion presence) in `review.md`. If the live fetch fails, note it and judge from the scraped evidence.
 
@@ -75,7 +76,7 @@ The terminal `final-dod` ticket emits the literal phrase `backlog empty` ONLY wh
 
 - every backlog ticket is in built.md;
 - every group has been reviewed in-cycle and carries a `- reviewed <id> <sha>: …` line in `review.md`;
-- the full green gate passes end-to-end over all seven templates plus the gallery;
+- the full green gate passes end-to-end over all eight templates plus the gallery;
 - every template renders entirely from its `config.json`: render-drift check green, no mutable content hardcoded in components;
 - every template has a side-by-side parity verdict at 390/768/1440 recorded in `review.md`, with its effects inventory ticked off;
 - the forbidden-identity scan is clean on every template;
