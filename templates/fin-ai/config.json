@@ -1,0 +1,371 @@
+{
+  "sections": ["header", "hero", "reasons", "footerCta", "footer"],
+  "title": "Vela — the customer agent",
+  "description": "Vela is a customer agent that resolves support, sales and commerce conversations end to end.",
+  "brand": "Vela",
+  "theme": {
+    "knotGradient": ["#ffb27a", "#fe6e00", "#b83e00"]
+  },
+  "header": {
+    "announceDesktop": "Beacon lands Nov 12: a day on what AI is doing to customer teams.",
+    "announceMobile": "Join us at Beacon, Nov 12.",
+    "announceCta": "Save a seat",
+    "navGroups": [
+      { "label": "Product", "links": [
+        { "text": "Overview", "href": "#r01" },
+        { "text": "Customer agent", "href": "#r04" },
+        { "text": "Channels", "href": "#r08" },
+        { "text": "Analyze", "href": "#r15" }
+      ] },
+      { "label": "Technology", "links": [
+        { "text": "Our models", "href": "#r03" },
+        { "text": "Learning loop", "href": "#r12" },
+        { "text": "Research", "href": "#r19" }
+      ] },
+      { "label": "Integrations", "links": [
+        { "text": "Your stack", "href": "#r07" },
+        { "text": "Helpdesks", "href": "#r09" }
+      ] },
+      { "label": "Stories", "links": [
+        { "text": "Who uses Vela", "href": "#r02" },
+        { "text": "Deployment", "href": "#r18" }
+      ] },
+      { "label": "Resources", "links": [
+        { "text": "Playbook", "href": "#r17" },
+        { "text": "Events", "href": "#r20" }
+      ] }
+    ],
+    "pricingLink": { "text": "Pricing", "href": "#r21" },
+    "loginText": "Log in",
+    "salesText": "Talk to sales",
+    "tryText": "Try Vela free",
+    "demoText": "View demo",
+    "harborText": "Harbor →",
+    "mobileNav": [
+      { "text": "Product", "href": "#r01" },
+      { "text": "Technology", "href": "#r03" },
+      { "text": "Integrations", "href": "#r07" },
+      { "text": "Stories", "href": "#r02" },
+      { "text": "Resources", "href": "#r20" },
+      { "text": "Pricing", "href": "#r21" }
+    ]
+  },
+  "hero": {
+    "heading": "Every customer, answered like your best day",
+    "ctaDemo": "View demo",
+    "ctaTry": "Try Vela free"
+  },
+  "reasons": {
+    "introHeading": "22 reasons to bring in Vela",
+    "items": [
+      { "id": "r01", "num": "01", "layout": "chart-area",
+        "heading": "Vela resolves more conversations than any other customer agent",
+        "body": [
+          "Vela's resolution rate averages 74% across 9,000+ teams, and many of them see well over 80%.",
+          "Vela improves with every week it spends on the job. It now closes 1.6 million conversations a week, and its average resolution rate climbs every month."
+        ],
+        "aside": { "label": "[ 01.A ]", "caption": "Why an AI research lab picked Vela instead of building.", "gradient": ["#8d7f74", "#4a423c"] },
+        "chart": { "ariaLabel": "Resolution rate rising from 34% to 78% over three years" }
+      },
+      { "id": "r02", "num": "02", "layout": "logo-words",
+        "heading": "Vela is trusted by thousands of forward-looking teams",
+        "body": ["Our customers span software, retail, fintech and travel, from ten-person startups to global support orgs."],
+        "items": [
+          { "text": "Alderwood", "class": "font-fa-serif" },
+          { "text": "nimbus", "class": "font-semibold tracking-tight" },
+          { "text": "Copperline", "class": "font-fa-serif italic" },
+          { "text": "HALCYON", "class": "tracking-[0.18em]" },
+          { "text": "Fern&amp;Field", "class": "font-semibold" },
+          { "text": "Quill&nbsp;Co.", "class": "font-fa-serif" },
+          { "text": "northbeam", "class": "tracking-tight font-bold" },
+          { "text": "Tundra", "class": "font-fa-serif" }
+        ]
+      },
+      { "id": "r03", "num": "03", "layout": "stat-bars", "bgGradient": ["#fdf6e3", "#f9e9c8", "#f6d9a8"],
+        "heading": "Vela outperforms because the models underneath are ours",
+        "body": [
+          "Vela runs on Meridian and Meridian Flash, models trained on billions of real support interactions.",
+          "They are tuned for one job, customer conversations, which makes them faster, cheaper and more accurate at it."
+        ],
+        "barLabels": ["MERIDIAN", "MODEL B", "MODEL C", "MODEL D"],
+        "cards": [
+          { "statValue": "2.4%", "statLabel": "higher resolution rate", "bars": [92, 84, 86, 85] },
+          { "statValue": "0.5s", "statLabel": "quicker to the first token", "bars": [58, 74, 88, 70] },
+          { "statValue": "-61%", "statLabel": "fewer hallucinations", "bars": [96, 18, 64, 40] }
+        ]
+      },
+      { "id": "r04", "num": "04", "layout": "role-cards",
+        "heading": "One agent for the whole customer journey",
+        "body": [
+          "One customer-facing agent that carries context from the first question to the tenth renewal.",
+          "Service, sales or commerce: switch a role on and Vela already knows the moves."
+        ],
+        "aside": { "label": "[ 04.A ]", "caption": "See one conversation move from support to checkout.", "gradient": ["#f3a26d", "#a34e22"] },
+        "cards": [
+          { "title": "Vela for Service", "body": "Delivers resolutions, not deflections, on every support queue." },
+          { "title": "Vela for Sales", "body": "Qualifies, answers and books inbound leads end to end." },
+          { "title": "Vela for Commerce", "body": "Guides the whole shopping journey, cart to return label." }
+        ]
+      },
+      { "id": "r05", "num": "05", "layout": "counters",
+        "heading": "Vela ships improvements weekly",
+        "body": ["We ship at a pace that compounds: 218 product updates last year, 174 already this year."],
+        "counters": [
+          { "value": "218", "label": "Updates last year" },
+          { "value": "174", "label": "Updates this year" },
+          { "value": "3&#215;", "label": "Productivity target" }
+        ]
+      },
+      { "id": "r06", "num": "06", "layout": "dark-video",
+        "heading": "Vela resolves the hard cases, not just the FAQs",
+        "body": [
+          "Vela reads and writes to complicated third-party systems: it changes account records, moves refunds and files the paperwork.",
+          "Multi-step, policy-heavy, edge-case work is exactly where it pulls ahead."
+        ],
+        "aside": { "label": "[ 06.A ]", "caption": "Watch a five-system refund resolved in one thread." },
+        "gradient": ["#2b2622", "#4a3a30", "#1c1916"]
+      },
+      { "id": "r07", "num": "07", "layout": "icon-grid",
+        "heading": "Vela speaks to every system you already run",
+        "body": [
+          "Over MCP, connectors or plain API, Vela pulls in customer data and takes real actions.",
+          "Extend it with custom actions and workflows through a fully open platform."
+        ],
+        "items": [
+          { "text": "CRM" }, { "text": "Billing" }, { "text": "Orders" }, { "text": "Auth" }, { "text": "Data" }, { "text": "MCP" }
+        ]
+      },
+      { "kind": "testimonial",
+        "pre": "“Vela reads order status and delivery windows straight out of our commerce stack, so ",
+        "marked": "nobody sits in a queue",
+        "post": " to learn where their package is.”",
+        "name": "Maren Oduya", "role": "Senior CX Manager, Alderwood",
+        "gradient": ["#b9b4ac", "#6e6a63"]
+      },
+      { "id": "r08", "num": "08", "layout": "chip-list", "bgGradient": ["#fbe7d4", "#f9d9c0", "#f4c39e"],
+        "heading": "Vela is at home on every channel your customers use",
+        "body": [
+          "Voice, chat, email, messaging and social are all native, so the conversation happens wherever it starts.",
+          "Voice runs on Meridian Flash, a model built for low-latency conversation."
+        ],
+        "aside": { "label": "[ 08.A ]", "caption": "Hear Vela take a voice call.", "borderColor": "#c9a684", "labelColor": "#8a6a4c", "captionColor": "#6d523a" },
+        "items": [
+          { "text": "Voice" }, { "text": "Chat" }, { "text": "Email" }, { "text": "Messaging" }, { "text": "Social" }, { "text": "In-app" }
+        ]
+      },
+      { "id": "r09", "num": "09", "layout": "logo-grid",
+        "heading": "Bring your own helpdesk, Vela fits right in",
+        "body": ["Escalations land with a human carrying the whole story, whichever helpdesk you run, and setup needs no migration project."],
+        "items": [
+          { "text": "Deskly", "class": "font-fa-serif text-[19px]" },
+          { "text": "tickett", "class": "font-semibold text-[19px]" },
+          { "text": "SUPPORTA", "class": "tracking-[0.16em] text-[17px]" },
+          { "text": "Queue&amp;Co", "class": "font-fa-serif italic text-[19px]" }
+        ]
+      },
+      { "id": "r10", "num": "10", "layout": "kv-panel",
+        "heading": "Confidence comes standard: you hold the controls",
+        "body": ["Configure tone, behavior, knowledge and guardrails yourself, without an engineering ticket."],
+        "rows": [
+          { "label": "Tone of voice", "value": "Warm &#183; Concise" },
+          { "label": "Refund ceiling", "value": "$250 auto" },
+          { "label": "Escalation rule", "value": "Sentiment &lt; 0.3" },
+          { "label": "Knowledge sources", "value": "14 connected" }
+        ]
+      },
+      { "id": "r11", "num": "11", "layout": "badge-grid",
+        "heading": "Trust, safety and reliability are the foundation, not features",
+        "body": ["Designed to stay up, redundant at every layer, and built by a team that has run some of the most security-conscious systems in the industry."],
+        "items": [
+          { "text": "SOC 2 Type II" }, { "text": "ISO 27001" }, { "text": "GDPR" }, { "text": "99.99% uptime" }
+        ]
+      },
+      { "id": "r12", "num": "12", "layout": "flywheel",
+        "heading": "Every conversation leaves Vela a little sharper",
+        "body": ["Every conversation feeds a flywheel: Vela works, learns, and turns what it learned into recommendations you can accept in one click."],
+        "chart": { "ariaLabel": "Resolve, learn, improve cycle", "resolveLabel": "RESOLVE", "learnLabel": "LEARN", "improveLabel": "IMPROVE" }
+      },
+      { "kind": "testimonial",
+        "pre": "“Other vendors demoed beautifully, then wanted an engineering ticket for every tweak. ",
+        "marked": "Vela hands the dials to my team",
+        "post": ", which is why it won.”",
+        "name": "Ines Kovar", "role": "Growth Product Lead, Halcyon",
+        "gradient": ["#a8ada6", "#5c615a"]
+      },
+      { "id": "r13", "num": "13", "layout": "doc-panel",
+        "heading": "Vela studies your business until it thinks like you",
+        "body": ["Vela learns your goals, policies, rules and procedures, and that understanding lets it reason through multi-step problems the way your best agent would."],
+        "aside": { "label": "[ 13.A ]", "caption": "How teams encode policy into Vela in an afternoon.", "gradient": ["#7f8a74", "#3c463c"] },
+        "rows": [
+          { "tag": "DOC", "text": "Returns and exchanges policy", "status": "Learned" },
+          { "tag": "DOC", "text": "Shipping zones and cutoffs", "status": "Learned" },
+          { "tag": "SOP", "text": "Chargeback escalation procedure", "status": "Learned" },
+          { "tag": "SOP", "text": "VIP handling guidelines", "status": "In review" }
+        ]
+      },
+      { "id": "r14", "num": "14", "layout": "sim-panel",
+        "heading": "Every change is tested against yesterday&#8217;s conversations first",
+        "body": ["Run simulations, regression tests and manual inspections against real historical conversations before anything goes live."],
+        "label": "Simulation run &#183; 2,400 conversations",
+        "chips": [
+          { "text": "2,304 pass", "bg": "#dbe8d4", "color": "#3c5a34" },
+          { "text": "41 regressions", "bg": "#f4dcd2", "color": "#7a3b24" },
+          { "text": "55 flagged for review", "bg": "#e8e5dd", "color": "#5f5f5a" }
+        ]
+      },
+      { "id": "r15", "num": "15", "layout": "chart-line",
+        "heading": "See everything Vela does, and why it did it",
+        "body": ["Measure everything happening across your customer operations, with AI-powered insights, QA and alerts on what you care about most."],
+        "chart": { "ariaLabel": "Two observability metrics trending up", "legend1": "CSAT", "legend1Color": "#6b6b64", "legend2": "FIRST RESPONSE", "legend2Color": "#9b968a" }
+      },
+      { "id": "r16", "num": "16", "layout": "note-cards",
+        "heading": "Vela Conductor keeps the operation humming without you",
+        "body": ["Vela Conductor orchestrates the backstage work: it spots problems, finds improvements, and does the routine upkeep humans used to queue for."],
+        "aside": { "label": "[ 16.A ]", "caption": "Conductor triages a backlog spike, unattended." },
+        "cards": [
+          { "label": "Detected", "body": "Spike in delivery questions from one carrier region. Suggested macro drafted." },
+          { "label": "Automated", "body": "Nightly knowledge sync from your docs, with diffs held for approval." }
+        ]
+      },
+      { "id": "r17", "num": "17", "layout": "steps", "bgClass": "bg-fa-bluepale",
+        "gridClass": "grid gap-3 sm:grid-cols-4", "stepBorderClass": "border-t-2 border-fa-blue", "stepLabelClass": "text-fa-blue",
+        "heading": "Vela comes with a step-by-step playbook for AI transformation",
+        "body": ["We ran the transformation on ourselves before asking anyone else to, then repeated it with thousands of teams. Everything we learned is encoded in one practical guide."],
+        "steps": [
+          { "label": "Step 1", "text": "Baseline your funnel" },
+          { "label": "Step 2", "text": "Encode policy" },
+          { "label": "Step 3", "text": "Ship one queue" },
+          { "label": "Step 4", "text": "Expand and measure" }
+        ]
+      },
+      { "id": "r18", "num": "18", "layout": "steps",
+        "gridClass": "grid grid-cols-2 gap-3 sm:grid-cols-4", "stepBorderClass": "border-t border-fa-line", "stepLabelClass": "text-fa-mute",
+        "heading": "Results come from partnership, and we go deep",
+        "body": ["Deployment engineers sit with your team and tune Vela to your bespoke requirements. We treat customers as partners in the product."],
+        "steps": [
+          { "label": "Week 1", "text": "Connect systems" },
+          { "label": "Week 2", "text": "Shadow mode" },
+          { "label": "Week 3", "text": "First live queue" },
+          { "label": "Week 6", "text": "Majority coverage" }
+        ]
+      },
+      { "id": "r19", "num": "19", "layout": "link-cards",
+        "heading": "We publish our research, openly and early",
+        "body": ["What we learn goes public so the field moves faster: papers, benchmarks and reports the industry actually cites."],
+        "readMoreLabel": "Read more &#8594;",
+        "cards": [
+          { "tag": "Paper", "title": "How we built a production reranker" },
+          { "tag": "Report", "title": "The state of AI-first support, 2026" }
+        ]
+      },
+      { "id": "r20", "num": "20", "layout": "event-thumbs",
+        "heading": "Vela events deliver world-class teaching, big and small",
+        "body": [
+          "Everyone is trying to figure out this era at once, so we get in rooms with our customers and work it out together."
+        ],
+        "aside": { "label": "[ 20.A ]", "caption": "Beacon Summit keynote, in full.", "gradient": ["#5a5a8c", "#2c2c48"] },
+        "thumbs": [
+          { "gradient": ["#3a3a5e", "#1c1c30"], "label": "Beacon Summit" },
+          { "gradient": ["#7a4a3a", "#33201a"], "label": "Field workshops" },
+          { "gradient": ["#4a6a5a", "#1f2e27"], "label": "City dinners" }
+        ]
+      },
+      { "kind": "marquee",
+        "thumbs": [
+          { "gradient": ["#2c2c48", "#11111e"], "label": "Keynote" },
+          { "gradient": ["#6e4632", "#2a1a12"], "label": "Roundtable" },
+          { "gradient": ["#46586e", "#141c24"], "label": "Panel" },
+          { "gradient": ["#586e46", "#1a2414"], "label": "Workshop" },
+          { "gradient": ["#6e4658", "#24141c"], "label": "Live demo" }
+        ]
+      },
+      { "id": "r21", "num": "21", "layout": "pricing",
+        "heading": "Vela invented outcome-based pricing for customer agents",
+        "body": [
+          "You only pay when Vela actually resolves something. Alerts, caps and live reporting keep the spend in your hands.",
+          "As Vela shoulders more of the queue, the cost of support falls, and the savings fund more strategic work."
+        ],
+        "highlighted": { "label": "Outcome pricing", "price": "$0.90", "note": "per resolved conversation, nothing otherwise" },
+        "baseline": { "label": "The old way", "price": "$89", "note": "per seat, per month, resolved or not" }
+      },
+      { "kind": "testimonial",
+        "pre": "“Vela bet on outcome pricing ",
+        "marked": "long before the rest of the market moved",
+        "post": ", and every competitor has spent since then catching up.”",
+        "name": "Jonas Efremov", "role": "Editor, The Margin Letter",
+        "gradient": ["#b0a89c", "#5e584e"]
+      },
+      { "id": "r22", "num": "22", "layout": "finale",
+        "heading": "Vela has the clearest vision for what comes next",
+        "body": ["Three years ago we shipped the first customer agent and created the category. The next leap is making perfect customer experiences the default, for everyone."],
+        "figureText": "The customer agent era is just beginning",
+        "gradient": ["#f7b183", "#f08050", "#b34a20"]
+      }
+    ]
+  },
+  "footerCta": {
+    "heading": "Every customer, answered like your best day",
+    "ctaDemo": "View demo",
+    "ctaTry": "Try Vela free"
+  },
+  "footer": {
+    "columns": [
+      { "title": "Product", "links": [
+        { "text": "Home", "href": "#" },
+        { "text": "Overview", "href": "#r01" },
+        { "text": "The agent", "href": "#r04" },
+        { "text": "For sales", "href": "#r04" },
+        { "text": "For commerce", "href": "#r04" },
+        { "text": "Channels", "href": "#r08" },
+        { "text": "Reliability", "href": "#r11" },
+        { "text": "Integrations", "href": "#r07" },
+        { "text": "Voice", "href": "#r08" },
+        { "text": "Playbooks", "href": "#r13" },
+        { "text": "Insights", "href": "#r15" },
+        { "text": "Training", "href": "#r13" },
+        { "text": "Simulations", "href": "#r14" }
+      ] },
+      { "title": "AI technology", "links": [
+        { "text": "Engine room", "href": "#r03" },
+        { "text": "Models", "href": "#r03" },
+        { "text": "Platform API", "href": "#r07" },
+        { "text": "Research", "href": "#r19" }
+      ] },
+      { "title": "Solutions", "links": [
+        { "text": "Fintech", "href": "#" },
+        { "text": "Retail and commerce", "href": "#" },
+        { "text": "Software", "href": "#" },
+        { "text": "Enterprise", "href": "#" },
+        { "text": "Marketplaces", "href": "#" }
+      ] },
+      { "title": "Resources", "links": [
+        { "text": "Customers", "href": "#r02" },
+        { "text": "Startups", "href": "#" },
+        { "text": "Beacon", "href": "#r20" },
+        { "text": "Webinars", "href": "#" },
+        { "text": "Changelog", "href": "#" },
+        { "text": "Docs and help", "href": "#" },
+        { "text": "Security", "href": "#r11" },
+        { "text": "Deployment", "href": "#r18" },
+        { "text": "Transformation playbook", "href": "#r17" },
+        { "text": "Research library", "href": "#r19" }
+      ] },
+      { "title": "Vela in action", "links": [
+        { "text": "Watch a demo", "href": "#" },
+        { "text": "Try it free", "href": "#" },
+        { "text": "Talk to sales", "href": "#" },
+        { "text": "Sign in", "href": "#" }
+      ], "extra": { "title": "The company", "links": [
+        { "text": "About us", "href": "#" },
+        { "text": "Join us", "href": "#" }
+      ] } }
+    ],
+    "copyright": "&#169; 2026 Vela Systems",
+    "legalLinks": [
+      { "text": "Privacy", "href": "#" },
+      { "text": "Terms", "href": "#" },
+      { "text": "Security", "href": "#" },
+      { "text": "Status", "href": "#" }
+    ]
+  }
+}
