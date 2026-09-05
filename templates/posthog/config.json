@@ -1,0 +1,591 @@
+{
+  "sections": [
+    "menubar",
+    "desktopIcons",
+    "window",
+    "toasts"
+  ],
+  "windowSections": [
+    "hero",
+    "tabs",
+    "tools",
+    "logos",
+    "data",
+    "pricing",
+    "why",
+    "reading",
+    "cta"
+  ],
+  "title": "Burrow – Product analytics on autopilot",
+  "description": "Burrow watches how people use your product, then fixes what it finds. Analytics, replays, flags and experiments in one place.",
+  "brand": "Burrow",
+  "theme": {
+    "wallpaper": [
+      "#7d9e5e",
+      "#8fb06d",
+      "#6c8f4e"
+    ],
+    "posterGradient": [
+      "#e9e11f",
+      "#cfc708"
+    ],
+    "boxGradient": [
+      "#f4f4f0",
+      "#d9d9d2"
+    ]
+  },
+  "menubar": {
+    "menus": [
+      "Products",
+      "Pricing",
+      "Docs",
+      "Community",
+      "Company",
+      "More"
+    ],
+    "cta": "Start free",
+    "searchLabel": "Search",
+    "helpLabel": "Help",
+    "accountLabel": "Account",
+    "mobileMenuLabel": "Open menu"
+  },
+  "desktopIcons": {
+    "left": [
+      {
+        "icon": "home",
+        "label": "Home"
+      },
+      {
+        "icon": "rocket",
+        "label": "Autopilot"
+      },
+      {
+        "icon": "vault",
+        "label": "Data vault"
+      },
+      {
+        "icon": "tag",
+        "label": "Pricing"
+      },
+      {
+        "icon": "book",
+        "label": "Docs"
+      },
+      {
+        "icon": "screen",
+        "label": "Demo"
+      },
+      {
+        "icon": "person",
+        "label": "Talk to a human"
+      }
+    ],
+    "right": [
+      {
+        "icon": "flag",
+        "label": "About us"
+      },
+      {
+        "icon": "scroll",
+        "label": "Changelog"
+      },
+      {
+        "icon": "folder",
+        "label": "Handbook"
+      },
+      {
+        "icon": "cart",
+        "label": "Store"
+      },
+      {
+        "icon": "person",
+        "label": "Join us"
+      },
+      {
+        "icon": "trash",
+        "label": "Trash"
+      }
+    ]
+  },
+  "window": {
+    "maximizeLabel": "Maximize window",
+    "closeLabel": "Close window",
+    "restoreHint": "Click Home to reopen"
+  },
+  "hero": {
+    "heading": "Put your product on",
+    "headingHighlight": "autopilot",
+    "p1": "Burrow already sees who your users are, what they click, and where they get stuck.",
+    "p2Lead": "Now it goes further: it",
+    "p2Marks": [
+      "spots regressions",
+      "patches bugs",
+      "opens pull requests"
+    ],
+    "p2Tail": "– all",
+    "p2Squiggle": "before you even ask.",
+    "p3": "Trusted by 400,000+ teams building better software.",
+    "cardTitle": "Get started",
+    "cardWeb": "Sign up in the browser",
+    "command": "npx @burrow/wizard autopilot",
+    "copyLabel": "Copy command",
+    "supports": "Works with Next.js, React, Python, and",
+    "supportsMore": "20 more"
+  },
+  "tabs": {
+    "items": [
+      {
+        "tab": "Ask Burrow anything",
+        "toggles": [
+          "Web",
+          "Chat"
+        ],
+        "eyebrow": "Burrow AI",
+        "heading": "Ask Burrow anything",
+        "paragraphs": [
+          "Burrow stitches 200+ analysis tools together on the fly to answer any question about how people use your product.",
+          "Pipe in outside data too, so you see the full picture instead of a partial one."
+        ],
+        "cta": "Get started – free",
+        "mock": "ask",
+        "mockAsk": {
+          "title": "What would you like to know about your users?",
+          "tagline": "Ship things people actually want.",
+          "placeholder": "Type a question / for commands",
+          "pillAuto": "Auto",
+          "pillContext": "Add context",
+          "chips": [
+            "Product analytics",
+            "SQL",
+            "Session replay",
+            "SDK setup",
+            "Feature flags",
+            "Experiments",
+            "Surveys",
+            "Docs"
+          ]
+        }
+      },
+      {
+        "tab": "Squash bugs from chat",
+        "toggles": [
+          "Chat",
+          "Desktop"
+        ],
+        "eyebrow": "Burrow in your chat",
+        "heading": "Fix issues without leaving chat",
+        "paragraphs": [
+          "Mention Burrow in a thread to dig into customer behavior or open a pull request, right where the conversation is happening.",
+          "Triage, investigate and ship without switching tools."
+        ],
+        "cta": "Explore the chat integration",
+        "mock": "chat",
+        "mockChat": [
+          {
+            "author": "Maya",
+            "text": "the pricing page footer link 404s on /guides/setup"
+          },
+          {
+            "author": "Tom",
+            "text": "whoops — @Burrow can you sort this?"
+          },
+          {
+            "author": "Burrow",
+            "text": "Found it. Line 12 points at a page we renamed last week. Opening a PR with the fix now.",
+            "bot": true
+          }
+        ]
+      },
+      {
+        "tab": "Hands-free improvements",
+        "toggles": [
+          "Web",
+          "Desktop",
+          "Chat"
+        ],
+        "eyebrow": "Burrow Inbox",
+        "heading": "Improvements, ready to review",
+        "paragraphs": [
+          "Your inbox groups related findings into ranked reports. Approve a proposed change and it ships as a pull request.",
+          "You stay in charge; the busywork does itself."
+        ],
+        "cta": "Explore Inbox",
+        "mock": "inbox",
+        "mockInbox": [
+          {
+            "title": "Checkout drop-off up 12% on mobile",
+            "pill": "High",
+            "tone": "hot"
+          },
+          {
+            "title": "Signup form: field order confuses users",
+            "pill": "Medium",
+            "tone": "warm"
+          },
+          {
+            "title": "Docs search returns stale results",
+            "pill": "Low",
+            "tone": "cool"
+          }
+        ]
+      }
+    ]
+  },
+  "tools": {
+    "label": "Batteries included for every agent:",
+    "items": [
+      {
+        "name": "Product analytics",
+        "icon": "bars",
+        "color": "#2f80fa"
+      },
+      {
+        "name": "Web analytics",
+        "icon": "globe",
+        "color": "#36c46f"
+      },
+      {
+        "name": "Session replay",
+        "icon": "play",
+        "color": "#f7a501"
+      },
+      {
+        "name": "Feature flags",
+        "icon": "toggle",
+        "color": "#29b2db"
+      },
+      {
+        "name": "Experiments",
+        "icon": "flask",
+        "color": "#b02fd6"
+      },
+      {
+        "name": "Surveys",
+        "icon": "bubble",
+        "color": "#e92f2f"
+      },
+      {
+        "name": "Error tracking",
+        "icon": "warn",
+        "color": "#f1a82c"
+      },
+      {
+        "name": "Data vault",
+        "icon": "cylinder",
+        "color": "#c170e8"
+      },
+      {
+        "name": "Pipelines",
+        "icon": "pipe",
+        "color": "#43b6e7"
+      },
+      {
+        "name": "Workflows",
+        "icon": "branch",
+        "color": "#36c46f"
+      },
+      {
+        "name": "Logs",
+        "icon": "lines",
+        "color": "#8d8d8d"
+      },
+      {
+        "name": "AI observability",
+        "icon": "spark",
+        "color": "#f54e00"
+      },
+      {
+        "name": "Endpoints",
+        "icon": "plug",
+        "color": "#2f80fa"
+      },
+      {
+        "name": "Inbox",
+        "icon": "tray",
+        "color": "#f7a501"
+      },
+      {
+        "name": "Traces",
+        "icon": "route",
+        "color": "#b02fd6"
+      },
+      {
+        "name": "Heatmaps",
+        "icon": "grid",
+        "color": "#e92f2f"
+      },
+      {
+        "name": "Replay AI",
+        "icon": "eye",
+        "color": "#29b2db"
+      },
+      {
+        "name": "Visual A/B tests",
+        "icon": "split",
+        "color": "#36c46f"
+      }
+    ]
+  },
+  "logos": {
+    "heading": "Proof we're not making it up",
+    "sub": "Real companies run us in production – not just one curious engineer on a free trial.",
+    "leftLabel": "Colorful logos",
+    "rightLabel": "\"Serious\" logos",
+    "swapLabel": "Swap logo panes",
+    "openCta": "Open customers",
+    "colorful": [
+      {
+        "name": "Acornly",
+        "color": "#f54e00",
+        "mark": "dot"
+      },
+      {
+        "name": "Bramblewick",
+        "color": "#2f80fa",
+        "mark": "square"
+      },
+      {
+        "name": "Cindervale",
+        "color": "#b02fd6",
+        "mark": "spark"
+      },
+      {
+        "name": "Fernbase",
+        "color": "#36c46f",
+        "mark": "leaf"
+      },
+      {
+        "name": "Mosscode",
+        "color": "#0f9b8e",
+        "mark": "chevrons"
+      },
+      {
+        "name": "Nutmeg AI",
+        "color": "#f7a501",
+        "mark": "dot"
+      },
+      {
+        "name": "Pebbleworks",
+        "color": "#e92f2f",
+        "mark": "square"
+      },
+      {
+        "name": "Quillstack",
+        "color": "#43b6e7",
+        "mark": "spark"
+      },
+      {
+        "name": "Rootline",
+        "color": "#6aa84f",
+        "mark": "chevrons"
+      },
+      {
+        "name": "Twigline",
+        "color": "#c23d00",
+        "mark": "leaf"
+      }
+    ],
+    "sleek": [
+      {
+        "name": "AEROFERN",
+        "mark": "square"
+      },
+      {
+        "name": "Birchmark",
+        "mark": "dot"
+      },
+      {
+        "name": "COPPICE",
+        "mark": "chevrons"
+      },
+      {
+        "name": "Dewpoint Labs",
+        "mark": "leaf"
+      },
+      {
+        "name": "Elmworks",
+        "mark": "spark"
+      },
+      {
+        "name": "Galehollow",
+        "mark": "square"
+      },
+      {
+        "name": "Ivyline Systems",
+        "mark": "dot"
+      },
+      {
+        "name": "Marrowgate",
+        "mark": "chevrons"
+      },
+      {
+        "name": "OAKSPUR",
+        "mark": "leaf"
+      },
+      {
+        "name": "Thistledown",
+        "mark": "spark"
+      }
+    ]
+  },
+  "data": {
+    "heading": "All your context,",
+    "headingHighlight": "in one place",
+    "cardTitleLead": "Built-in, every plan",
+    "cardTitleMark": "ships",
+    "cardTitleTail": "with:",
+    "cardItems": [
+      "A full data warehouse",
+      "100+ sources & destinations",
+      "SQL editor + dashboards",
+      "Live user activity feed",
+      "API & webhooks"
+    ],
+    "p1Lead": "Whether a human or an agent is asking, answers are only as good as the",
+    "p1Italic": "whole",
+    "p1Tail": "story behind them.",
+    "p2": "Everything lands in one queryable store, so humans, agents and dashboards all read from one source. That includes:",
+    "bullets": [
+      "Rows from 100+ outside tools like your billing, CRM and database",
+      "Signals from every other Burrow feature, replays and experiments included"
+    ],
+    "p3": "The evidence your agents need is already here. Turn \"tell me what broke\" into \"here's the fix, approve it.\"",
+    "link": "Connect your first source"
+  },
+  "pricing": {
+    "heading": "Pay only for what you use",
+    "p1": "Pricing is not something you should lose sleep over.",
+    "p2": "Every paid product is metered, with a generous free tier that resets monthly. Most of our customers never pay a cent.",
+    "p3": "At scale we aim to be the cheapest option on the table. No discovery calls, no custom quotes, no surprises.",
+    "p4": "A few examples of how the meter runs:",
+    "colProduct": "Product",
+    "colFree": "Free tier",
+    "colPrice": "Pricing (drops with volume)",
+    "rows": [
+      {
+        "icon": "bars",
+        "color": "#2f80fa",
+        "product": "Product analytics",
+        "free": "1 million events/mo",
+        "price": "$0.00004/event"
+      },
+      {
+        "icon": "play",
+        "color": "#f7a501",
+        "product": "Session replay",
+        "free": "5,000 recordings/mo",
+        "price": "$0.004/recording"
+      },
+      {
+        "icon": "toggle",
+        "color": "#29b2db",
+        "product": "Feature flags",
+        "free": "1 million requests/mo",
+        "price": "$0.0001/request"
+      },
+      {
+        "icon": "cylinder",
+        "color": "#c170e8",
+        "product": "Data vault",
+        "free": "1 million rows/mo",
+        "price": "$0.00002/row"
+      }
+    ],
+    "link": "Explore pricing"
+  },
+  "why": {
+    "heading": "Why pick Burrow?",
+    "intro": "A few ways we do things differently:",
+    "bullets": [
+      {
+        "lead": "Open by default.",
+        "text": "Our handbook, roadmap and strategy are public reading.",
+        "links": [
+          "handbook",
+          "roadmap",
+          "strategy"
+        ]
+      },
+      {
+        "lead": "We ship weekly.",
+        "text": "The changelog never sleeps.",
+        "links": [
+          "changelog"
+        ]
+      },
+      {
+        "lead": "Support that codes.",
+        "text": "Everyone answering tickets has shipped production software.",
+        "links": [
+          "support team"
+        ]
+      }
+    ],
+    "link": "More about the team"
+  },
+  "reading": {
+    "heading": "Late-night reading",
+    "intro": "Still scrolling? A few links worth your insomnia:",
+    "links": [
+      "watch-the-demo.mov",
+      "Technical docs",
+      "API reference",
+      "Ask us anything",
+      "How our teams are organized"
+    ]
+  },
+  "cta": {
+    "heading": "The hard sell",
+    "sub": "If nothing above convinced you, maybe these time-honored marketing moves will.",
+    "ecoPill": "Eco-friendly",
+    "product": "Burrow Web",
+    "productSub": "Digital download*",
+    "burst": [
+      "Not",
+      "endorsed",
+      "by anyone",
+      "famous"
+    ],
+    "boxBrand": "Burrow",
+    "boxTitle": "Burrow 3000",
+    "boxTag": "The analytics suite your gran warned you about",
+    "ribbon": "Leader",
+    "ribbonSub": "Small burrows, spring 2026",
+    "cloudLabel": "Select your cloud",
+    "clouds": [
+      "US (Oregon)",
+      "EU (Dublin)"
+    ],
+    "startsAt": "Starts at:",
+    "strike": "$0",
+    "free": "Free",
+    "scarcity": "stock strictly unlimited!!",
+    "button": "Get started",
+    "hurryLead": "Hurry:",
+    "hurryCount": "1,847",
+    "hurryMid": "teams signed up",
+    "hurryToday": "today",
+    "hurryTail": "Move fast and save a whole $0 at checkout.",
+    "footnote": "*Burrow runs in your browser and cannot be installed from a CD. The box is purely for vibes.",
+    "counter": "04127349"
+  },
+  "toasts": [
+    {
+      "kind": "cookie",
+      "title": "The obligatory cookie banner",
+      "p1": "We set exactly one first-party cookie so the app remembers who you are. Nothing gets sold, shared, or creepily retargeted.",
+      "p2": "(Your snacks are safe.)",
+      "closeLabel": "Dismiss cookie notice"
+    },
+    {
+      "kind": "poster",
+      "title": "The Burrow",
+      "sub": "A gripping documentary about dashboards.",
+      "posterEyebrow": "NOW STREAMING NOWHERE",
+      "posterTitle": "THE BURROW",
+      "posterCredits": "STARRING A MOLE · BASED ON A TRUE BACKLOG · RATED G FOR GRAPHS",
+      "playLabel": "Play trailer",
+      "closeLabel": "Dismiss poster"
+    }
+  ]
+}

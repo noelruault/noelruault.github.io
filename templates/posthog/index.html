@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burrow – Product analytics on autopilot</title>
+<meta name="description" content="Burrow watches how people use your product, then fixes what it finds. Analytics, replays, flags and experiments in one place.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="ph-desktop h-dvh overflow-hidden font-ph-sans text-ph-ink antialiased">
+
+<header class="ph-menubar fixed inset-x-2 top-2 z-40 flex h-10 items-center gap-1 rounded-md px-2">
+  <a href="#" class="flex items-center gap-1 px-2 text-ph-ink" aria-label="Burrow home"><svg width="26" height="22" viewBox="0 0 26 22" aria-hidden="true"><path d="M2 20 L12 4 L16 11 L19 6 L24 20 Z" fill="currentColor"/><circle cx="12" cy="4" r="2.4" fill="#f54e00"/></svg></a>
+  <nav class="hidden items-center md:flex" aria-label="Main">
+    <button type="button" class="ph-menu-item rounded px-2.5 py-1 text-[14px]">Products</button>
+    <button type="button" class="ph-menu-item rounded px-2.5 py-1 text-[14px]">Pricing</button>
+    <button type="button" class="ph-menu-item rounded px-2.5 py-1 text-[14px]">Docs</button>
+    <button type="button" class="ph-menu-item rounded px-2.5 py-1 text-[14px]">Community</button>
+    <button type="button" class="ph-menu-item rounded px-2.5 py-1 text-[14px]">Company</button>
+    <button type="button" class="ph-menu-item rounded px-2.5 py-1 text-[14px]">More</button>
+  </nav>
+  <button type="button" class="ph-mobile-menu-btn flex items-center gap-1 rounded px-1.5 py-1 md:hidden" aria-label="Open menu" aria-expanded="false"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+  <div class="ph-mobile-menu absolute left-2 top-11 z-50 hidden w-48 rounded-md p-1 md:hidden">
+    <a href="#" class="block rounded px-3 py-1.5 text-[14px]">Products</a>
+    <a href="#" class="block rounded px-3 py-1.5 text-[14px]">Pricing</a>
+    <a href="#" class="block rounded px-3 py-1.5 text-[14px]">Docs</a>
+    <a href="#" class="block rounded px-3 py-1.5 text-[14px]">Community</a>
+    <a href="#" class="block rounded px-3 py-1.5 text-[14px]">Company</a>
+    <a href="#" class="block rounded px-3 py-1.5 text-[14px]">More</a>
+  </div>
+  <div class="ml-auto flex items-center gap-2">
+    <a href="#" class="ph-btn-amber rounded-md px-3 py-1 text-[14px] font-bold">Start free</a>
+    <button type="button" class="p-1.5" aria-label="Search"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l4.2 4.2"/></svg></button>
+    <button type="button" class="hidden p-1.5 sm:block" aria-label="Help"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1" y="1" width="15" height="15" rx="3"/><path d="M6.4 6.2a2.1 2.1 0 1 1 2.7 2c-.6.2-.9.6-.9 1.2v.4"/><circle cx="8.3" cy="12" r=".9" fill="currentColor" stroke="none"/></svg></button>
+    <button type="button" class="p-1.5" aria-label="Account"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="9" r="7.5"/><circle cx="9" cy="7" r="2.6"/><path d="M3.8 14.6c1-2.2 2.9-3.3 5.2-3.3s4.2 1.1 5.2 3.3"/></svg></button>
+  </div>
+</header>
+<div class="pointer-events-none fixed inset-y-14 inset-x-2 z-10 hidden justify-between lg:flex" aria-hidden="false">
+  <div class="pointer-events-auto flex flex-col items-center gap-5 pl-4 pt-3">
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="home">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 20 L20 8 L34 20 M10 17v14h20V17" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Home</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="rocket">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M20 6c5 3 7 9 7 14l4 6-6-1c-1.5 2-3.5 3-5 3s-3.5-1-5-3l-6 1 4-6c0-5 2-11 7-14z" fill="none"/><circle cx="20" cy="16" r="3" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Autopilot</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="vault">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><ellipse cx="20" cy="10" rx="12" ry="4.5" fill="none"/><path d="M8 10v18c0 2.5 5.4 4.5 12 4.5s12-2 12-4.5V10" fill="none"/><path d="M8 19c0 2.5 5.4 4.5 12 4.5s12-2 12-4.5" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Data vault</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="tag">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 18 L18 6h10v10L16 28z" fill="none"/><circle cx="23" cy="11" r="2.2" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Pricing</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="book">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M8 8h10a4 4 0 0 1 4 4v18a4 4 0 0 0-4-4H8zM32 8H22a2 2 0 0 0-2 2" fill="none"/><path d="M32 8v18h-9" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Docs</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="screen">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="6" y="8" width="28" height="18" rx="2" fill="none"/><path d="M16 32h8M20 26v6M16 13l6 4.5-6 4.5z" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Demo</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="person">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="12" r="5" fill="none"/><path d="M9 32c1.6-6 5.8-9 11-9s9.4 3 11 9" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Talk to a human</span>
+</a>
+  </div>
+  <div class="pointer-events-auto flex flex-col items-center gap-5 pr-4 pt-3">
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="flag">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 6v28M10 8h18l-4 5 4 5H10" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">About us</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="scroll">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 6h16a3 3 0 0 1 3 3v2h-6M12 6a3 3 0 0 0-3 3v22a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V11M14 15h10M14 20h10M14 25h7" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Changelog</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="folder">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 12a3 3 0 0 1 3-3h8l3 4h11a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Handbook</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="cart">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 8h4l4 16h14l4-12H12" fill="none"/><circle cx="16" cy="30" r="2.5" fill="none"/><circle cx="28" cy="30" r="2.5" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Store</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="person">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="12" r="5" fill="none"/><path d="M9 32c1.6-6 5.8-9 11-9s9.4 3 11 9" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Join us</span>
+</a>
+    <a href="#" class="ph-desk-icon flex w-[76px] flex-col items-center gap-1.5" data-icon="trash">
+  <span class="ph-desk-glyph flex h-11 w-11 items-center justify-center rounded-md">
+    <svg width="40" height="40" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 12h20l-2 20a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2zM8 12h24M16 12V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3M16 17v12M20 17v12M24 17v12" fill="none"/></svg>
+  </span>
+  <span class="ph-desk-label text-center text-[12.5px] leading-tight">Trash</span>
+</a>
+  </div>
+</div>
+<main class="ph-window absolute inset-x-2 bottom-0 top-[70px] z-20 mx-auto max-w-[1140px] overflow-hidden rounded-t-lg lg:inset-x-[150px]">
+  <div class="absolute right-3 top-3 z-30 flex items-center gap-2.5 text-ph-sub">
+    <button type="button" class="ph-win-max hidden lg:block" aria-label="Maximize window"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1" y="1" width="11" height="11" rx="1.5"/></svg></button>
+    <button type="button" class="ph-win-close" aria-label="Close window"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1.5 1.5l10 10M11.5 1.5l-10 10"/></svg></button>
+  </div>
+  <div class="ph-window-scroll h-full overflow-y-auto overflow-x-hidden overscroll-contain">
+    <div class="mx-auto max-w-[980px] space-y-12 px-5 pb-16 pt-12 sm:px-10 lg:px-12">
+<section class="text-center xl:text-left">
+  <div class="mb-8 flex items-center justify-center gap-2 xl:justify-start">
+    <svg width="34" height="28" viewBox="0 0 26 22" aria-hidden="true"><path d="M2 20 L12 4 L16 11 L19 6 L24 20 Z" fill="currentColor"/><circle cx="12" cy="4" r="2.4" fill="#f54e00"/></svg>
+    <span class="text-[26px] font-extrabold tracking-tight">Burrow</span>
+  </div>
+  <div class="grid items-start gap-8 xl:grid-cols-[1fr_360px]">
+    <div class="min-w-0">
+      <h1 class="ph-h1 mx-auto max-w-[16em] xl:mx-0">Put your product on <mark class="ph-mark-blue">autopilot</mark></h1>
+      <p class="mx-auto mt-6 max-w-[34em] text-[18px] leading-relaxed text-ph-sub xl:mx-0">Burrow already sees who your users are, what they click, and where they get stuck.</p>
+      <p class="mx-auto mt-5 max-w-[34em] text-[18px] leading-relaxed text-ph-sub xl:mx-0">Now it goes further: it <mark class="ph-mark">spots regressions</mark>, <mark class="ph-mark">patches bugs</mark>, and <mark class="ph-mark">opens pull requests</mark> – all <span class="ph-squiggle">before you even ask.</span></p>
+      <p class="mx-auto mt-5 max-w-[34em] text-[18px] leading-relaxed text-ph-sub xl:mx-0">Trusted by 400,000+ teams building better software.</p>
+    </div>
+    <div class="ph-card mx-auto w-full max-w-[380px] rounded-md text-left">
+      <div class="flex items-center justify-between border-b border-ph-line px-4 py-2.5">
+        <span class="text-[15px] font-bold">Get started</span>
+        <a href="#" class="text-[13px] font-semibold underline underline-offset-2">Sign up in the browser ↗</a>
+      </div>
+      <div class="px-4 py-3">
+        <div class="flex items-center justify-between gap-2 rounded border border-ph-line bg-ph-panel px-3 py-2 font-ph-mono text-[13px]">
+          <span><span class="text-ph-blue">npx</span> <span class="text-ph-red">@burrow/wizard autopilot</span></span>
+          <button type="button" class="ph-copy-btn shrink-0 text-ph-sub" aria-label="Copy command" data-command="npx @burrow/wizard autopilot"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M10 4V2.5A1.5 1.5 0 0 0 8.5 1h-6A1.5 1.5 0 0 0 1 2.5v6A1.5 1.5 0 0 0 2.5 10H4"/></svg></button>
+        </div>
+        <p class="mt-2.5 text-[13px] text-ph-sub">Works with Next.js, React, Python, and <a href="#" class="font-semibold underline underline-offset-2">20 more</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ph-tabs">
+  <div class="flex overflow-x-auto" role="tablist">
+    <button type="button" role="tab" aria-selected="true" data-tab="0" class="ph-tab ph-tab-active shrink-0 grow rounded-t-md px-4 py-3 text-[14.5px] font-semibold">Ask Burrow anything</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="1" class="ph-tab shrink-0 grow rounded-t-md px-4 py-3 text-[14.5px] font-semibold">Squash bugs from chat</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="2" class="ph-tab shrink-0 grow rounded-t-md px-4 py-3 text-[14.5px] font-semibold">Hands-free improvements</button>
+  </div>
+  <div class="ph-tab-panel rounded-b-md p-4 sm:p-6" data-panel="0">
+    <div class="mb-4 flex justify-center gap-1">
+      <span class="ph-toggle ph-toggle-active">Web</span>
+      <span class="ph-toggle">Chat</span>
+    </div>
+    <div class="grid items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <div class="ph-mock rounded-md p-4 sm:p-6">
+  <div class="mx-auto max-w-[430px] rounded-md border border-ph-line bg-ph-paper p-5 text-center shadow-sm">
+    <div class="flex justify-center"><svg width="28" height="23" viewBox="0 0 26 22" aria-hidden="true"><path d="M2 20 L12 4 L16 11 L19 6 L24 20 Z" fill="currentColor"/><circle cx="12" cy="4" r="2.4" fill="#f54e00"/></svg></div>
+    <p class="mt-3 text-[17px] font-bold">What would you like to know about your users?</p>
+    <p class="mt-1 text-[13px] italic text-ph-sub">Ship things people actually want.</p>
+    <div class="mt-4 rounded border border-ph-line bg-white px-3 py-2 text-left text-[13px] text-ph-mute">Type a question / for commands</div>
+    <div class="mt-2 flex items-center justify-between">
+      <div class="flex gap-1.5">
+        <span class="ph-pill">Auto ▾</span>
+        <span class="ph-pill">@ Add context ▾</span>
+      </div>
+      <span class="ph-btn-amber inline-flex h-7 w-9 items-center justify-center rounded" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-wrap justify-center gap-1.5">
+    <span class="ph-chip">Product analytics</span>
+    <span class="ph-chip">SQL</span>
+    <span class="ph-chip">Session replay</span>
+    <span class="ph-chip">SDK setup</span>
+    <span class="ph-chip">Feature flags</span>
+    <span class="ph-chip">Experiments</span>
+    <span class="ph-chip">Surveys</span>
+    <span class="ph-chip">Docs</span>
+  </div>
+</div>
+      <div class="text-center lg:text-left">
+        <p class="text-[13px] font-semibold uppercase tracking-wide text-ph-sub">✦ Burrow AI</p>
+        <h3 class="mt-1 text-[26px] font-extrabold tracking-tight">Ask Burrow anything</h3>
+        <p class="mt-3 text-[15.5px] leading-relaxed text-ph-sub">Burrow stitches 200+ analysis tools together on the fly to answer any question about how people use your product.</p>
+        <p class="mt-3 text-[15.5px] leading-relaxed text-ph-sub">Pipe in outside data too, so you see the full picture instead of a partial one.</p>
+        <a href="#" class="ph-btn-amber mt-4 inline-block rounded-md px-4 py-2 text-[15px] font-bold">Get started – free</a>
+      </div>
+    </div>
+  </div>
+  <div class="ph-tab-panel hidden rounded-b-md p-4 sm:p-6" data-panel="1">
+    <div class="mb-4 flex justify-center gap-1">
+      <span class="ph-toggle ph-toggle-active">Chat</span>
+      <span class="ph-toggle">Desktop</span>
+    </div>
+    <div class="grid items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <div class="ph-mock rounded-md p-4 sm:p-6">
+  <div class="mx-auto max-w-[430px] space-y-3 rounded-md border border-ph-line bg-white p-4 text-left shadow-sm">
+    <div class="flex gap-2.5">
+      <span class="mt-0.5 h-7 w-7 shrink-0 rounded bg-ph-line"></span>
+      <p class="text-[13.5px] leading-snug"><strong>Maya</strong><br>the pricing page footer link 404s on /guides/setup</p>
+    </div>
+    <div class="flex gap-2.5">
+      <span class="mt-0.5 h-7 w-7 shrink-0 rounded bg-ph-line"></span>
+      <p class="text-[13.5px] leading-snug"><strong>Tom</strong><br>whoops — @Burrow can you sort this?</p>
+    </div>
+    <div class="flex gap-2.5">
+      <span class="mt-0.5 h-7 w-7 shrink-0 rounded bg-ph-red"></span>
+      <p class="text-[13.5px] leading-snug"><strong>Burrow</strong> <span class="ph-pill-app">APP</span><br>Found it. Line 12 points at a page we renamed last week. Opening a PR with the fix now.</p>
+    </div>
+  </div>
+</div>
+      <div class="text-center lg:text-left">
+        <p class="text-[13px] font-semibold uppercase tracking-wide text-ph-sub">✦ Burrow in your chat</p>
+        <h3 class="mt-1 text-[26px] font-extrabold tracking-tight">Fix issues without leaving chat</h3>
+        <p class="mt-3 text-[15.5px] leading-relaxed text-ph-sub">Mention Burrow in a thread to dig into customer behavior or open a pull request, right where the conversation is happening.</p>
+        <p class="mt-3 text-[15.5px] leading-relaxed text-ph-sub">Triage, investigate and ship without switching tools.</p>
+        <a href="#" class="mt-4 inline-block font-semibold underline underline-offset-2">Explore the chat integration</a>
+      </div>
+    </div>
+  </div>
+  <div class="ph-tab-panel hidden rounded-b-md p-4 sm:p-6" data-panel="2">
+    <div class="mb-4 flex justify-center gap-1">
+      <span class="ph-toggle ph-toggle-active">Web</span>
+      <span class="ph-toggle">Desktop</span>
+      <span class="ph-toggle">Chat</span>
+    </div>
+    <div class="grid items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <div class="ph-mock rounded-md p-4 sm:p-6">
+  <div class="mx-auto max-w-[430px] divide-y divide-ph-line rounded-md border border-ph-line bg-white text-left shadow-sm">
+    <div class="flex items-center justify-between gap-3 px-4 py-3">
+      <p class="text-[13.5px] font-semibold leading-snug">Checkout drop-off up 12% on mobile</p>
+      <span class="ph-inbox-pill ph-inbox-hot">High</span>
+    </div>
+    <div class="flex items-center justify-between gap-3 px-4 py-3">
+      <p class="text-[13.5px] font-semibold leading-snug">Signup form: field order confuses users</p>
+      <span class="ph-inbox-pill ph-inbox-warm">Medium</span>
+    </div>
+    <div class="flex items-center justify-between gap-3 px-4 py-3">
+      <p class="text-[13.5px] font-semibold leading-snug">Docs search returns stale results</p>
+      <span class="ph-inbox-pill ph-inbox-cool">Low</span>
+    </div>
+  </div>
+</div>
+      <div class="text-center lg:text-left">
+        <p class="text-[13px] font-semibold uppercase tracking-wide text-ph-sub">✦ Burrow Inbox</p>
+        <h3 class="mt-1 text-[26px] font-extrabold tracking-tight">Improvements, ready to review</h3>
+        <p class="mt-3 text-[15.5px] leading-relaxed text-ph-sub">Your inbox groups related findings into ranked reports. Approve a proposed change and it ships as a pull request.</p>
+        <p class="mt-3 text-[15.5px] leading-relaxed text-ph-sub">You stay in charge; the busywork does itself.</p>
+        <a href="#" class="mt-4 inline-block font-semibold underline underline-offset-2">Explore Inbox</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="flex items-center gap-4 overflow-hidden">
+  <p class="shrink-0 text-[14px] font-semibold text-ph-sub">Batteries included for every agent:</p>
+  <div class="ph-marquee-clip relative min-w-0 flex-1 overflow-hidden" aria-label="Batteries included for every agent:">
+    <div class="ph-marquee flex w-max items-center gap-2">
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2f80fa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12V7M6 12V3M10 12V9"/></svg>Product analytics</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#36c46f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M1.5 7h11M7 1.5c-3.5 3-3.5 8 0 11 3.5-3 3.5-8 0-11z"/></svg>Web analytics</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f7a501" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M5.7 4.8l3.4 2.2-3.4 2.2z"/></svg>Session replay</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#29b2db" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="12" height="6" rx="3"/><circle cx="10" cy="7" r="2"/></svg>Feature flags</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#b02fd6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 1.5h4M6 1.5v4L2.5 11a1.5 1.5 0 0 0 1.3 2.2h6.4a1.5 1.5 0 0 0 1.3-2.2L8 5.5v-4"/></svg>Experiments</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#e92f2f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2.5h10v7H7l-3 2.5V9.5H2z"/></svg>Surveys</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f1a82c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.5L13 12H1zM7 5.5V9M7 10.5v.5"/></svg>Error tracking</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#c170e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="7" cy="3" rx="5" ry="2"/><path d="M2 3v8c0 1.1 2.2 2 5 2s5-.9 5-2V3"/></svg>Data vault</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#43b6e7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h5l2 6h5M1 10h4M9 4h4"/></svg>Pipelines</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#36c46f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="3" cy="3" r="1.8"/><circle cx="3" cy="11" r="1.8"/><circle cx="11" cy="7" r="1.8"/><path d="M3 5v4M4.8 3.6 9.3 6M4.8 10.4 9.3 8"/></svg>Workflows</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#8d8d8d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h10M2 7h10M2 11h6"/></svg>Logs</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f54e00" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1l1.4 4.1L13 6.5l-4.1 1.4L7 12l-1.4-4.1L1 6.5l4.6-1.4z"/></svg>AI observability</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2f80fa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 1v4M10 1v4M2.5 5h9v2.5a4.5 4.5 0 0 1-9 0zM7 12v1.5"/></svg>Endpoints</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f7a501" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8l2-5.5h7l2 5.5v3.5h-11zM1.5 8h3l1 1.8h3L9.5 8h3"/></svg>Inbox</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#b02fd6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="3" cy="11" r="1.8"/><circle cx="11" cy="3" r="1.8"/><path d="M4.5 10C8 9 6 5 9.5 4"/></svg>Traces</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#e92f2f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="1.5" width="4.5" height="4.5"/><rect x="8" y="1.5" width="4.5" height="4.5"/><rect x="1.5" y="8" width="4.5" height="4.5"/><rect x="8" y="8" width="4.5" height="4.5"/></svg>Heatmaps</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#29b2db" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7c2-3.5 4-5 6-5s4 1.5 6 5c-2 3.5-4 5-6 5s-4-1.5-6-5z"/><circle cx="7" cy="7" r="2"/></svg>Replay AI</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#36c46f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1v12M2 4h3M2 8h3M9 6h3M9 10h3"/></svg>Visual A/B tests</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2f80fa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12V7M6 12V3M10 12V9"/></svg>Product analytics</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#36c46f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M1.5 7h11M7 1.5c-3.5 3-3.5 8 0 11 3.5-3 3.5-8 0-11z"/></svg>Web analytics</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f7a501" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M5.7 4.8l3.4 2.2-3.4 2.2z"/></svg>Session replay</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#29b2db" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="12" height="6" rx="3"/><circle cx="10" cy="7" r="2"/></svg>Feature flags</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#b02fd6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 1.5h4M6 1.5v4L2.5 11a1.5 1.5 0 0 0 1.3 2.2h6.4a1.5 1.5 0 0 0 1.3-2.2L8 5.5v-4"/></svg>Experiments</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#e92f2f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2.5h10v7H7l-3 2.5V9.5H2z"/></svg>Surveys</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f1a82c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.5L13 12H1zM7 5.5V9M7 10.5v.5"/></svg>Error tracking</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#c170e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="7" cy="3" rx="5" ry="2"/><path d="M2 3v8c0 1.1 2.2 2 5 2s5-.9 5-2V3"/></svg>Data vault</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#43b6e7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h5l2 6h5M1 10h4M9 4h4"/></svg>Pipelines</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#36c46f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="3" cy="3" r="1.8"/><circle cx="3" cy="11" r="1.8"/><circle cx="11" cy="7" r="1.8"/><path d="M3 5v4M4.8 3.6 9.3 6M4.8 10.4 9.3 8"/></svg>Workflows</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#8d8d8d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h10M2 7h10M2 11h6"/></svg>Logs</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f54e00" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1l1.4 4.1L13 6.5l-4.1 1.4L7 12l-1.4-4.1L1 6.5l4.6-1.4z"/></svg>AI observability</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2f80fa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 1v4M10 1v4M2.5 5h9v2.5a4.5 4.5 0 0 1-9 0zM7 12v1.5"/></svg>Endpoints</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f7a501" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8l2-5.5h7l2 5.5v3.5h-11zM1.5 8h3l1 1.8h3L9.5 8h3"/></svg>Inbox</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#b02fd6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="3" cy="11" r="1.8"/><circle cx="11" cy="3" r="1.8"/><path d="M4.5 10C8 9 6 5 9.5 4"/></svg>Traces</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#e92f2f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="1.5" width="4.5" height="4.5"/><rect x="8" y="1.5" width="4.5" height="4.5"/><rect x="1.5" y="8" width="4.5" height="4.5"/><rect x="8" y="8" width="4.5" height="4.5"/></svg>Heatmaps</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#29b2db" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7c2-3.5 4-5 6-5s4 1.5 6 5c-2 3.5-4 5-6 5s-4-1.5-6-5z"/><circle cx="7" cy="7" r="2"/></svg>Replay AI</span>
+      <span class="ph-tool-chip"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#36c46f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1v12M2 4h3M2 8h3M9 6h3M9 10h3"/></svg>Visual A/B tests</span>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="ph-h2">Proof we're not making it up</h2>
+  <p class="mt-4 text-[18px] leading-relaxed text-ph-sub">Real companies run us in production – not just one curious engineer on a free trial.</p>
+  <div class="ph-card relative mt-6 rounded-md">
+    <button type="button" class="ph-logo-swap absolute left-1/2 top-2.5 z-10 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full sm:flex" aria-label="Swap logo panes">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13.5 6.5a6 6 0 0 0-11-1M3.5 10.5a6 6 0 0 0 11 1"/><path d="M2.5 2v3.5H6M14.5 15v-3.5H11"/></svg>
+    </button>
+    <div class="ph-logo-panes grid sm:grid-cols-2 sm:divide-x sm:divide-ph-line">
+      <div class="ph-logo-pane">
+        <p class="ph-logo-pane-head">Colorful logos</p>
+        <div class="grid grid-cols-2 gap-x-2 px-4 py-5">
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#f54e00">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#f54e00"/><circle cx="9" cy="9" r="2.6" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Acornly</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#2f80fa">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="3" fill="#2f80fa"/><rect x="6.5" y="6.5" width="5" height="5" rx="1" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Bramblewick</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#b02fd6">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1l2 5.5L16.5 9l-5.5 2L9 16.5 7 11 1.5 9 7 6.5z" fill="#b02fd6"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Cindervale</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#36c46f">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15C3 7 8 3 15 3c0 8-4 12-12 12z" fill="#36c46f"/><path d="M4.5 13.5C7 10 10 7.5 13 5.5" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Fernbase</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#0f9b8e">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4l5 5-5 5M9 4l5 5-5 5" stroke="#0f9b8e" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Mosscode</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#f7a501">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#f7a501"/><circle cx="9" cy="9" r="2.6" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Nutmeg AI</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#e92f2f">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="3" fill="#e92f2f"/><rect x="6.5" y="6.5" width="5" height="5" rx="1" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Pebbleworks</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#43b6e7">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1l2 5.5L16.5 9l-5.5 2L9 16.5 7 11 1.5 9 7 6.5z" fill="#43b6e7"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Quillstack</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#6aa84f">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4l5 5-5 5M9 4l5 5-5 5" stroke="#6aa84f" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Rootline</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 " style="color:#c23d00">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15C3 7 8 3 15 3c0 8-4 12-12 12z" fill="#c23d00"/><path d="M4.5 13.5C7 10 10 7.5 13 5.5" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Twigline</span>
+</span>
+        </div>
+      </div>
+      <div class="ph-logo-pane border-t border-ph-line sm:border-t-0">
+        <p class="ph-logo-pane-head">"Serious" logos</p>
+        <div class="grid grid-cols-2 gap-x-2 px-4 py-5">
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="3" fill="#111"/><rect x="6.5" y="6.5" width="5" height="5" rx="1" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">AEROFERN</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#111"/><circle cx="9" cy="9" r="2.6" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Birchmark</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4l5 5-5 5M9 4l5 5-5 5" stroke="#111" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">COPPICE</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15C3 7 8 3 15 3c0 8-4 12-12 12z" fill="#111"/><path d="M4.5 13.5C7 10 10 7.5 13 5.5" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Dewpoint Labs</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1l2 5.5L16.5 9l-5.5 2L9 16.5 7 11 1.5 9 7 6.5z" fill="#111"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Elmworks</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="3" fill="#111"/><rect x="6.5" y="6.5" width="5" height="5" rx="1" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Galehollow</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#111"/><circle cx="9" cy="9" r="2.6" fill="#fff"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Ivyline Systems</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4l5 5-5 5M9 4l5 5-5 5" stroke="#111" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Marrowgate</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15C3 7 8 3 15 3c0 8-4 12-12 12z" fill="#111"/><path d="M4.5 13.5C7 10 10 7.5 13 5.5" stroke="#fff" stroke-width="1.2" fill="none"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">OAKSPUR</span>
+</span>
+          <span class="flex items-center justify-center gap-1.5 py-2.5 text-ph-ink" >
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1l2 5.5L16.5 9l-5.5 2L9 16.5 7 11 1.5 9 7 6.5z" fill="#111"/></svg>
+  <span class="text-[16px] font-bold tracking-tight">Thistledown</span>
+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="ph-btn-outline mt-5 inline-block rounded-md px-4 py-2 text-[15px] font-bold">Open customers</a>
+</section>
+<section>
+  <h2 class="ph-h2">All your context, <mark class="ph-mark-blue">in one place</mark></h2>
+  <div class="mt-6 grid gap-8 lg:grid-cols-[1fr_320px]">
+    <div class="min-w-0 text-[18px] leading-relaxed text-ph-sub">
+      <p>Whether a human or an agent is asking, answers are only as good as the <em>whole</em> story behind them.</p>
+      <p class="mt-5">Everything lands in one queryable store, so humans, agents and dashboards all read from one source. That includes:</p>
+      <ul class="mt-5 list-disc space-y-2 pl-6 marker:text-ph-mute">
+        <li>Rows from 100+ outside tools like your billing, CRM and database</li>
+        <li>Signals from every other Burrow feature, replays and experiments included</li>
+      </ul>
+      <p class="mt-5">The evidence your agents need is already here. Turn "tell me what broke" into "here's the fix, approve it."</p>
+      <a href="#" class="mt-6 inline-block font-bold text-ph-ink underline underline-offset-4">Connect your first source</a>
+    </div>
+    <aside class="ph-panel-card h-max rounded-md p-5">
+      <p class="text-[15px] font-bold">Built-in, every plan <mark class="ph-mark-blue">ships</mark> with:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-[14.5px] text-ph-sub marker:text-ph-mute">
+        <li>A full data warehouse</li>
+        <li>100+ sources & destinations</li>
+        <li>SQL editor + dashboards</li>
+        <li>Live user activity feed</li>
+        <li>API & webhooks</li>
+      </ul>
+      <div class="mt-3 flex justify-end"><svg width="150" height="110" viewBox="0 0 150 110" aria-hidden="true">
+  <circle cx="100" cy="62" r="34" fill="none" stroke="#8a6d4f" stroke-width="5"/>
+  <circle cx="100" cy="62" r="10" fill="#8a6d4f"/>
+  <g stroke="#8a6d4f" stroke-width="4" stroke-linecap="round">
+    <path d="M100 24v18M100 82v18M62 62h18M120 62h18M74 36l12 12M114 76l12 12M126 36l-12 12M86 76L74 88"/>
+  </g>
+  <ellipse cx="46" cy="78" rx="24" ry="20" fill="#6b5138"/>
+  <circle cx="56" cy="62" r="12" fill="#7d5f42"/>
+  <circle cx="60" cy="59" r="2" fill="#1d1408"/>
+  <path d="M66 64c4 1 7 3 8 6" stroke="#1d1408" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="70" cy="66" rx="3.4" ry="2.2" fill="#e8a0a0"/>
+</svg></div>
+    </aside>
+  </div>
+</section>
+<section>
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="ph-h2">Pay only for what you use</h2>
+    <div class="hidden shrink-0 md:block"><svg width="130" height="80" viewBox="0 0 130 80" aria-hidden="true">
+  <rect x="14" y="26" width="86" height="30" rx="8" fill="#79a25c"/>
+  <path d="M100 34h14l8 12v10h-22z" fill="#6a9350"/>
+  <rect x="104" y="37" width="10" height="8" rx="2" fill="#cfe3f7"/>
+  <rect x="22" y="32" width="14" height="9" rx="2" fill="#cfe3f7"/>
+  <rect x="42" y="32" width="14" height="9" rx="2" fill="#cfe3f7"/>
+  <circle cx="36" cy="60" r="9" fill="#2b2b26"/><circle cx="36" cy="60" r="4" fill="#8d8d8d"/>
+  <circle cx="102" cy="60" r="9" fill="#2b2b26"/><circle cx="102" cy="60" r="4" fill="#8d8d8d"/>
+</svg></div>
+  </div>
+  <div class="mt-5 max-w-[38em] space-y-5 text-[18px] leading-relaxed text-ph-sub">
+    <p>Pricing is not something you should lose sleep over.</p>
+    <p>Every paid product is metered, with a generous free tier that resets monthly. Most of our customers never pay a cent.</p>
+    <p>At scale we aim to be the cheapest option on the table. No discovery calls, no custom quotes, no surprises.</p>
+    <p>A few examples of how the meter runs:</p>
+  </div>
+  <div class="mt-6 overflow-x-auto">
+    <table class="ph-table w-full min-w-[560px] text-left text-[15px]">
+      <thead>
+        <tr>
+          <th class="w-10"></th>
+          <th>Product</th>
+          <th>Free tier</th>
+          <th>Pricing (drops with volume)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-ph-mute">1</td>
+          <td><a href="#" class="inline-flex items-center gap-1.5 font-semibold underline underline-offset-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2f80fa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12V7M6 12V3M10 12V9"/></svg>Product analytics</a></td>
+          <td>1 million events/mo</td>
+          <td>$0.00004/event</td>
+        </tr>
+        <tr>
+          <td class="text-ph-mute">2</td>
+          <td><a href="#" class="inline-flex items-center gap-1.5 font-semibold underline underline-offset-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#f7a501" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M5.7 4.8l3.4 2.2-3.4 2.2z"/></svg>Session replay</a></td>
+          <td>5,000 recordings/mo</td>
+          <td>$0.004/recording</td>
+        </tr>
+        <tr>
+          <td class="text-ph-mute">3</td>
+          <td><a href="#" class="inline-flex items-center gap-1.5 font-semibold underline underline-offset-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#29b2db" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="12" height="6" rx="3"/><circle cx="10" cy="7" r="2"/></svg>Feature flags</a></td>
+          <td>1 million requests/mo</td>
+          <td>$0.0001/request</td>
+        </tr>
+        <tr>
+          <td class="text-ph-mute">4</td>
+          <td><a href="#" class="inline-flex items-center gap-1.5 font-semibold underline underline-offset-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#c170e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="7" cy="3" rx="5" ry="2"/><path d="M2 3v8c0 1.1 2.2 2 5 2s5-.9 5-2V3"/></svg>Data vault</a></td>
+          <td>1 million rows/mo</td>
+          <td>$0.00002/row</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a href="#" class="mt-6 inline-block font-bold text-ph-ink underline underline-offset-4">Explore pricing</a>
+</section>
+<section>
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="ph-h2">Why pick Burrow?</h2>
+    <div class="hidden shrink-0 md:block"><svg width="150" height="120" viewBox="0 0 150 120" aria-hidden="true">
+  <ellipse cx="75" cy="104" rx="52" ry="8" fill="#00000012"/>
+  <ellipse cx="70" cy="72" rx="34" ry="28" fill="#6b5138"/>
+  <circle cx="84" cy="48" r="17" fill="#7d5f42"/>
+  <circle cx="90" cy="44" r="2.4" fill="#1d1408"/>
+  <circle cx="79" cy="45" r="2.4" fill="#1d1408"/>
+  <circle cx="90" cy="44" r="5.5" fill="none" stroke="#1d1408" stroke-width="1.6"/>
+  <circle cx="79" cy="45" r="5.5" fill="none" stroke="#1d1408" stroke-width="1.6"/>
+  <path d="M84.5 44.6h.1" stroke="#1d1408" stroke-width="1.6"/>
+  <ellipse cx="85" cy="55" rx="3.6" ry="2.4" fill="#e8a0a0"/>
+  <path d="M44 84l24-8 24 8-24 6z" fill="#e9e2d4" stroke="#8a6d4f" stroke-width="2"/>
+  <path d="M68 76v14" stroke="#8a6d4f" stroke-width="2"/>
+</svg></div>
+  </div>
+  <p class="mt-5 text-[18px] leading-relaxed text-ph-sub">A few ways we do things differently:</p>
+  <ul class="mt-5 max-w-[40em] list-disc space-y-3 pl-6 text-[18px] leading-relaxed text-ph-sub marker:text-ph-mute">
+    <li><strong class="text-ph-ink">Open by default.</strong> Our handbook, roadmap and strategy are public reading. <a href="#" class="font-semibold underline underline-offset-2">handbook</a> · <a href="#" class="font-semibold underline underline-offset-2">roadmap</a> · <a href="#" class="font-semibold underline underline-offset-2">strategy</a></li>
+    <li><strong class="text-ph-ink">We ship weekly.</strong> The changelog never sleeps. <a href="#" class="font-semibold underline underline-offset-2">changelog</a></li>
+    <li><strong class="text-ph-ink">Support that codes.</strong> Everyone answering tickets has shipped production software. <a href="#" class="font-semibold underline underline-offset-2">support team</a></li>
+  </ul>
+  <a href="#" class="mt-6 inline-block font-bold text-ph-ink underline underline-offset-4">More about the team</a>
+</section>
+<section>
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="ph-h2">Late-night reading</h2>
+    <div class="hidden shrink-0 md:block"><svg width="190" height="120" viewBox="0 0 190 120" aria-hidden="true">
+  <ellipse cx="95" cy="104" rx="70" ry="9" fill="#00000012"/>
+  <path d="M30 96c0-20 18-32 44-32h50c14 0 24 8 24 20v12z" fill="#efe9dc" stroke="#d9d2c2" stroke-width="2"/>
+  <ellipse cx="55" cy="70" rx="26" ry="20" fill="#6b5138"/>
+  <circle cx="42" cy="58" r="13" fill="#7d5f42"/>
+  <path d="M34 57c2-1.6 5-1.6 7 0M44 55c2-1.6 5-1.6 7 0" stroke="#1d1408" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <ellipse cx="36" cy="65" rx="3.2" ry="2.2" fill="#e8a0a0"/>
+  <rect x="88" y="70" width="34" height="22" rx="2.5" fill="#cfe3f7" stroke="#8fa8c8" stroke-width="2"/>
+  <path d="M84 92h42l4 6H80z" fill="#e3e3de" stroke="#b9b9b2" stroke-width="1.6"/>
+  <text x="128" y="42" font-size="17" font-weight="700" fill="#6b5138">z</text>
+  <text x="138" y="30" font-size="22" font-weight="700" fill="#6b5138">Z</text>
+</svg></div>
+  </div>
+  <p class="mt-5 text-[18px] leading-relaxed text-ph-sub">Still scrolling? A few links worth your insomnia:</p>
+  <ul class="mt-5 list-disc space-y-2.5 pl-6 text-[18px] marker:text-ph-mute">
+    <li><a href="#" class="font-semibold underline underline-offset-2">watch-the-demo.mov</a></li>
+    <li><a href="#" class="font-semibold underline underline-offset-2">Technical docs</a></li>
+    <li><a href="#" class="font-semibold underline underline-offset-2">API reference</a></li>
+    <li><a href="#" class="font-semibold underline underline-offset-2">Ask us anything</a></li>
+    <li><a href="#" class="font-semibold underline underline-offset-2">How our teams are organized</a></li>
+  </ul>
+</section>
+<section>
+  <h2 class="ph-h2">The hard sell</h2>
+  <p class="mt-4 text-[18px] leading-relaxed text-ph-sub">If nothing above convinced you, maybe these time-honored marketing moves will.</p>
+  <div class="ph-card mt-6 rounded-md p-5 sm:p-8">
+    <div class="grid items-start gap-8 md:grid-cols-[1fr_1.1fr]">
+      <div class="relative">
+        <svg width="270" height="250" viewBox="0 0 270 250" aria-hidden="true" class="mx-auto">
+  <g transform="rotate(-4 120 120)">
+    <path d="M40 40 L170 24 L196 52 L196 196 L66 212 L40 184 Z" fill="#e8e6df" stroke="#b9b6ab" stroke-width="2"/>
+    <path d="M40 40 L170 24 L196 52 L66 68 Z" fill="#f4f3ee" stroke="#b9b6ab" stroke-width="2"/>
+    <path d="M66 68 L196 52 L196 196 L66 212 Z" fill="#dddace" stroke="#b9b6ab" stroke-width="2"/>
+    <rect x="80" y="86" width="100" height="100" transform="rotate(-7 130 136)" fill="#2b2b26"/>
+    <rect x="90" y="96" width="80" height="60" transform="rotate(-7 130 126)" fill="#8fb06d"/>
+    <text x="84" y="182" transform="rotate(-7 130 176)" font-size="20" font-weight="800" fill="#f4f3ee">Burrow 3000</text>
+    <text x="84" y="198" transform="rotate(-7 130 190)" font-size="7.5" fill="#cfccc0">The analytics suite your gran warned you about</text>
+  </g>
+  <circle cx="212" cy="176" r="52" fill="#efeee9" stroke="#b9b6ab" stroke-width="2"/>
+  <circle cx="212" cy="176" r="44" fill="#dcdad0"/>
+  <circle cx="212" cy="176" r="13" fill="#f6f5f1" stroke="#b9b6ab" stroke-width="2"/>
+  <text x="184" y="146" font-size="10" font-weight="700" fill="#55534b">Burrow</text>
+</svg>
+        <div class="ph-burst" aria-hidden="true"><span>Not<br>endorsed<br>by anyone<br>famous</span></div>
+        <div class="ph-ribbon" aria-hidden="true">
+  <p class="text-[15px] font-extrabold leading-none">Leader</p>
+  <p class="mt-1 text-[8.5px] leading-tight">Small burrows, spring 2026</p>
+</div>
+      </div>
+      <div>
+        <span class="ph-eco-pill">✿ Eco-friendly</span>
+        <h3 class="mt-3 text-[34px] font-extrabold leading-tight tracking-tight">Burrow Web</h3>
+        <p class="text-[14px] text-ph-sub">Digital download*</p>
+        <p class="mt-5 text-[16px] font-bold">Select your cloud</p>
+        <div class="mt-2 flex gap-2" role="group" aria-label="Select your cloud">
+          <button type="button" class="ph-cloud-btn ph-cloud-active rounded border px-4 py-2 text-[15px] font-semibold">US (Oregon)</button>
+          <button type="button" class="ph-cloud-btn rounded border px-4 py-2 text-[15px] font-semibold">EU (Dublin)</button>
+        </div>
+        <p class="mt-5 text-[16px] font-bold">Starts at:</p>
+        <p class="mt-1 text-[24px] font-extrabold"><s class="text-ph-sub">$0</s> <span class="text-ph-red uppercase">Free</span> <span class="ml-1 align-middle text-[13px] font-semibold text-ph-sub">stock strictly unlimited!!</span></p>
+        <a href="#" class="ph-btn-amber ph-btn-big mt-5 inline-block rounded-lg px-10 py-3 text-center text-[19px] font-bold">Get started</a>
+        <p class="mt-5 flex items-start gap-2 text-[14.5px] leading-snug text-ph-sub"><svg class="mt-0.5 shrink-0" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 11l4.5-4.5 3 3L14 4M14 4h-4M14 4v4"/></svg><span><strong class="text-ph-ink">Hurry:</strong> 1,847 teams signed up <span class="text-ph-red font-semibold">today</span>. Move fast and save a whole $0 at checkout.</span></p>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-[12.5px] italic text-ph-mute">*Burrow runs in your browser and cannot be installed from a CD. The box is purely for vibes.</p>
+  </div>
+  <p class="ph-counter mt-10 font-ph-mono" aria-label="Visitor counter">04127349</p>
+</section>
+    </div>
+  </div>
+</main>
+<div class="ph-desk-hint pointer-events-none fixed inset-0 z-0 hidden items-center justify-center text-[15px] text-white/80">Click Home to reopen</div>
+<aside class="ph-toast fixed bottom-4 right-4 z-50 w-[min(380px,calc(100vw-2rem))] rounded-md p-4 pr-10" data-toast="cookie">
+  <button type="button" class="ph-toast-close absolute right-3 top-3 text-ph-sub" aria-label="Dismiss cookie notice"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1.5 1.5l10 10M11.5 1.5l-10 10"/></svg></button>
+  <div class="flex items-end gap-3">
+    <div class="min-w-0">
+      <p class="text-[15px] font-bold">The obligatory cookie banner</p>
+      <p class="mt-1.5 text-[13px] leading-snug text-ph-sub">We set exactly one first-party cookie so the app remembers who you are. Nothing gets sold, shared, or creepily retargeted.</p>
+      <p class="mt-1.5 text-[13px] leading-snug text-ph-sub">(Your snacks are safe.)</p>
+    </div>
+    <div class="hidden shrink-0 sm:block"><svg width="72" height="78" viewBox="0 0 72 78" aria-hidden="true">
+  <ellipse cx="36" cy="52" rx="24" ry="22" fill="#6b5138"/>
+  <circle cx="36" cy="30" r="15" fill="#7d5f42"/>
+  <circle cx="31" cy="28" r="2.2" fill="#1d1408"/>
+  <circle cx="41" cy="28" r="2.2" fill="#1d1408"/>
+  <path d="M30 36c3.5 3 8.5 3 12 0" stroke="#1d1408" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <ellipse cx="36" cy="33" rx="3.4" ry="2.2" fill="#e8a0a0"/>
+  <path d="M12 46l-6-10M60 46l6-10" stroke="#6b5138" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="5" cy="33" r="4.5" fill="#7d5f42"/>
+  <circle cx="67" cy="33" r="4.5" fill="#7d5f42"/>
+</svg></div>
+  </div>
+</aside>
+<aside class="ph-toast fixed bottom-4 left-4 z-50 hidden w-[240px] rounded-md p-3 lg:block" data-toast="poster">
+  <button type="button" class="ph-toast-close absolute right-2.5 top-2.5 text-ph-sub" aria-label="Dismiss poster"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1.5 1.5l10 10M11.5 1.5l-10 10"/></svg></button>
+  <div class="ph-poster rounded p-4 text-center">
+    <p class="text-[9px] font-bold tracking-[0.25em] text-white/70">NOW STREAMING NOWHERE</p>
+    <p class="mt-3 text-[22px] font-extrabold leading-none tracking-tight text-white">THE BURROW</p>
+    <p class="mt-3 text-[8px] leading-relaxed tracking-wide text-white/60">STARRING A MOLE · BASED ON A TRUE BACKLOG · RATED G FOR GRAPHS</p>
+    <button type="button" class="ph-btn-amber mt-3 rounded px-3 py-1 text-[12px] font-bold">▶ Play trailer</button>
+  </div>
+  <p class="mt-2 text-[13px] font-bold">The Burrow</p>
+  <p class="text-[12px] text-ph-sub">A gripping documentary about dashboards.</p>
+</aside>
+
+<script src="main.js"></script>
+</body>
+</html>

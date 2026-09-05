@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./components.css";
+@source "../";
+
+@theme {
+  --color-ph-paper: #f6f5f0;
+  --color-ph-panel: #eeede6;
+  --color-ph-ink: #151515;
+  --color-ph-sub: #4b4b45;
+  --color-ph-mute: #8b8b83;
+  --color-ph-line: #d7d5ca;
+  --color-ph-red: #f54e00;
+  --color-ph-amber: #f7a501;
+  --color-ph-blue: #2f80fa;
+  --color-ph-magenta: #b02fd6;
+  --font-ph-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ph-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
