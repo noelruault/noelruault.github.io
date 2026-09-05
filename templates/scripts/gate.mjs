@@ -16,6 +16,16 @@ if (rendertest.exitCode !== 0) {
 
 const manifest = JSON.parse(readFileSync(new URL("../manifest.json", import.meta.url), "utf8"));
 
+// Per-template unit tests: a slug may ship an assert-based <slug>/test.mjs for its own pure logic.
+for (const slug of manifest) {
+  if (!existsSync(`${slug}/test.mjs`)) continue;
+  const t = Bun.spawnSync(["bun", `${slug}/test.mjs`], { stdout: "inherit", stderr: "inherit" });
+  if (t.exitCode !== 0) {
+    console.error(`gate: ${slug}/test.mjs failed`);
+    process.exit(t.exitCode);
+  }
+}
+
 // Snapshot each modular slug's committed index.html before build re-renders it from config + components.
 // A hand-edit that build's render would otherwise silently clobber shows up as a gate failure instead.
 const preBuildSnapshots = new Map();

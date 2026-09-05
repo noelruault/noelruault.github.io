@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "./components.css";
+@source "../";
+
+@theme {
+  --color-ct-dark: #0a0806;
+  --color-ct-light: #e8e7e1;
+  --color-ct-mute: #8a877f;
+  --font-ct-sans: system-ui, "Helvetica Neue", Arial, sans-serif;
+  --font-ct-serif: Georgia, "Times New Roman", Times, serif;
+}

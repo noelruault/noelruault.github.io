@@ -1,0 +1,77 @@
+{
+  "sections": [
+    "nav",
+    "emblem",
+    "works",
+    "workView",
+    "artists",
+    "studio",
+    "contact",
+    "partner",
+    "cursor"
+  ],
+  "title": "Cadence, a production office in Lyon",
+  "description": "Cadence is an independent production office in Lyon producing films, campaigns and shows with its own circle of directors and photographers.",
+  "brand": "cadence",
+  "brandDisplay": "cādence",
+  "theme": {
+    "dark": "#0a0806",
+    "light": "#e8e7e1"
+  },
+  "nav": {
+    "homeLabel": "PROJECTS",
+    "homeAria": "Cadence home",
+    "right": [
+      { "label": "ARTISTS", "view": "artists" },
+      { "label": "CONTACT", "view": "contact" },
+      { "label": "STUDIO", "view": "studio" }
+    ]
+  },
+  "works": [
+    { "index": "001", "title": "THE QUIET HOUR", "duration": "01:12", "angle": 8, "fx": 1.05, "fy": 0.92, "w": "17rem", "ar": "16/10", "gradient": "linear-gradient(160deg,#2e4a6b,#0d1420)" },
+    { "index": "002", "title": "SALT ORCHARD", "duration": "00:47", "angle": 36, "fx": 0.88, "fy": 1.1, "w": "13rem", "ar": "4/3", "gradient": "linear-gradient(200deg,#e7e2d3,#9aa88b)" },
+    { "index": "003", "title": "NEON VESPERS", "duration": "02:03", "angle": 68, "fx": 1.12, "fy": 0.86, "w": "9rem", "ar": "9/16", "gradient": "linear-gradient(145deg,#b43a6e,#2a1030)" },
+    { "index": "004", "title": "PAPER TIDE", "duration": "00:58", "angle": 95, "fx": 0.82, "fy": 1.05, "w": "11rem", "ar": "3/4", "gradient": "linear-gradient(180deg,#bcd4e6,#f2f4f4)" },
+    { "index": "005", "title": "HALF LIGHT", "duration": "01:36", "angle": 128, "fx": 1.08, "fy": 0.95, "w": "16rem", "ar": "16/10", "gradient": "linear-gradient(210deg,#d98e32,#5a2e12)" },
+    { "index": "006", "title": "VELVET STATIC", "duration": "01:04", "angle": 160, "fx": 0.9, "fy": 1.12, "w": "12rem", "ar": "4/5", "gradient": "linear-gradient(170deg,#171214,#5c1f24)" },
+    { "index": "007", "title": "NORTH OF NOON", "duration": "00:41", "angle": 190, "fx": 1.15, "fy": 0.88, "w": "18rem", "ar": "16/9", "gradient": "linear-gradient(190deg,#9db8d2,#e8e3da)" },
+    { "index": "008", "title": "CERAMIC SKY", "duration": "01:51", "angle": 218, "fx": 0.85, "fy": 1.02, "w": "10rem", "ar": "1/1", "gradient": "linear-gradient(150deg,#b8c8bd,#48555a)" },
+    { "index": "009", "title": "LOW ORBIT", "duration": "02:20", "angle": 248, "fx": 1.1, "fy": 0.9, "w": "15rem", "ar": "16/10", "gradient": "linear-gradient(165deg,#0c1f22,#3f7f8c)" },
+    { "index": "010", "title": "WINTER ENGINE", "duration": "00:52", "angle": 275, "fx": 0.92, "fy": 1.08, "w": "13rem", "ar": "4/3", "gradient": "linear-gradient(205deg,#5b6770,#cfd6da)" },
+    { "index": "011", "title": "APRICOT FIELD", "duration": "01:18", "angle": 305, "fx": 1.02, "fy": 0.94, "w": "11rem", "ar": "3/4", "gradient": "linear-gradient(185deg,#e8a06b,#c96f5f)" },
+    { "index": "012", "title": "SECOND SLEEP", "duration": "01:29", "angle": 336, "fx": 0.95, "fy": 1.06, "w": "14rem", "ar": "16/10", "gradient": "linear-gradient(175deg,#1c1a22,#4a3b5c)" }
+  ],
+  "artists": {
+    "roles": ["DIRECTOR", "PHOTOGRAPHER"],
+    "list": [
+      { "name": "MARGUERITE", "role": "DIRECTOR", "gradient": "linear-gradient(170deg,#cfc9bd,#8f8a7e)" },
+      { "name": "KOLDO", "role": "DIRECTOR", "gradient": "linear-gradient(190deg,#2b2f36,#6b7480)" },
+      { "name": "ANNIKA", "role": "PHOTOGRAPHER", "gradient": "linear-gradient(160deg,#d8c4b2,#a06e52)" },
+      { "name": "RUI", "role": "PHOTOGRAPHER", "gradient": "linear-gradient(200deg,#41504a,#9db3a6)" }
+    ]
+  },
+  "studio": {
+    "lines": [
+      "MODERN MAKERS MOVEMENT",
+      "PATIENT PICTURES PRACTICE",
+      "RESTLESS RHYTHM REPUBLIC",
+      "TENDER TEMPO TERRITORY"
+    ],
+    "columnWord": "CADENCE",
+    "columnCount": 7
+  },
+  "contact": {
+    "closeLabel": "CLOSE",
+    "columns": [
+      { "lines": ["12 RUE VERRIER", "LYON 03"] },
+      { "lines": ["FOR STORIES", "AND THEIR MAKERS"] },
+      { "lines": ["START A PRODUCTION", "HELLO@CADENCE.FILMS"] },
+      { "lines": ["INSTAGRAM", "VIMEO"] }
+    ],
+    "blobSeed": 7
+  },
+  "partner": {
+    "label": "tempo",
+    "aria": "Tempo, sister studio"
+  }
+}

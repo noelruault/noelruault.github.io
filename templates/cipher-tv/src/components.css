@@ -1,0 +1,601 @@
+/* Chrome (nav, logo, emblem, workbar, cursor) is one light color under mix-blend-mode: difference,
+   so it reads light over the dark projects view and dark over the light artists/studio views,
+   exactly like the reference handles contrast. */
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+::selection {
+  background-color: #676767;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* ---- fixed chrome ---- */
+
+.ct-logo {
+  position: fixed;
+  left: 20.5px;
+  top: 10px;
+  z-index: 30;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+  font-size: 30px;
+  font-weight: 450;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.ct-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 7px 20.5px;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.ct-nav-link {
+  pointer-events: auto;
+  padding: 15px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+
+.ct-nav-link:hover {
+  opacity: 0.5;
+}
+
+.ct-nav-link.is-active {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.ct-nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .ct-logo {
+    font-size: 25px;
+    top: 14px;
+  }
+  .ct-nav {
+    top: 44px;
+    left: 12px;
+    right: auto;
+    display: flex;
+    padding: 0;
+  }
+  .ct-nav-link {
+    padding: 12px 8px;
+  }
+  .ct-nav-link:hover {
+    opacity: 1;
+  }
+  .ct-nav-right {
+    gap: 0;
+  }
+}
+
+.ct-emblem {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 12;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+  pointer-events: none;
+}
+
+.ct-emblem svg {
+  display: block;
+}
+
+/* The two variants swap per view; selectors are body-scoped (0,2,1) so they outrank the `.ct-emblem svg` display above. */
+body[data-view="projects"] .ct-mark-ring,
+body[data-view="artists"] .ct-mark-orbit,
+body[data-view="studio"] .ct-mark-orbit {
+  display: none;
+}
+
+/* While the contact overlay is open the emblem rises above it and shows the ring, reading dark on the light blob via the blend. */
+body.ct-contact-open .ct-emblem {
+  z-index: 60;
+}
+
+body.ct-contact-open .ct-mark-orbit {
+  display: none;
+}
+
+body.ct-contact-open .ct-mark-ring {
+  display: block;
+}
+
+/* ---- views ---- */
+
+.ct-view {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ct-view-artists,
+.ct-view-studio {
+  background: var(--color-ct-light);
+  color: var(--color-ct-dark);
+}
+
+/* ---- projects cloud ---- */
+
+.ct-cloud {
+  position: absolute;
+  inset: 0;
+  --rx: min(23vw, 340px);
+  --ry: 27vh;
+  --rot: 0deg;
+  --par-x: 0px;
+  --par-y: 0px;
+  --tile-scale: 1;
+}
+
+@media (max-width: 768px) {
+  .ct-cloud {
+    --rx: 38vw;
+    --ry: 30vh;
+    --tile-scale: 0.55;
+  }
+}
+
+.ct-tile {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--w) * var(--tile-scale));
+  aspect-ratio: var(--ar);
+  background: var(--g);
+  cursor: pointer;
+  translate: calc(-50% + var(--rx) * var(--fx) * cos(var(--a) + var(--rot)) + var(--par-x))
+    calc(-50% + var(--ry) * var(--fy) * sin(var(--a) + var(--rot)) + var(--par-y));
+  transition: filter 0.35s ease, scale 0.35s ease;
+}
+
+.ct-cloud:has(.ct-tile:hover) .ct-tile:not(:hover) {
+  filter: grayscale(1) brightness(0.55);
+}
+
+.ct-tile:hover {
+  scale: 1.03;
+}
+
+.ct-workbar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 15;
+  display: flex;
+  padding: 16px 20.5px;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.ct-workbar-title {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+
+body.ct-tilehover .ct-workbar {
+  opacity: 1;
+}
+
+/* ---- cursor label + cube ---- */
+
+.ct-cursor-cube,
+.ct-cursor-label {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.ct-cursor-cube.is-visible,
+.ct-cursor-label.is-visible {
+  opacity: 1;
+}
+
+.ct-cursor-cube span {
+  position: relative;
+  display: block;
+  left: 24px;
+  top: 30px;
+  width: 4px;
+  aspect-ratio: 1;
+  background: #fff;
+}
+
+.ct-cursor-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 36px;
+  padding-top: 42px;
+}
+
+.ct-cursor-title {
+  font-family: var(--font-ct-serif);
+  font-size: 12px;
+}
+
+.ct-cursor-timer {
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+@media (pointer: coarse) {
+  .ct-cursor-cube,
+  .ct-cursor-label {
+    display: none;
+  }
+}
+
+/* ---- work detail view ---- */
+
+/* Below the nav (z-20) so the menu stays usable over an open work, like the reference's work routes. */
+.ct-work-view {
+  position: fixed;
+  inset: 0;
+  z-index: 14;
+  background: var(--color-ct-dark);
+  cursor: pointer;
+}
+
+.ct-work-media {
+  position: absolute;
+  inset: 0;
+  background: var(--g);
+}
+
+.ct-work-index,
+.ct-work-title {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ct-work-index {
+  left: 7%;
+}
+
+.ct-work-title {
+  right: 7%;
+}
+
+/* ---- artists view ---- */
+
+.ct-role-rail {
+  position: absolute;
+  left: 40px;
+  top: 48%;
+  z-index: 5;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ct-role {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  color: var(--color-ct-mute);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.ct-role.is-active {
+  color: var(--color-ct-dark);
+}
+
+.ct-role-marker {
+  width: 3px;
+  aspect-ratio: 1;
+  background: currentColor;
+  opacity: 0;
+}
+
+.ct-role.is-active .ct-role-marker {
+  opacity: 1;
+}
+
+.ct-artist {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.ct-artist.is-active {
+  display: block;
+}
+
+.ct-artist-name {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  translate: -50%;
+  font-family: var(--font-ct-serif);
+  /* --name-size is set per artist at render time from the name's length, so long names stay inside the viewport. */
+  font-size: clamp(64px, var(--name-size, 14.5vw), 210px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 100%;
+  white-space: nowrap;
+}
+
+.ct-artist-role {
+  position: absolute;
+  left: 50%;
+  top: 39%;
+  translate: -50%;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ct-artist-portrait {
+  position: absolute;
+  left: 50%;
+  top: 63%;
+  translate: -50%;
+  width: clamp(160px, 17vw, 246px);
+  aspect-ratio: 3 / 4;
+  background: var(--g);
+}
+
+@media (max-width: 768px) {
+  .ct-role-rail {
+    left: 20px;
+  }
+}
+
+/* ---- studio view ---- */
+
+.ct-studio-block {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-ct-serif);
+  font-size: clamp(15px, 2.2vw, 32px);
+  letter-spacing: 0.24em;
+  line-height: 116%;
+  text-transform: uppercase;
+}
+
+.ct-studio-lines p {
+  text-align: center;
+}
+
+.ct-studio-column p {
+  padding-left: 14vw;
+  text-align: left;
+}
+
+.ct-studio-mark {
+  position: absolute;
+  left: 78%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.ct-studio-mark svg {
+  display: block;
+}
+
+/* ---- contact overlay ---- */
+
+.ct-contact {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--color-ct-dark);
+  color: var(--color-ct-light);
+}
+
+.ct-contact-close {
+  position: absolute;
+  right: 56px;
+  top: 78px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-ct-serif);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ct-light);
+  cursor: pointer;
+}
+
+.ct-contact-close .ct-role-marker {
+  opacity: 1;
+  translate: -8px -6px;
+}
+
+.ct-contact-blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(640px, 80vw);
+  fill: var(--color-ct-light);
+  animation: ct-flicker 1.8s steps(2) infinite;
+}
+
+@keyframes ct-flicker {
+  50% {
+    opacity: 0.94;
+  }
+}
+
+.ct-contact-row {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 20.5px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 200%;
+  text-transform: uppercase;
+}
+
+.ct-contact-col:last-child {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .ct-contact-close {
+    right: 20px;
+    top: 60px;
+  }
+  .ct-contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .ct-contact-col:last-child {
+    text-align: left;
+  }
+}
+
+/* ---- partner mark ---- */
+
+.ct-partner {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  z-index: 20;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 16px 10px;
+  mix-blend-mode: difference;
+  color: var(--color-ct-light);
+}
+
+.ct-partner-word {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  transition: transform 0.45s cubic-bezier(0.8, 0.15, 0.3, 0.95);
+}
+
+.ct-partner-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+}
+
+.ct-partner-arrow svg {
+  width: 8px;
+  height: 8px;
+}
+
+.ct-arrow-rel,
+.ct-arrow-abs {
+  transition: transform 0.45s cubic-bezier(0.8, 0.15, 0.3, 0.95);
+}
+
+.ct-arrow-abs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-150%, 150%);
+}
+
+.ct-partner:hover .ct-arrow-rel {
+  transform: translate(150%, -150%);
+}
+
+.ct-partner:hover .ct-arrow-abs {
+  transform: translate(-50%, -50%);
+}
+
+.ct-partner:hover .ct-partner-word {
+  transform: translate(10px);
+}
+
+/* ---- reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-tile,
+  .ct-nav-link,
+  .ct-workbar,
+  .ct-cursor-cube,
+  .ct-cursor-label,
+  .ct-partner-word,
+  .ct-arrow-rel,
+  .ct-arrow-abs {
+    transition: none;
+  }
+  .ct-contact-blob {
+    animation: none;
+  }
+}
