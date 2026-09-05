@@ -29,10 +29,11 @@ Eight independent, self-contained website templates under `templates/`, plus a g
 
 ## Modularity contract (hard, every template including the gallery)
 
-- Everything mutable lives in `templates/<slug>/config.json`: brand name, nav items, every heading, paragraph, label and link, image/placeholder specs (gradient stops, inline-SVG params, alt text), theme tokens (colors, radii, accent), section order and each section's item lists.
+- Everything mutable lives in `templates/<slug>/config.json`: brand name, nav items, every heading, paragraph, label and link, image/placeholder specs (gradient stops, inline-SVG params, alt text), theme tokens (colors, radii, accent), section order (`config.sections`, an ordered list of section names) and each section's item lists.
 - Every section is a component: `templates/<slug>/components/<section>.mjs`, a pure function `(config) => html string`. A component holds structure, classes and wiring only; no copy, url, image or color literal hardcoded inside it.
-- Rendering happens at BUILD time: `bun run build` renders `index.html` from config + components, then builds the css. Build-time rendering keeps the no-JS guarantee (gate check) while making every template fully re-skinnable by editing config alone.
-- The gate's render-drift check (Harness contract) enforces that the committed `index.html` is exactly what the config renders.
+- The document wrapper is `templates/<slug>/shell.mjs`, a pure function `(config, bodyHtml) => full html string`: doctype/html/head/body, plus any config-driven `<title>`/meta/description — the one place that assembles the sections (joined in `config.sections` order) into a full page.
+- Rendering happens at BUILD time: `bun run build` renders `index.html` from config + components + shell (`templates/scripts/render.mjs`), then builds the css. Build-time rendering keeps the no-JS guarantee (gate check) while making every template fully re-skinnable by editing config alone.
+- The gate's render-drift check (Harness contract) enforces that the committed `index.html` is exactly what the config renders: it snapshots the committed file before `bun run build` re-renders it, and fails if the two differ (a hand-edit or a forgotten rebuild after a config change).
 
 ## Method (per site, condensed from the proven component-RE loop)
 

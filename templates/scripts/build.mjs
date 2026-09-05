@@ -1,8 +1,15 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { renderSlug } from "./render.mjs";
 
 const manifest = JSON.parse(readFileSync(new URL("../manifest.json", import.meta.url), "utf8"));
 
 for (const slug of manifest) {
+  if (existsSync(`${slug}/config.json`)) {
+    const html = await renderSlug(`${slug}/`);
+    writeFileSync(`${slug}/index.html`, html);
+    console.log(`rendered ${slug}/index.html`);
+  }
+
   const input = `${slug}/src/main.css`;
   const output = `${slug}/style.css`;
   const proc = Bun.spawn(

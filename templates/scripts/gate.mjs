@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { chromium } from "playwright";
 import { checkSlugAtWidth, WIDTHS, serveDir } from "./check.mjs";
 
@@ -8,10 +8,35 @@ if (selftest.exitCode !== 0) {
   process.exit(selftest.exitCode);
 }
 
+const rendertest = Bun.spawnSync(["bun", "scripts/rendertest.mjs"], { stdout: "inherit", stderr: "inherit" });
+if (rendertest.exitCode !== 0) {
+  console.error("gate: rendertest failed, render/drift logic is unsound, aborting before touching templates");
+  process.exit(rendertest.exitCode);
+}
+
+const manifest = JSON.parse(readFileSync(new URL("../manifest.json", import.meta.url), "utf8"));
+
+// Snapshot each modular slug's committed index.html before build re-renders it from config + components.
+// A hand-edit that build's render would otherwise silently clobber shows up as a gate failure instead.
+const preBuildSnapshots = new Map();
+for (const slug of manifest) {
+  if (existsSync(`${slug}/config.json`) && existsSync(`${slug}/index.html`)) {
+    preBuildSnapshots.set(slug, readFileSync(`${slug}/index.html`, "utf8"));
+  }
+}
+
 const build = Bun.spawnSync(["bun", "scripts/build.mjs"], { stdout: "inherit", stderr: "inherit" });
 if (build.exitCode !== 0) process.exit(build.exitCode);
 
-const manifest = JSON.parse(readFileSync(new URL("../manifest.json", import.meta.url), "utf8"));
+let driftFailed = false;
+for (const [slug, before] of preBuildSnapshots) {
+  const after = readFileSync(`${slug}/index.html`, "utf8");
+  if (before !== after) {
+    driftFailed = true;
+    console.error(`FAIL ${slug}: render-drift — committed index.html doesn't match config + components. Run 'bun run build' and commit the result.`);
+  }
+}
+if (driftFailed) process.exit(1);
 if (manifest.length === 0) {
   console.log("gate: manifest empty, nothing to check");
   process.exit(0);
