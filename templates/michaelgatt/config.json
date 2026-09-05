@@ -10,10 +10,6 @@
     "contact",
     "menu"
   ],
-  "theme": {
-    "bg": "#000000",
-    "line": "rgba(255,255,255,.14)"
-  },
   "brand": {
     "name": "Emrys Vale",
     "sub": "Composer"

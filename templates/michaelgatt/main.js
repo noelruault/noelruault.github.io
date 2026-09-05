@@ -154,7 +154,12 @@
       body.dataset.mgView = open.dataset.mgOpen;
       return;
     }
-    if (e.target.closest("[data-mg-close]")) delete body.dataset.mgView;
+    if (e.target.closest("[data-mg-close]")) {
+      delete body.dataset.mgView;
+      return;
+    }
+    // a tile is a doorway, not a decoration: the reference navigates to the project
+    if (body.dataset.mgEntered && e.target.closest("[data-mg-tile]")) body.dataset.mgView = "index";
   });
   addEventListener("keydown", (e) => {
     if (e.key === "Escape") delete body.dataset.mgView;
@@ -169,7 +174,7 @@
   function spyAbout() {
     const idx = Math.min(aboutSecs.length - 1, Math.round(aboutPane.scrollTop / aboutPane.clientHeight));
     railItems.forEach((it, i) => it.classList.toggle("active", i === idx));
-    railCursor.style.transform = `translateY(${idx * 3.5}rem)`;
+    railCursor.style.transform = `translateY(${idx * (railItems[0]?.offsetHeight || 56)}px)`;
     if (idx === aboutSecs.length - 1) wipe.classList.add("on");
   }
   aboutPane.addEventListener("scroll", spyAbout, { passive: true });

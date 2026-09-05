@@ -68,6 +68,12 @@ body[data-mg-entered] .mg-intro {
   transform-style: preserve-3d;
   transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   --travel: 0px;
+  /* the field's own z=0 plane sits in front of every tile (negative translateZ) and would swallow all pointer events */
+  pointer-events: none;
+}
+.mg-slot {
+  pointer-events: auto;
+  cursor: pointer;
 }
 .mg-slot {
   position: absolute;
