@@ -22,7 +22,7 @@ const iconTile = (item) => `<a href="#" class="ph-desk-icon flex w-[76px] flex-c
 
 export default (config) => {
   const d = config.desktopIcons;
-  return `<div class="pointer-events-none fixed inset-y-14 inset-x-2 z-10 hidden justify-between lg:flex" aria-hidden="false">
+  return `<div class="pointer-events-none fixed inset-y-14 inset-x-2 z-10 hidden justify-between md:flex" aria-hidden="false">
   <div class="pointer-events-auto flex flex-col items-center gap-5 pl-4 pt-3">
     ${d.left.map(iconTile).join("\n    ")}
   </div>

@@ -21,11 +21,11 @@ const mockAsk = (m) => `<div class="ph-mock rounded-md p-4 sm:p-6">
   </div>
 </div>`;
 
-const mockChat = (msgs) => `<div class="ph-mock rounded-md p-4 sm:p-6">
+const mockChat = (msgs, appTag) => `<div class="ph-mock rounded-md p-4 sm:p-6">
   <div class="mx-auto max-w-[430px] space-y-3 rounded-md border border-ph-line bg-white p-4 text-left shadow-sm">
     ${msgs.map((msg) => `<div class="flex gap-2.5">
       <span class="mt-0.5 h-7 w-7 shrink-0 rounded ${msg.bot ? "bg-ph-red" : "bg-ph-line"}"></span>
-      <p class="text-[13.5px] leading-snug"><strong>${msg.author}</strong>${msg.bot ? ` <span class="ph-pill-app">APP</span>` : ""}<br>${msg.text}</p>
+      <p class="text-[13.5px] leading-snug"><strong>${msg.author}</strong>${msg.bot ? ` <span class="ph-pill-app">${appTag}</span>` : ""}<br>${msg.text}</p>
     </div>`).join("\n    ")}
   </div>
 </div>`;
@@ -39,9 +39,9 @@ const mockInbox = (items) => `<div class="ph-mock rounded-md p-4 sm:p-6">
   </div>
 </div>`;
 
-const mockFor = (item) => {
+const mockFor = (item, appTag) => {
   if (item.mock === "ask") return mockAsk(item.mockAsk);
-  if (item.mock === "chat") return mockChat(item.mockChat);
+  if (item.mock === "chat") return mockChat(item.mockChat, appTag);
   return mockInbox(item.mockInbox);
 };
 
@@ -56,7 +56,7 @@ export default (config) => {
       ${it.toggles.map((t, j) => `<span class="ph-toggle${j === 0 ? " ph-toggle-active" : ""}">${t}</span>`).join("\n      ")}
     </div>
     <div class="grid items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
-      ${mockFor(it)}
+      ${mockFor(it, config.tabs.appTag)}
       <div class="text-center lg:text-left">
         <p class="text-[13px] font-semibold uppercase tracking-wide text-ph-sub">✦ ${it.eyebrow}</p>
         <h3 class="mt-1 text-[26px] font-extrabold tracking-tight">${it.heading}</h3>

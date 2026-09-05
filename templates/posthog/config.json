@@ -229,7 +229,8 @@
           }
         ]
       }
-    ]
+    ],
+    "appTag": "APP"
   },
   "tools": {
     "label": "Batteries included for every agent:",
