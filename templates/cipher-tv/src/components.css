@@ -123,8 +123,9 @@ body[data-view="studio"] .ct-mark-orbit {
   display: none;
 }
 
-/* While the contact overlay is open the emblem rises above it and shows the ring, reading dark on the light blob via the blend. */
-body.ct-contact-open .ct-emblem {
+/* While the contact overlay is open the emblem and logo rise above it, like the reference keeps its wordmark over the overlay; the emblem swaps to the ring, reading dark on the light blob via the blend. */
+body.ct-contact-open .ct-emblem,
+body.ct-contact-open .ct-logo {
   z-index: 60;
 }
 
@@ -165,7 +166,7 @@ body.ct-contact-open .ct-mark-ring {
 
 @media (max-width: 768px) {
   .ct-cloud {
-    --rx: 38vw;
+    --rx: 33vw;
     --ry: 30vh;
     --tile-scale: 0.55;
   }
