@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "./components.css";
+@source "../";
+
+@theme {
+  --color-mg-off: #e6e5e5;
+  --color-mg-mist: #c5c5c5;
+  --color-mg-steel: #969ca0;
+  --color-mg-smoke: #898989;
+  --color-mg-coal: #101010;
+  --font-mg-serif: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}

@@ -1,0 +1,635 @@
+{
+  "title": "Emrys Vale | Original Music for Film and Games",
+  "description": "Original scores and sound worlds for film, series and games by composer Emrys Vale.",
+  "sections": [
+    "header",
+    "intro",
+    "stage",
+    "indexview",
+    "about",
+    "contact",
+    "menu"
+  ],
+  "theme": {
+    "bg": "#000000",
+    "line": "rgba(255,255,255,.14)"
+  },
+  "brand": {
+    "name": "Emrys Vale",
+    "sub": "Composer"
+  },
+  "intro": {
+    "words": [
+      {
+        "t": "Tap",
+        "x": "-20em",
+        "y": "0em"
+      },
+      {
+        "t": "anywhere",
+        "x": "-12em",
+        "y": "0em"
+      },
+      {
+        "t": "and",
+        "x": "-6em",
+        "y": "-0.7em"
+      },
+      {
+        "t": "the",
+        "x": "-1.5em",
+        "y": "-0.7em"
+      },
+      {
+        "t": "score",
+        "x": "3em",
+        "y": "0em",
+        "echo": true
+      },
+      {
+        "t": "begins",
+        "x": "9em",
+        "y": "0em"
+      },
+      {
+        "t": "playing",
+        "x": "16em",
+        "y": "0.7em"
+      }
+    ],
+    "enterQuiet": "Enter in silence"
+  },
+  "welcome": [
+    {
+      "t": "step into",
+      "s": "sm"
+    },
+    {
+      "t": "Emrys Vale's",
+      "s": "lg"
+    },
+    {
+      "t": "world",
+      "s": "sm",
+      "break": true
+    },
+    {
+      "t": "of",
+      "s": "sm"
+    },
+    {
+      "t": "Film",
+      "s": "lg"
+    },
+    {
+      "t": "+",
+      "s": "sm"
+    },
+    {
+      "t": "Series",
+      "s": "lg"
+    },
+    {
+      "t": "and",
+      "s": "sm"
+    },
+    {
+      "t": "Games",
+      "s": "lg",
+      "break": true
+    },
+    {
+      "t": "music",
+      "s": "sm"
+    },
+    {
+      "t": "scoring",
+      "s": "lg"
+    }
+  ],
+  "stage": {
+    "cursorLabel": "Hear more",
+    "listToggle": "List view",
+    "maxTravel": 1500
+  },
+  "projects": [
+    {
+      "num": "001",
+      "t": "The Hollow Signal",
+      "k": "Feature score"
+    },
+    {
+      "num": "002",
+      "t": "Cinder & Vine",
+      "k": "Animated feature"
+    },
+    {
+      "num": "003",
+      "t": "Night Ferry",
+      "k": "Series main title"
+    },
+    {
+      "num": "004",
+      "t": "Paper Comet",
+      "k": "Indie game"
+    },
+    {
+      "num": "005",
+      "t": "The Long Quiet",
+      "k": "Documentary"
+    },
+    {
+      "num": "006",
+      "t": "Marrow Lane",
+      "k": "Horror feature"
+    },
+    {
+      "num": "007",
+      "t": "Starlark Protocol",
+      "k": "Series score"
+    },
+    {
+      "num": "008",
+      "t": "Reef of Glass",
+      "k": "Nature series"
+    },
+    {
+      "num": "009",
+      "t": "Kettle & Crow",
+      "k": "Animated short"
+    },
+    {
+      "num": "010",
+      "t": "Amber Meridian",
+      "k": "Game score"
+    },
+    {
+      "num": "011",
+      "t": "The Last Cartographer",
+      "k": "Feature score"
+    },
+    {
+      "num": "012",
+      "t": "Salt Circus",
+      "k": "Series score"
+    }
+  ],
+  "indexview": {
+    "back": "Back to orbit"
+  },
+  "tiles": [
+    {
+      "p": 0,
+      "x": "-38vw",
+      "y": "-24vh",
+      "z": "-300px",
+      "w": "16vw",
+      "ar": "16/10",
+      "g": [
+        "#0e2b31",
+        "#050b0d",
+        "160deg"
+      ],
+      "m": "wave",
+      "dim": 0.6
+    },
+    {
+      "p": 1,
+      "x": "-16vw",
+      "y": "-30vh",
+      "z": "-700px",
+      "w": "13vw",
+      "ar": "4/5",
+      "g": [
+        "#2a1440",
+        "#0d0618",
+        "200deg"
+      ],
+      "m": "ring",
+      "dim": 0.5
+    },
+    {
+      "p": 2,
+      "x": "8vw",
+      "y": "-26vh",
+      "z": "-150px",
+      "w": "12vw",
+      "ar": "4/3",
+      "g": [
+        "#3a0d12",
+        "#12050a",
+        "145deg"
+      ],
+      "m": "none",
+      "dim": 0.7
+    },
+    {
+      "p": 3,
+      "x": "34vw",
+      "y": "-28vh",
+      "z": "-900px",
+      "w": "20vw",
+      "ar": "16/9",
+      "g": [
+        "#16243d",
+        "#060a14",
+        "170deg"
+      ],
+      "m": "ridge",
+      "dim": 0.45
+    },
+    {
+      "p": 4,
+      "x": "-45vw",
+      "y": "2vh",
+      "z": "-500px",
+      "w": "18vw",
+      "ar": "16/9",
+      "g": [
+        "#1d3324",
+        "#07110a",
+        "150deg"
+      ],
+      "m": "wave",
+      "dim": 0.55
+    },
+    {
+      "p": 5,
+      "x": "-24vw",
+      "y": "10vh",
+      "z": "-100px",
+      "w": "15vw",
+      "ar": "3/4",
+      "g": [
+        "#40200c",
+        "#140902",
+        "190deg"
+      ],
+      "m": "none",
+      "dim": 0.8
+    },
+    {
+      "p": 6,
+      "x": "20vw",
+      "y": "6vh",
+      "z": "-650px",
+      "w": "14vw",
+      "ar": "1/1",
+      "g": [
+        "#3d1f2e",
+        "#12060f",
+        "135deg"
+      ],
+      "m": "ring",
+      "dim": 0.5
+    },
+    {
+      "p": 7,
+      "x": "42vw",
+      "y": "12vh",
+      "z": "-250px",
+      "w": "17vw",
+      "ar": "16/10",
+      "g": [
+        "#0d3438",
+        "#041012",
+        "165deg"
+      ],
+      "m": "wave",
+      "dim": 0.65
+    },
+    {
+      "p": 8,
+      "x": "-36vw",
+      "y": "28vh",
+      "z": "-800px",
+      "w": "13vw",
+      "ar": "4/3",
+      "g": [
+        "#4a3019",
+        "#1a0f05",
+        "155deg"
+      ],
+      "m": "ridge",
+      "dim": 0.45
+    },
+    {
+      "p": 9,
+      "x": "-8vw",
+      "y": "30vh",
+      "z": "-400px",
+      "w": "15vw",
+      "ar": "16/9",
+      "g": [
+        "#232323",
+        "#0a0a0a",
+        "180deg"
+      ],
+      "m": "none",
+      "dim": 0.6
+    },
+    {
+      "p": 10,
+      "x": "16vw",
+      "y": "26vh",
+      "z": "-1000px",
+      "w": "19vw",
+      "ar": "16/9",
+      "g": [
+        "#3c1030",
+        "#12040e",
+        "140deg"
+      ],
+      "m": "ring",
+      "dim": 0.4
+    },
+    {
+      "p": 11,
+      "x": "40vw",
+      "y": "30vh",
+      "z": "-550px",
+      "w": "12vw",
+      "ar": "4/5",
+      "g": [
+        "#4a3010",
+        "#160b03",
+        "175deg"
+      ],
+      "m": "none",
+      "dim": 0.55
+    },
+    {
+      "p": 0,
+      "x": "-30vw",
+      "y": "-18vh",
+      "z": "-1600px",
+      "w": "18vw",
+      "ar": "16/9",
+      "g": [
+        "#123034",
+        "#060d0e",
+        "150deg"
+      ],
+      "m": "none",
+      "dim": 0.6,
+      "desk": true
+    },
+    {
+      "p": 2,
+      "x": "26vw",
+      "y": "-20vh",
+      "z": "-1900px",
+      "w": "16vw",
+      "ar": "4/3",
+      "g": [
+        "#38141c",
+        "#0f0509",
+        "165deg"
+      ],
+      "m": "wave",
+      "dim": 0.55,
+      "desk": true
+    },
+    {
+      "p": 4,
+      "x": "-44vw",
+      "y": "16vh",
+      "z": "-2200px",
+      "w": "20vw",
+      "ar": "16/10",
+      "g": [
+        "#20301f",
+        "#090f08",
+        "185deg"
+      ],
+      "m": "none",
+      "dim": 0.55,
+      "desk": true
+    },
+    {
+      "p": 6,
+      "x": "6vw",
+      "y": "18vh",
+      "z": "-1700px",
+      "w": "13vw",
+      "ar": "1/1",
+      "g": [
+        "#2d1836",
+        "#0c0612",
+        "155deg"
+      ],
+      "m": "ridge",
+      "dim": 0.55,
+      "desk": true
+    },
+    {
+      "p": 8,
+      "x": "38vw",
+      "y": "4vh",
+      "z": "-2400px",
+      "w": "17vw",
+      "ar": "16/9",
+      "g": [
+        "#413018",
+        "#150f05",
+        "145deg"
+      ],
+      "m": "none",
+      "dim": 0.5,
+      "desk": true
+    },
+    {
+      "p": 10,
+      "x": "-12vw",
+      "y": "-32vh",
+      "z": "-2100px",
+      "w": "14vw",
+      "ar": "3/4",
+      "g": [
+        "#101c30",
+        "#04070f",
+        "195deg"
+      ],
+      "m": "ring",
+      "dim": 0.5,
+      "desk": true
+    },
+    {
+      "p": 1,
+      "x": "12vw",
+      "y": "34vh",
+      "z": "-2600px",
+      "w": "16vw",
+      "ar": "16/9",
+      "g": [
+        "#301a10",
+        "#0d0603",
+        "160deg"
+      ],
+      "m": "wave",
+      "dim": 0.5,
+      "desk": true
+    },
+    {
+      "p": 3,
+      "x": "-26vw",
+      "y": "34vh",
+      "z": "-1400px",
+      "w": "12vw",
+      "ar": "4/3",
+      "g": [
+        "#0f2f27",
+        "#050e0b",
+        "170deg"
+      ],
+      "m": "none",
+      "dim": 0.6,
+      "desk": true
+    }
+  ],
+  "about": {
+    "rail": [
+      "Basement demos",
+      "One cello, two rivers",
+      "Trailers + idents",
+      "Feature length worlds"
+    ],
+    "text1": [
+      {
+        "t": "Emrys",
+        "s": "lg"
+      },
+      {
+        "t": "writes",
+        "s": "sm"
+      },
+      {
+        "t": "scores",
+        "s": "lg",
+        "break": true
+      },
+      {
+        "t": "for",
+        "s": "sm"
+      },
+      {
+        "t": "moving pictures",
+        "s": "lg"
+      }
+    ],
+    "text2": [
+      {
+        "t": "also a",
+        "s": "sm"
+      },
+      {
+        "t": "songwriter",
+        "s": "lg",
+        "break": true
+      },
+      {
+        "t": "and",
+        "s": "sm"
+      },
+      {
+        "t": "sound designer",
+        "s": "lg",
+        "break": true
+      },
+      {
+        "t": "and",
+        "s": "sm"
+      },
+      {
+        "t": "theme maker",
+        "s": "lg"
+      }
+    ],
+    "magic": [
+      {
+        "t": "Emrys",
+        "x": "0em"
+      },
+      {
+        "t": "started",
+        "x": "0em"
+      },
+      {
+        "t": "scoring",
+        "x": "-0.5em"
+      },
+      {
+        "t": "stories with",
+        "x": "-4.5em"
+      },
+      {
+        "t": "a four-track",
+        "x": "-3em"
+      },
+      {
+        "t": "and a borrowed",
+        "x": "-1.75em"
+      },
+      {
+        "t": "cello",
+        "x": "0.5em",
+        "hollow": true
+      }
+    ],
+    "closing": "Twelve years on, the studio is bigger. The habit of listening first never changed.",
+    "back": "Back to orbit"
+  },
+  "contact": {
+    "heading": "For scoring and licensing\ninquiries",
+    "agentName": "Mara Ellison",
+    "agency": "North Light Artists",
+    "phone": "(555) 010-4477",
+    "email": "mara@northlightartists.example",
+    "bioLabel": "Press\nkit",
+    "bioLink": "Download",
+    "credit": {
+      "words": [
+        "this",
+        "site",
+        "hand",
+        "built",
+        "by"
+      ],
+      "name": "Atelier Nocturne"
+    },
+    "back": "Back to orbit"
+  },
+  "menu": {
+    "line1": [
+      {
+        "t": "the",
+        "s": "sm"
+      },
+      {
+        "t": "scores",
+        "s": "lg",
+        "open": "index"
+      },
+      {
+        "t": "and my",
+        "s": "sm"
+      },
+      {
+        "t": "story",
+        "s": "lg",
+        "open": "about"
+      }
+    ],
+    "line2": [
+      {
+        "t": "or say",
+        "s": "sm"
+      },
+      {
+        "t": "hello",
+        "s": "lg",
+        "open": "contact"
+      }
+    ]
+  }
+}
