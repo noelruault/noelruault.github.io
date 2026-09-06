@@ -1,0 +1,562 @@
+/* likova template components. Everything namespaced lk-. */
+
+body {
+  font-family: var(--font-lk-sans);
+}
+
+/* ---- type scale, sized off the reference's fluid display system ---- */
+.lk-display {
+  font-size: clamp(4rem, 11vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.lk-h2 {
+  font-size: clamp(2.1rem, 4.8vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+.lk-statement {
+  font-size: clamp(1.45rem, 2.9vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 450;
+}
+
+.lk-lead {
+  font-size: clamp(1.02rem, 1.4vw, 1.28rem);
+  line-height: 1.3;
+}
+
+.lk-kicker {
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--color-lk-gray);
+}
+
+/* first-line indent the reference applies to big statements */
+.lk-indent {
+  width: clamp(4rem, 12vw, 11rem);
+}
+
+/* ---- section themes ---- */
+.lk-light {
+  background: #fff;
+  color: var(--color-lk-ink);
+}
+
+.lk-light-alt {
+  background: var(--color-lk-light);
+  color: var(--color-lk-ink);
+}
+
+/* ---- sticky stack: pinned full-bleed panel, next section slides over ---- */
+section, footer {
+  position: relative;
+}
+
+.lk-stage .lk-pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* extra travel plus negative margin: the following section rides over the pin */
+.lk-stage--tall {
+  min-height: 200svh;
+  margin-bottom: -100svh;
+}
+
+/* media-only pin inside a flow section: content sibling slides over it */
+.lk-pin--media {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* the information band is a plain full-height panel, not a pin */
+.lk-pin--info {
+  position: relative;
+  height: auto;
+  min-height: 100svh;
+  overflow: visible;
+}
+
+/* ---- header ---- */
+.lk-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+}
+
+.lk-header__inner {
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.lk-burger {
+  display: block;
+  width: 26px;
+  height: 12px;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+
+.lk-logo {
+  display: block;
+  color: #fff;
+}
+
+.lk-logo__mark {
+  height: 20px;
+  width: auto;
+}
+
+.lk-logo__text {
+  font-size: 15px;
+  letter-spacing: 0.42em;
+  fill: currentColor;
+  font-weight: 600;
+}
+
+.lk-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lk-link:hover {
+  opacity: 0.7;
+}
+
+/* ---- bookmarks: tabs poking above a section's top edge ---- */
+.lk-bookmark {
+  --bh: clamp(3.8rem, 8vw, 7.5rem);
+  height: var(--bh);
+  margin-top: calc(var(--bh) * -1);
+  background: var(--color-lk-navy);
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.lk-light .lk-bookmark,
+.lk-light-alt .lk-bookmark {
+  background: #fff;
+}
+
+.lk-bookmark--intro {
+  margin-top: 2.5rem;
+  justify-content: flex-end;
+  background: var(--color-lk-navy);
+}
+
+.lk-bookmark--team {
+  align-items: flex-start;
+  padding-top: 1.4rem;
+}
+
+.lk-bookmark--footer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  --bh: clamp(6rem, 14vw, 12rem);
+}
+
+/* ---- numbered chapter tag + square icon buttons ---- */
+.lk-numtag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  background: #fff;
+  color: var(--color-lk-navy);
+  font-size: 0.78rem;
+  flex: none;
+}
+
+.lk-light .lk-numtag,
+.lk-light-alt .lk-numtag {
+  background: var(--color-lk-navy);
+  color: #fff;
+}
+
+.lk-sqbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: #fff;
+  color: var(--color-lk-navy);
+  flex: none;
+}
+
+.lk-sqbtn--ghost {
+  background: transparent;
+  color: currentColor;
+  border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+}
+
+.lk-sqbtn--overlay {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+}
+
+.lk-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---- bitten-corner CTA: clip-path notch cut from one corner ---- */
+.lk-bitten {
+  --n: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.15rem 2.6rem;
+  background: #fff;
+  color: var(--color-lk-navy);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+}
+
+.lk-light .lk-bitten,
+.lk-light-alt .lk-bitten {
+  background: var(--color-lk-navy);
+  color: #fff;
+}
+
+.lk-bitten--rb {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--n)), calc(100% - var(--n)) calc(100% - var(--n)), calc(100% - var(--n)) 100%, 0 100%);
+}
+
+.lk-bitten--lt {
+  clip-path: polygon(var(--n) 0, 100% 0, 100% 100%, 0 100%, 0 var(--n), var(--n) var(--n));
+}
+
+.lk-bitten--lb {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, var(--n) 100%, var(--n) calc(100% - var(--n)), 0 calc(100% - var(--n)));
+}
+
+.lk-bitten--full {
+  width: 100%;
+}
+
+.lk-bitten:hover {
+  opacity: 0.9;
+}
+
+/* ---- progress bars + slide counters ---- */
+.lk-bar {
+  display: block;
+  flex: 1;
+  height: 2px;
+  background: color-mix(in srgb, currentColor 25%, transparent);
+}
+
+.lk-bar__fill {
+  display: block;
+  height: 100%;
+  background: currentColor;
+}
+
+.lk-slash {
+  display: inline-block;
+  width: 1px;
+  height: 0.9rem;
+  background: currentColor;
+  transform: rotate(20deg);
+  opacity: 0.5;
+}
+
+/* ---- gradient-stroke glyph icons ---- */
+.lk-glyph {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.lk-glyph--lg {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.lk-glyph--xl {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+/* ---- intro ---- */
+.lk-stage--intro .lk-pin {
+  justify-content: flex-start;
+}
+
+.lk-building {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: min(52svh, 560px);
+}
+
+.lk-intro-foot {
+  margin-top: auto;
+  padding-bottom: 2.2rem;
+}
+
+.lk-class-icon {
+  width: clamp(2.6rem, 4vw, 3.6rem);
+  height: auto;
+}
+
+/* ---- idea ---- */
+.lk-cube {
+  aspect-ratio: 1;
+  max-width: 560px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* ---- floating slide panels pinned to the stage bottom ---- */
+.lk-loc-panel,
+.lk-map-panel,
+.lk-arch-slider,
+.lk-env-panel {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  background: var(--color-lk-navy);
+  padding: 1.6rem;
+}
+
+.lk-map-panel {
+  background: #fff;
+  color: var(--color-lk-ink);
+}
+
+.lk-env-panel {
+  background: var(--color-lk-navy);
+  min-height: clamp(14rem, 40svh, 22rem);
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  margin: 0;
+}
+
+.lk-arch-slider {
+  position: relative;
+}
+
+.lk-arch-decor {
+  position: absolute;
+  left: 0;
+  top: -0.9rem;
+  width: 38%;
+  height: 0.9rem;
+  background: var(--color-lk-navy);
+}
+
+/* ---- accessibility map pins ---- */
+.lk-pin-btn {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--color-lk-navy);
+  transform: translate(-50%, -50%);
+}
+
+/* ---- master plan ---- */
+.lk-plan-open {
+  margin-top: auto;
+  margin-left: auto;
+  background: var(--color-lk-navy);
+  color: #fff;
+  padding: 1.4rem;
+  width: min(320px, 80%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.lk-plan-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ---- architect card ---- */
+.lk-architect {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 92%);
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .lk-architect {
+    display: block;
+  }
+}
+
+.lk-architect__card {
+  display: block;
+  background: #fff;
+  color: var(--color-lk-ink);
+  padding: 1.6rem;
+  text-decoration: none;
+}
+
+.lk-architect__photo {
+  aspect-ratio: 4 / 3;
+  margin-top: 1.2rem;
+}
+
+/* ---- offices CTA ---- */
+.lk-offices-cta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media (min-width: 64rem) {
+  .lk-offices-cta {
+    left: 0;
+    right: auto;
+  }
+}
+
+/* ---- lobby ---- */
+.lk-decor-strip {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+}
+
+.lk-decor-tile {
+  aspect-ratio: 0.72;
+}
+
+.lk-lobby-image {
+  aspect-ratio: 4 / 5;
+}
+
+.lk-stat-card {
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  padding-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.lk-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lk-gallery-item {
+  position: relative;
+  aspect-ratio: 0.8;
+}
+
+/* ---- comfort cards: corner-anchored content like the reference's card system ---- */
+.lk-comfort-card {
+  background: var(--color-lk-navy);
+  color: #fff;
+  padding: 1.6rem;
+  min-height: clamp(18rem, 40vw, 26rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- engineering ---- */
+.lk-schematic {
+  width: 100%;
+  height: auto;
+}
+
+.lk-eng-card {
+  background: #fff;
+  color: var(--color-lk-ink);
+  padding: 1.6rem;
+  aspect-ratio: 1.3;
+  display: flex;
+  flex-direction: column;
+  max-width: 34rem;
+}
+
+.lk-eng-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---- amenities ---- */
+.lk-amenity-card {
+  background: var(--color-lk-panel);
+  padding: 1.4rem;
+  aspect-ratio: 1.05;
+  display: flex;
+  flex-direction: column;
+  max-width: 26rem;
+}
+
+/* ---- team ---- */
+.lk-team-card {
+  position: relative;
+  background: var(--color-lk-navy);
+  color: #fff;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.lk-team-card__image {
+  aspect-ratio: 1.15;
+}
+
+.lk-team-card__plus {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .lk-team-card__plus {
+    display: inline-flex;
+  }
+}
+
+.lk-hr {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+}
+
+/* ---- footer ---- */
+.lk-footnote {
+  color: color-mix(in srgb, var(--color-lk-gray) 55%, transparent);
+  max-width: 72ch;
+}

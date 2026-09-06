@@ -1,0 +1,209 @@
+{
+  "sections": ["header", "intro", "idea", "information", "location", "accessibility", "environment", "generalPlan", "architecture", "lobby", "offices", "comfort", "engineering", "infrastructure", "team", "footer"],
+  "title": "Meridian — Class A Business Campus",
+  "description": "Meridian is a class A business campus template: pinned full-bleed panels, numbered chapters, oversized numerals and a dark-light rhythm.",
+  "brand": "Meridian",
+  "theme": {
+    "navy": "#0b1026",
+    "panel": "#262b40",
+    "muted": "#5e5d72",
+    "gray": "#c0c1c8",
+    "light": "#e4e7ec",
+    "metal": ["#c9cdd6", "#5c6168"]
+  },
+  "placeholders": {
+    "sky": ["#1a2140", "#0b1026"],
+    "duskCity": ["#2c3352", "#141a33"],
+    "aerial": ["#39415c", "#10152c"],
+    "map": ["#dfe3e9", "#c3cad4"],
+    "parks": ["#25402f", "#0d1a12"],
+    "plan": ["#d7dbe2", "#aeb5c0"],
+    "facade": ["#4a5470", "#171d36"],
+    "lobbyWarm": ["#6b6459", "#26221c"],
+    "officeCool": ["#5d6678", "#1c2233"],
+    "court": ["#54604f", "#1b2418"],
+    "teamCard": ["#333a55", "#12172e"],
+    "cube": ["#c9cdd6", "#5c6168"]
+  },
+  "header": {
+    "menuLabel": "Menu",
+    "selectorText": "Choose your floor",
+    "favouritesCount": "0",
+    "contactText": "Get in touch",
+    "nav": [
+      { "text": "The campus", "href": "#about" },
+      { "text": "Location", "href": "#location" },
+      { "text": "Site plan", "href": "#siteplan" },
+      { "text": "Architecture", "href": "#architecture" },
+      { "text": "Lobby", "href": "#lobby" },
+      { "text": "Offices", "href": "#offices" },
+      { "text": "Systems", "href": "#systems" },
+      { "text": "Amenities", "href": "#amenities" },
+      { "text": "People", "href": "#people" }
+    ]
+  },
+  "intro": {
+    "srTitle": "Meridian — built for upward trajectories",
+    "tagline": ["Built for", "upward trajectories"],
+    "lede": "A class A business campus on the city's western rim. Bold geometry and honest engineering give growing companies a launch pad, not just a lease.",
+    "classLabel": "Class",
+    "classValue": "A",
+    "scrollHref": "#about"
+  },
+  "idea": {
+    "number": "1",
+    "heading": ["Confident ideas.", "Louder ambitions."],
+    "statement": "Meridian reads as sculpture first and floor plate second. The campus resets the skyline of its district and hands every tenant a share of that signal.",
+    "anchor": "about"
+  },
+  "information": {
+    "srTitle": "Key figures",
+    "stats": [
+      { "key": "Storeys across the three volumes", "value": "7-8-9" },
+      { "key": "Gross area, square meters", "value": "48 200" },
+      { "key": "Doors open in the", "prefix": "2nd quarter of", "value": "2027" }
+    ]
+  },
+  "location": {
+    "number": "2",
+    "heading": "Location",
+    "kicker": ["An address that", "does the introductions"],
+    "intro": "The campus anchors a corridor where the city is spending heavily on transit and public space, so the neighbourhood compounds in value while you work.",
+    "anchor": "location",
+    "slides": [
+      { "title": ["Minutes from", "the runway"], "icon": "plane", "text": "Catch a morning flight without an alarm-clock tragedy: the airport door is a short drive from the lobby turnstiles." },
+      { "title": ["A widening", "road grid"], "icon": "car", "text": "Two arterials and a new interchange put the centre of town within a coffee's worth of driving." },
+      { "title": ["Homes within", "walking range"], "icon": "building", "text": "Dense new housing sits one stop away, so the commute can be a stroll rather than a schedule." }
+    ]
+  },
+  "accessibility": {
+    "number": "3",
+    "kicker": ["Every route to work", "is a short one"],
+    "statement": "Nearer than the map suggests. Meridian sits against the orbital exit, so drivers skip the morning crush and cyclists ride a dedicated greenway the whole way in.",
+    "pins": ["park", "sport", "food", "plane", "med", "hotel"],
+    "stats": [
+      { "value": "7", "unit": "minutes", "mode": "by shuttle", "label": "To the metro loop" },
+      { "value": "9", "unit": "minutes", "mode": "by car", "label": "To the airport" },
+      { "value": "14", "unit": "minutes", "mode": "by car", "label": "To the orbital road" }
+    ]
+  },
+  "environment": {
+    "heading": ["Green space for people", "who never sit still"],
+    "slides": [
+      "Three public parks ring the campus with trail loops, open lawns and water you can actually reach on a lunch break.",
+      "Winter swaps the trails for groomed ski tracks and a lit skating oval five minutes from the lobby doors.",
+      "Prefer culture to cardio? A concert shell and two galleries share the same block as your badge reader."
+    ]
+  },
+  "generalPlan": {
+    "heading": "The Site Plan",
+    "kicker": ["Geometry of", "your intentions"],
+    "ctaText": "Open the site plan",
+    "anchor": "siteplan"
+  },
+  "architecture": {
+    "number": "4",
+    "heading": "Architecture",
+    "kicker": ["Lines that insist", "on going up"],
+    "intro": "Three stepped volumes share a plinth and lean into the avenue, a silhouette built to be recognised at highway speed.",
+    "anchor": "architecture",
+    "slides": [
+      "Parts of the massing float above the plaza on slender columns, opening the ground floor to daylight.",
+      "Vertical fins pace the façade and stretch the eye upward, giving the block its sense of motion.",
+      "A glass base with double-height storefronts keeps the street level open and light.",
+      "Selective glazing tempers the sun without stealing the view.",
+      "After dark, programmed façade lighting redraws the building in thin bright strokes."
+    ],
+    "architect": {
+      "name": "Jonas Ferro.",
+      "role": "Principal architect at TERRAFORMA STUDIO",
+      "buttonLabel": ["A note from", "the architect"]
+    }
+  },
+  "lobby": {
+    "number": "5",
+    "heading": "Lobby",
+    "kicker": ["Arrival that sets", "the day's tempo"],
+    "intro": "Independent entrance halls, each with its own reception desk and waiting lounge, mean visitors never queue behind another company's morning rush.",
+    "statement": "The interiors follow one quiet rule: muted materials, generous voids, and daylight doing most of the decorating.",
+    "detail": "Custom joinery and a restrained palette keep the halls calm at nine in the morning and composed at nine at night.",
+    "cards": [
+      { "label": ["Entrance halls with", "separate street doors"], "value": "3" },
+      { "label": ["Ceiling height in", "the main hall, meters"], "value": "10" },
+      { "label": ["Elevators, including direct", "runs to the parking levels"], "value": "12" }
+    ],
+    "gallery": 3,
+    "decorTiles": 8
+  },
+  "offices": {
+    "number": "6",
+    "heading": "Offices",
+    "kicker": ["Floor plates that", "flex with headcount"],
+    "intro": "Tenants are the campus's whole point. Column-free spans, raised floors and operable partitions let a team of twelve become a team of eighty without moving out.",
+    "slides": ["Open work floors", "Corner suites", "Boardrooms", "Coffee points", "Clear heights up to 5,4 meters with full-height glazing keep even the deepest desk in daylight."],
+    "ctaText": "Choose your floor"
+  },
+  "comfort": {
+    "srTitle": "Comfort that guards the workday.",
+    "statement": "Comfort that guards the workday. Meridian keeps the background hum of running a building away from the people doing the work, quietly and around the clock.",
+    "cards": [
+      { "title": "Service without ceremony", "icon": "service", "text": "One flat service package covers the essentials, with no surprise line items at quarter end." },
+      { "title": "An operator on call", "icon": "help", "text": "A resident app and a staffed desk resolve the small stuff before it becomes a ticket chain." }
+    ]
+  },
+  "engineering": {
+    "number": "7",
+    "heading": "Systems",
+    "kicker": "Engineering you never think about",
+    "intro": "The building runs itself: ventilation, heating, access and metering are automated end to end and watched from one control room.",
+    "detail": "Climate systems hold each floor at its own setpoint and refresh the air on a schedule tuned to occupancy, not habit.",
+    "anchor": "systems",
+    "features": [
+      { "link": "LED lighting", "title": "Low-draw fixtures throughout", "icon": "M12 3v3M5 7l2 2M19 7l-2 2M8 13a4 4 0 1 1 8 0c0 2-1 2.5-1 4h-6c0-1.5-1-2-1-4zM10 19h4" },
+      { "link": "Room-level climate", "title": "Setpoints per room", "icon": "M12 4v10M12 14a3 3 0 1 0 .01 0M9 7h-3M9 10H6" },
+      { "link": "Façade lighting", "title": "Programmable night façade", "icon": "M4 20L12 4l8 16M8 14h8" },
+      { "link": "Fibre and Wi-Fi", "title": "Signal in every corner", "icon": "M4 10a12 12 0 0 1 16 0M7 13a8 8 0 0 1 10 0M10 16a4 4 0 0 1 4 0M12 19h.01" },
+      { "link": "Elevator bank", "title": "Four passenger cars, one freight", "icon": "M6 4h12v16H6zM12 8v8M9 12l3-3 3 3" },
+      { "link": "Round-the-clock watch", "title": "Staffed desk, day and night", "icon": "M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z" },
+      { "link": "Fresh-air plant", "title": "Supply and extract ventilation", "icon": "M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 10V4M14 13l5 3M10 13l-5 3" },
+      { "link": "Plate-reading parking", "title": "Camera entry, guided stalls", "icon": "M5 11l1-4h12l1 4M5 11h14v6H5zM7 17v2M17 17v2" }
+    ]
+  },
+  "infrastructure": {
+    "number": "8",
+    "heading": "Amenities",
+    "kicker": ["Ground floors that", "earn their rent"],
+    "intro": "Meridian is more than desks. The plinth carries a working high street, so errands happen between meetings instead of after hours.",
+    "anchor": "amenities",
+    "cards": [
+      { "label": "Shops", "icon": "M4 8l2-4h12l2 4M4 8v12h16V8M9 12a3 3 0 0 0 6 0" },
+      { "label": "Restaurants", "icon": "M7 3v8M5 3v4a2 2 0 0 0 4 0V3M16 3c-2 0-3 2-3 5h3v13" },
+      { "label": "Espresso bars", "icon": "M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4zM16 10h2a2 2 0 0 1 0 4h-2M8 5c0-1 1-1 1-2M12 5c0-1 1-1 1-2" },
+      { "label": ["Clinic and", "pharmacy"], "icon": "M12 5v14M5 12h14" },
+      { "label": "Gym", "icon": "M4 12h3M17 12h3M7 8v8M17 8v8M7 12h10" },
+      { "label": ["Shared", "courtyards"], "icon": "M12 4l7 7h-3v7h-8v-7H5z" }
+    ],
+    "note": "These ground floors are meant to pull the whole district in, not just the badge-holders upstairs.",
+    "courtText": "The inner court is furnished for actual work: long tables, weatherproof power and shade that moves with the sun.",
+    "gallery": 3
+  },
+  "team": {
+    "number": "9",
+    "heading": "Our people",
+    "kicker": "Specialists behind the campus",
+    "anchor": "people",
+    "cards": [
+      { "title": "Concept and massing", "text": "Halden Bureau shaped the three volumes and the plinth. Their portfolio runs from transit halls to quiet chapels, and it shows in the section." },
+      { "title": "Light planning", "text": "Studio Lucent drew the night façade and the lobby light plot, work that has picked up two international lighting awards." },
+      { "title": "Common interiors", "text": "Atelier Marlow furnished the halls and courtyards, keeping the palette calm so the architecture does the talking." }
+    ]
+  },
+  "footer": {
+    "ctaText": "Get in touch",
+    "hours": ["Open daily,", "8:00 AM – 8:00 PM"],
+    "copyright": "© 2027. Meridian",
+    "privacyText": "Privacy Policy",
+    "creditText": "A clean-room template",
+    "footnote": "Everything on this page is placeholder marketing copy for a design template; no real building, offer or contract stands behind it."
+  }
+}

@@ -1,6 +1,6 @@
 export const WIDTHS = [390, 768, 1440];
 
-export const FORBIDDEN_IDENTITY = ["fin.ai", "intercom", "posthog", "cipher.tv", "michaelgatt", "likova"];
+export const FORBIDDEN_IDENTITY = ["fin.ai", "intercom", "posthog", "cipher.tv", "michaelgatt", "likova", "otsuka", "pi.dev", "charm.land"];
 
 export function serveDir(dir) {
   return Bun.serve({
@@ -29,6 +29,34 @@ export async function scrollFullPage(page) {
 export async function checkOverflow(page) {
   const overflow = await page.evaluate(() => document.body.scrollWidth > window.innerWidth + 1);
   return overflow ? ["horizontal overflow: body.scrollWidth exceeds viewport width"] : [];
+}
+
+// body.scrollWidth misses the common mobile defect: `overflow-x: hidden` on html/body clips pushed-out text instead of scrolling it.
+// Only html/body are treated as non-clipping; a wrapper with its own overflow-x (marquee, carousel, scroll pane) legitimately clips.
+export async function checkTextOverflow(page) {
+  return page.evaluate(() => {
+    const vw = window.innerWidth;
+    const clippedByWrapper = (el) => {
+      for (let p = el.parentElement; p && p !== document.body && p !== document.documentElement; p = p.parentElement) {
+        if (getComputedStyle(p).overflowX !== "visible") return true;
+      }
+      return false;
+    };
+    const hasOwnText = (el) => Array.from(el.childNodes).some((n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+    const out = [];
+    for (const el of document.body.querySelectorAll("*")) {
+      if (!hasOwnText(el) || clippedByWrapper(el)) continue;
+      const s = getComputedStyle(el);
+      if (s.display === "none" || s.visibility === "hidden" || parseFloat(s.opacity) === 0) continue;
+      const r = el.getBoundingClientRect();
+      if (r.width === 0 || r.height === 0) continue;
+      if (r.right > vw + 1 || r.left < -1) {
+        const cls = (el.getAttribute("class") || "").split(/\s+/)[0];
+        out.push(`${el.tagName.toLowerCase()}${cls ? "." + cls : ""} left=${Math.round(r.left)} right=${Math.round(r.right)}`);
+      }
+    }
+    return out.length ? [`${out.length} text element(s) extend past the ${vw}px viewport: ${out.slice(0, 3).join("; ")}`] : [];
+  });
 }
 
 export async function checkRevealVisible(page) {
@@ -71,6 +99,7 @@ export async function checkSlugAtWidth(browser, baseUrl, width) {
     await scrollFullPage(page);
     for (const m of checkConsole(consoleErrors, pageErrors)) failures.push(`[${width}px normal] ${m}`);
     for (const m of await checkOverflow(page)) failures.push(`[${width}px normal] ${m}`);
+    for (const m of await checkTextOverflow(page)) failures.push(`[${width}px normal] ${m}`);
     for (const m of await checkRevealVisible(page)) failures.push(`[${width}px normal] ${m}`);
     for (const m of await checkForbiddenIdentity(page, FORBIDDEN_IDENTITY)) failures.push(`[${width}px normal] ${m}`);
     await context.close();

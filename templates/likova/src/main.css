@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "./components.css";
+@source "../";
+
+@theme {
+  --color-lk-navy: #0b1026;
+  --color-lk-panel: #262b40;
+  --color-lk-muted: #5e5d72;
+  --color-lk-gray: #c0c1c8;
+  --color-lk-light: #e4e7ec;
+  --color-lk-ink: #0b1026;
+  --font-lk-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+}
