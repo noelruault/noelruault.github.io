@@ -31,8 +31,8 @@ export async function checkOverflow(page) {
   return overflow ? ["horizontal overflow: body.scrollWidth exceeds viewport width"] : [];
 }
 
-// body.scrollWidth misses the common mobile defect: `overflow-x: hidden` on html/body clips pushed-out text instead of scrolling it.
-// Only html/body are treated as non-clipping; a wrapper with its own overflow-x (marquee, carousel, scroll pane) legitimately clips.
+// body.scrollWidth only grows rightwards, so text pushed LEFT of the viewport never registers there, and it names nothing when it fires.
+// This check names the offender. Only html/body count as non-clipping ancestors: a wrapper with its own overflow-x (marquee, carousel, scroll pane) legitimately clips.
 export async function checkTextOverflow(page) {
   return page.evaluate(() => {
     const vw = window.innerWidth;

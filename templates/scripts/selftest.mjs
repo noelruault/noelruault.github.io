@@ -10,8 +10,8 @@ const FIXTURES = {
     <div style="width:3000px">wide</div>
     <div class="reveal" style="opacity:1">ok</div>
   </body></html>`,
-  textOverflow: `<!doctype html><html><head><title>Stub</title><style>body{margin:0;overflow-x:hidden}</style></head><body>
-    <p style="width:3000px;white-space:nowrap">this line is pushed far past the viewport and clipped by body</p>
+  textOverflow: `<!doctype html><html><head><title>Stub</title><style>body{margin:0}</style></head><body>
+    <p style="position:relative;left:-300px;width:400px">this line is pushed left, out of the viewport</p>
     <div class="reveal" style="opacity:1">ok</div>
   </body></html>`,
   clippedMarquee: `<!doctype html><html><head><title>Stub</title><style>body{margin:0}</style></head><body>
@@ -65,8 +65,8 @@ assert.notEqual((await checkOverflow(overflow.page)).length, 0, "overflow mutati
 await overflow.context.close();
 
 const textOverflow = await load("textOverflow");
-assert.deepEqual(await checkOverflow(textOverflow.page), [], "body overflow-x:hidden hides the defect from scrollWidth, which is why checkTextOverflow exists");
-assert.notEqual((await checkTextOverflow(textOverflow.page)).length, 0, "text pushed past the viewport under body overflow-x:hidden must be caught");
+assert.deepEqual(await checkOverflow(textOverflow.page), [], "scrollWidth is blind to leftward overflow, which is why checkTextOverflow exists");
+assert.notEqual((await checkTextOverflow(textOverflow.page)).length, 0, "text pushed out of the viewport must be caught");
 await textOverflow.context.close();
 
 const clippedMarquee = await load("clippedMarquee");
