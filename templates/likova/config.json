@@ -12,7 +12,7 @@
     "metal": ["#c9cdd6", "#5c6168"]
   },
   "placeholders": {
-    "sky": ["#1a2140", "#0b1026"],
+    "sky": ["#e9edf5", "#8296bd"],
     "duskCity": ["#2c3352", "#141a33"],
     "aerial": ["#39415c", "#10152c"],
     "map": ["#dfe3e9", "#c3cad4"],

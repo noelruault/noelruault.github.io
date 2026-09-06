@@ -1,7 +1,7 @@
-import { br, glyph, grad, pinGlyphs, barGroup, counter } from "./_shared.mjs";
+import { br, glyph, grad, numTag, pinGlyphs, barGroup, counter } from "./_shared.mjs";
 
 const pinSpots = [
-  [12, 18], [78, 12], [30, 44], [64, 58], [18, 72], [86, 66],
+  [46, 58], [82, 55], [58, 70], [30, 78], [70, 86], [88, 72],
 ];
 
 export default (config) => {
@@ -19,7 +19,10 @@ export default (config) => {
       ${pins}
     </div>
     <div class="relative px-4 lg:px-8 pt-24 lg:pt-28">
-      <h2 class="text-sm text-lk-muted">${br(a.kicker)}</h2>
+      <div class="flex items-start justify-between max-w-3xl">
+        <h2 class="text-sm text-lk-muted">${br(a.kicker)}</h2>
+        ${numTag(a.number)}
+      </div>
       <p class="lk-statement max-w-4xl mt-8"><span class="lk-indent hidden lg:inline-block" aria-hidden="true"></span>${a.statement}</p>
     </div>
     <div class="lk-map-panel relative mx-4 lg:mx-8 mt-14 max-w-sm">

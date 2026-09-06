@@ -6,7 +6,7 @@ export default (config) => {
   const rows = info.stats
     .map(
       (s, i) => `<div class="${i === 0 ? "" : "hidden"}">
-          <p class="lk-lead text-lk-gray">${s.key}</p>
+          <p class="lk-lead uppercase tracking-wide text-lk-gray">${s.key}</p>
         </div>`
     )
     .join("\n        ");
@@ -22,7 +22,7 @@ export default (config) => {
   <h2 class="sr-only">${info.srTitle}</h2>
   <div class="lk-pin lk-pin--info px-4 lg:px-8 py-16 lg:py-0 lg:flex lg:flex-col lg:justify-center">
     <div class="lg:hidden">
-      <p class="lk-lead text-lk-gray">${first.key}</p>
+      <p class="lk-lead uppercase tracking-wide text-lk-gray">${first.key}</p>
       <p class="lk-display text-right mt-10">${first.value}</p>
       <div class="mt-10">${barGroup(info.stats.length)}</div>
     </div>
