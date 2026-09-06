@@ -57,7 +57,7 @@ Eight independent, self-contained website templates under `templates/`, plus a g
 
 ## Method (per site, condensed from the proven component-RE loop)
 
-0. Load the `reverse-engineer-web` skill FIRST (Skill tool, name `reverse-engineer-web`; on disk `~/.claude/skills/reverse-engineer-web/`: `SKILL.md`, `scripts/extract_fragment.py`, `scripts/extract_css.py`). Every template ticket (t10–t57, their sub-ids, and any fix ticket that touches a template) starts by invoking it: its working loop, rebuild rules and gotchas are this method's source, and its two scripts ARE step 3's mechanical extraction. A delegated `router` plan names the script paths explicitly so a cheap step runs them instead of re-implementing them. The handoff block's `did:` line names which scripts ran.
+0. Load the `reverse-engineer-web` skill FIRST (Skill tool, name `reverse-engineer-web`; on disk `~/.claude/skills/reverse-engineer-web/`: `SKILL.md`, `scripts/extract_fragment.py`, `scripts/extract_css.py`). Every template ticket (t10–t57, their sub-ids, and any fix ticket that touches a template) starts by invoking it: its working loop, rebuild rules and gotchas are this method's source, and its two scripts ARE step 3's mechanical extraction. A delegated `router` plan names the script paths explicitly so a cheap step runs them instead of re-implementing them. The handoff block's `did:` line names which scripts ran. The skill's step 0 reads the shared process memory (`~/.claude/agent-memory/reverse-engineer-web/MEMORY.md`, cross-project lessons and the scorecard of every template built so far): obey it like lessons.md.
 1. Scrape to scratch (never into the repo): page HTML + every linked stylesheet. Page CSS is often per-page plus one shared token file; fetch both.
 2. Enumerate the page top to bottom: every section, its grid, its breakpoint behavior, every effect (reveal-on-scroll, stagger, hover lift, marquee, parallax, sticky nav, accordion, carousel). This inventory drives the build and the review verdict.
 3. Extract fragments and rules mechanically (balanced-tag walk for HTML, prefix-matched rules plus `@media` recursion plus ALL `@keyframes` for CSS; minified CSS is one line, never read by eye). This step is bulk and delegable via `router` at d1-d2.
@@ -65,6 +65,7 @@ Eight independent, self-contained website templates under `templates/`, plus a g
 5. Rebuild namespaced: Tailwind v4 utilities for layout/spacing/type, a per-template `components.css` (imported into the tailwind entry, the v4 CLI inlines it) for extracted effects, keyframes and gradients. Collapse per-theme rule soup into CSS vars. Stagger via `--i` with `transition-delay: calc(var(--i,0) * 60ms)` and delay reset on hover.
 6. Reveal-on-scroll ships with three guards: IntersectionObserver adding `.visible` with a no-IO fallback that adds it immediately; `prefers-reduced-motion: reduce` forcing every hidden-by-default class visible; a `<noscript>` style block doing the same with `!important`.
 7. Design judgment, composition and visual QA stay on this thread (the strong model). Only mechanical extraction gets delegated.
+8. Record (skill step 8, same cycle, before the `review.md` line is written): append to the shared process memory one class-tagged, evidenced lesson per durable finding that transfers beyond this repo, and ONE scorecard row for the template shipped (page kind, sections, widths green first try, cycles to ship, review verdict, top defect class). Repo-specific gotchas (gate invocations, harness quirks) go to `docs/webtemplates/lessons.md` instead, never to the shared memory. Nothing in the shared memory names this repo, its tickets or the reference brands.
 
 ## Harness contract (built by t00, used by every later ticket)
 
@@ -103,6 +104,7 @@ The terminal `final-dod` ticket emits the literal phrase `backlog empty` ONLY wh
 - every template renders entirely from its `config.json`: render-drift check green, no mutable content hardcoded in components;
 - every template has a side-by-side parity verdict at 390/768/1440 recorded in `review.md`, with its effects inventory ticked off;
 - every template honours the Responsive contract and the Tailwind contract, and its group's `review.md` line says so explicitly;
+- every template has one scorecard row in the shared process memory (Method step 8), so the process is measured across all eight;
 - the forbidden-identity scan is clean on every template;
 - each template dir is self-contained (no external requests, no node_modules, built css committed).
 
